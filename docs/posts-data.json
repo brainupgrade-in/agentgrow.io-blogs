@@ -30,5 +30,13 @@
     "category": "Strategy",
     "readTime": "5 min read",
     "publishedAt": "Feb 28, 2026"
+  },
+  {
+    "slug": "facebook-instagram-setup",
+    "title": "How to Get Your Facebook & Instagram Credentials for AgentGrow",
+    "excerpt": "Step-by-step guide to getting your Facebook Page ID, Page Access Token, and Instagram Account ID so your AI agent can post on your behalf.",
+    "category": "How-To",
+    "readTime": "8 min read",
+    "publishedAt": "Mar 3, 2026"
   }
 ]

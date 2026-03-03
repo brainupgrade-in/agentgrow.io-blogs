@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Get Your Facebook &amp; Instagram Credentials for AgentGrow — AgentGrow</title>
+  <meta name="description" content="Step-by-step guide to getting your Facebook Page ID, Page Access Token, and Instagram Account ID so your AI agent can post on your behalf.">
+  <meta property="og:title" content="How to Get Your Facebook & Instagram Credentials for AgentGrow">
+  <meta property="og:description" content="Step-by-step guide to getting your Facebook Page ID, Page Access Token, and Instagram Account ID so your AI agent can post on your behalf.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://agentgrow.io/blog/posts/facebook-instagram-setup.html">
+  <meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://agentgrow.io/blog/posts/facebook-instagram-setup.html">
+  <link rel="stylesheet" href="../css/blog.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "How to Get Your Facebook & Instagram Credentials for AgentGrow",
+    "description": "Step-by-step guide to getting your Facebook Page ID, Page Access Token, and Instagram Account ID so your AI agent can post on your behalf.",
+    "datePublished": "2026-03-03",
+    "author": {"@type": "Organization", "name": "AgentGrow"},
+    "publisher": {"@type": "Organization", "name": "AgentGrow", "url": "https://agentgrow.io"},
+    "mainEntityOfPage": "https://agentgrow.io/blog/posts/facebook-instagram-setup.html"
+  }
+  </script>
+  <style>
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      background: var(--lime);
+      color: var(--obsidian);
+      border-radius: 50%;
+      font-weight: 700;
+      font-size: 0.85rem;
+      margin-right: 0.5rem;
+      flex-shrink: 0;
+    }
+    .step-heading {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.75rem;
+    }
+    .step-heading h3 {
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+    .screenshot-placeholder {
+      background: var(--glass-bg);
+      border: 1px dashed var(--border-subtle);
+      border-radius: 8px;
+      padding: 1.5rem;
+      text-align: center;
+      color: var(--zinc-500);
+      font-size: 0.85rem;
+      margin: 1rem 0 1.5rem;
+    }
+    .code-block {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-size: 0.85rem;
+      color: var(--lime);
+      overflow-x: auto;
+      margin: 0.75rem 0 1.25rem;
+      word-break: break-all;
+    }
+    .warning-box {
+      background: rgba(251, 191, 36, 0.08);
+      border-left: 3px solid var(--amber);
+      border-radius: 0 8px 8px 0;
+      padding: 1rem 1.25rem;
+      margin: 1.25rem 0;
+      color: var(--zinc-300);
+      font-size: 0.9rem;
+    }
+    .warning-box strong {
+      color: var(--amber);
+    }
+    .section-divider {
+      border: none;
+      border-top: 1px solid var(--border-subtle);
+      margin: 2.5rem 0;
+    }
+    .field-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0 1.5rem;
+    }
+    .field-table th {
+      text-align: left;
+      padding: 0.6rem 0.75rem;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--zinc-500);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .field-table td {
+      padding: 0.6rem 0.75rem;
+      font-size: 0.9rem;
+      border-bottom: 1px solid var(--glass-border);
+    }
+    .field-table td:first-child {
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-size: 0.85rem;
+      color: var(--lime);
+      white-space: nowrap;
+    }
+    .field-table td:last-child {
+      color: var(--zinc-400);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="inner">
+      <a href="https://agentgrow.io/" class="logo">
+        <div class="logo-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </div>
+        AgentGrow
+      </a>
+      <nav>
+        <a href="https://agentgrow.io/#features">Features</a>
+        <a href="https://agentgrow.io/#pricing">Pricing</a>
+        <a href="../guide/">Guide</a>
+        <a href="../">Blog</a>
+      </nav>
+      <a href="https://agentgrow.io/onboard/" class="cta-btn">Start Free Trial</a>
+    </div>
+  </header>
+
+  <!-- Article Header -->
+  <div class="article-header">
+    <div class="container-narrow">
+      <p class="breadcrumb"><a href="../">&larr; Blog</a> / How-To</p>
+      <span class="badge badge-how-to">How-To</span>
+      <h1>How to Get Your Facebook &amp; Instagram Credentials for AgentGrow</h1>
+      <p class="excerpt-text">Step-by-step guide to getting your Facebook Page ID, Page Access Token, and Instagram Account ID so your AI agent can post on your behalf.</p>
+      <div class="meta">
+        <span>AgentGrow</span>
+        <span>&middot;</span>
+        <span>Mar 3, 2026</span>
+        <span>&middot;</span>
+        <span>8 min read</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Article Body -->
+  <div class="article-body">
+    <div class="container-narrow">
+
+      <p>To let your AI agent publish posts on your Facebook Page and Instagram account, you need to provide a few credentials through the Integrations page in your AgentGrow dashboard. This guide walks you through getting each one.</p>
+
+      <h2>What You Will Need</h2>
+
+      <p>Here are the credentials required for each integration:</p>
+
+      <table class="field-table">
+        <thead>
+          <tr><th>Integration</th><th>Field</th><th>What it is</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Facebook</td><td>FACEBOOK_PAGE_ID</td><td>The numeric ID of your Facebook Page</td></tr>
+          <tr><td>Facebook</td><td>FACEBOOK_PAGE_ACCESS_TOKEN</td><td>A long-lived token that lets your agent post to the Page</td></tr>
+          <tr><td>Instagram</td><td>INSTAGRAM_ACCOUNT_ID</td><td>The numeric ID of your Instagram Business account</td></tr>
+          <tr><td>Instagram</td><td>INSTAGRAM_ACCESS_TOKEN</td><td>Same Page Access Token used for Facebook (Instagram Business uses the Facebook API)</td></tr>
+        </tbody>
+      </table>
+
+      <div class="callout">Instagram Business accounts are managed through Facebook. One Page Access Token works for both Facebook and Instagram posting.</div>
+
+      <h2>Prerequisites</h2>
+
+      <ul>
+        <li>A <strong>Facebook Page</strong> for your business (not a personal profile)</li>
+        <li>An <strong>Instagram Business account</strong> connected to that Facebook Page</li>
+        <li>A <strong>Meta Developer account</strong> (free to create)</li>
+      </ul>
+
+      <p>If you do not have an Instagram Business account yet, switch from personal to business in <strong>Instagram Settings &gt; Account &gt; Switch to Professional Account</strong>, then link it to your Facebook Page under <strong>Page Settings &gt; Linked Accounts</strong>.</p>
+
+      <hr class="section-divider">
+
+      <!-- PART 1: Facebook Page ID -->
+      <h2>Part 1 — Get Your Facebook Page ID</h2>
+
+      <div class="step-heading">
+        <span class="step-number">1</span>
+        <h3>Go to your Facebook Page</h3>
+      </div>
+      <p>Open Facebook and navigate to the Page you want your agent to post to. Make sure you are an admin of this Page.</p>
+
+      <div class="step-heading">
+        <span class="step-number">2</span>
+        <h3>Open Page Settings</h3>
+      </div>
+      <p>On the left sidebar of your Page (New Pages Experience), click <strong>Settings</strong> at the bottom. If you are using the classic interface, click <strong>Settings</strong> in the top navigation bar.</p>
+
+      <div class="step-heading">
+        <span class="step-number">3</span>
+        <h3>Find your Page ID</h3>
+      </div>
+      <p>Scroll to the bottom of the <strong>General</strong> settings page (or look under <strong>Page Transparency</strong>). You will see <strong>Page ID</strong> — a long numeric string like:</p>
+      <div class="code-block">102770581820871</div>
+      <p>Copy this number. This is your <strong>FACEBOOK_PAGE_ID</strong>.</p>
+
+      <div class="callout">Alternative: Go to your Page, click <strong>About</strong>, and scroll to the very bottom. The Page ID is listed under <strong>Page transparency</strong>.</div>
+
+      <hr class="section-divider">
+
+      <!-- PART 2: Facebook Page Access Token -->
+      <h2>Part 2 — Get Your Page Access Token</h2>
+
+      <p>This is the most involved step. You will create a Meta App, grant it permissions, and generate a long-lived Page Access Token.</p>
+
+      <div class="step-heading">
+        <span class="step-number">1</span>
+        <h3>Create a Meta Developer account</h3>
+      </div>
+      <p>Go to <strong>developers.facebook.com</strong> and log in with the Facebook account that is an admin of your Page. If prompted, agree to the Meta Platform Terms and verify your account.</p>
+
+      <div class="step-heading">
+        <span class="step-number">2</span>
+        <h3>Create a new App</h3>
+      </div>
+      <p>Click <strong>My Apps</strong> (top-right) then <strong>Create App</strong>.</p>
+      <ul>
+        <li><strong>Use case:</strong> select <strong>"Other"</strong></li>
+        <li><strong>App type:</strong> select <strong>"Business"</strong></li>
+        <li><strong>App name:</strong> anything descriptive like "AgentGrow Publishing"</li>
+        <li><strong>Business portfolio:</strong> select your business portfolio (or create one if needed)</li>
+      </ul>
+      <p>Click <strong>Create App</strong>.</p>
+
+      <div class="step-heading">
+        <span class="step-number">3</span>
+        <h3>Add the required products</h3>
+      </div>
+      <p>From your App Dashboard, scroll to <strong>"Add products to your app"</strong> and click <strong>Set Up</strong> on these:</p>
+      <ul>
+        <li><strong>Facebook Login for Business</strong> — needed to generate tokens</li>
+      </ul>
+
+      <div class="step-heading">
+        <span class="step-number">4</span>
+        <h3>Open the Graph API Explorer</h3>
+      </div>
+      <p>Go to <strong>developers.facebook.com/tools/explorer/</strong>. This is the easiest way to generate your token.</p>
+      <ul>
+        <li>In the top-right dropdown, select your app ("AgentGrow Publishing")</li>
+        <li>Click <strong>Generate Access Token</strong></li>
+      </ul>
+
+      <div class="step-heading">
+        <span class="step-number">5</span>
+        <h3>Grant the required permissions</h3>
+      </div>
+      <p>When the login dialog appears, make sure you grant these permissions:</p>
+      <ul>
+        <li><strong>pages_manage_posts</strong> — lets the agent create posts</li>
+        <li><strong>pages_read_engagement</strong> — lets the agent read post insights</li>
+        <li><strong>pages_show_list</strong> — lets the agent access your Pages</li>
+        <li><strong>instagram_basic</strong> — needed for Instagram posting</li>
+        <li><strong>instagram_content_publish</strong> — lets the agent publish to Instagram</li>
+      </ul>
+      <p>If you do not see all permissions listed, click <strong>Add a Permission</strong> in the Explorer and search for each one.</p>
+
+      <div class="step-heading">
+        <span class="step-number">6</span>
+        <h3>Get the Page Access Token</h3>
+      </div>
+      <p>The token you just generated is a <strong>User Access Token</strong>. You need to exchange it for a <strong>Page Access Token</strong>:</p>
+      <ul>
+        <li>In Graph API Explorer, change the dropdown from <strong>"User Token"</strong> to <strong>"Page Access Token"</strong></li>
+        <li>Select your Page from the list</li>
+        <li>A new token will appear in the Access Token field</li>
+      </ul>
+      <p>Copy this token. It will look something like:</p>
+      <div class="code-block">EAABsbCS1iHgBO0pVjZC8mG2RaT7xN3KlXs2...</div>
+
+      <div class="step-heading">
+        <span class="step-number">7</span>
+        <h3>Extend the token to long-lived</h3>
+      </div>
+      <p>Short-lived tokens expire in about one hour. You need a long-lived token (60 days) or a permanent token.</p>
+
+      <p><strong>Option A — Use the Access Token Debugger:</strong></p>
+      <ul>
+        <li>Go to <strong>developers.facebook.com/tools/debug/accesstoken/</strong></li>
+        <li>Paste your Page Access Token and click <strong>Debug</strong></li>
+        <li>At the bottom, click <strong>Extend Access Token</strong></li>
+        <li>Copy the new long-lived token</li>
+      </ul>
+
+      <p><strong>Option B — Use the API directly:</strong></p>
+      <p>In Graph API Explorer, make this request (replace values with yours):</p>
+      <div class="code-block">GET /oauth/access_token?grant_type=fb_exchange_token&client_id=YOUR_APP_ID&client_secret=YOUR_APP_SECRET&fb_exchange_token=YOUR_SHORT_LIVED_TOKEN</div>
+      <p>The response contains a long-lived token.</p>
+
+      <div class="warning-box">
+        <strong>Important:</strong> Page Access Tokens generated from a long-lived User Token are permanent and do not expire. This is the recommended approach — extend the User Token first, then get the Page Token.
+      </div>
+
+      <p>The final token you copy is your <strong>FACEBOOK_PAGE_ACCESS_TOKEN</strong>. This same token also works as your <strong>INSTAGRAM_ACCESS_TOKEN</strong>.</p>
+
+      <hr class="section-divider">
+
+      <!-- PART 3: Instagram Account ID -->
+      <h2>Part 3 — Get Your Instagram Account ID</h2>
+
+      <div class="step-heading">
+        <span class="step-number">1</span>
+        <h3>Confirm your Instagram Business account is linked</h3>
+      </div>
+      <p>Go to your Facebook Page &gt; <strong>Settings</strong> &gt; <strong>Linked Accounts</strong> (or <strong>Instagram</strong> in the left menu). Make sure your Instagram Business account appears here. If not, link it first.</p>
+
+      <div class="step-heading">
+        <span class="step-number">2</span>
+        <h3>Query the Graph API</h3>
+      </div>
+      <p>Go back to <strong>developers.facebook.com/tools/explorer/</strong>. Make sure your Page Access Token is selected, then run this query:</p>
+      <div class="code-block">GET /me/accounts?fields=instagram_business_account</div>
+      <p>The response will include your Pages. Find the one with an <code>instagram_business_account</code> field:</p>
+      <div class="code-block">{
+  "data": [
+    {
+      "instagram_business_account": {
+        "id": "17841448960441070"
+      },
+      "id": "102770581820871"
+    }
+  ]
+}</div>
+      <p>The <code>id</code> inside <code>instagram_business_account</code> is your <strong>INSTAGRAM_ACCOUNT_ID</strong>.</p>
+
+      <div class="callout">If <code>instagram_business_account</code> is missing, your Instagram account is either not a Business/Creator account or it is not linked to the Facebook Page.</div>
+
+      <hr class="section-divider">
+
+      <!-- PART 4: Enter credentials in AgentGrow -->
+      <h2>Part 4 — Enter Credentials in AgentGrow</h2>
+
+      <div class="step-heading">
+        <span class="step-number">1</span>
+        <h3>Open your Integrations page</h3>
+      </div>
+      <p>Log in to your AgentGrow dashboard at <strong>agentgrow.io/user/integrations</strong>.</p>
+
+      <div class="step-heading">
+        <span class="step-number">2</span>
+        <h3>Configure Facebook</h3>
+      </div>
+      <p>Click <strong>Configure</strong> (or <strong>Reconfigure</strong>) on the Facebook module. Enter:</p>
+      <ul>
+        <li><strong>Facebook Page ID:</strong> the numeric ID from Part 1</li>
+        <li><strong>Facebook Page Access Token:</strong> the long-lived token from Part 2</li>
+      </ul>
+      <p>Click <strong>Save &amp; Restart Agent</strong>. Your agent pod will restart in about 30 seconds.</p>
+
+      <div class="step-heading">
+        <span class="step-number">3</span>
+        <h3>Configure Instagram</h3>
+      </div>
+      <p>Click <strong>Configure</strong> on the Instagram module. Enter:</p>
+      <ul>
+        <li><strong>Instagram Account ID:</strong> the ID from Part 3</li>
+        <li><strong>Instagram Access Token:</strong> the same Page Access Token you used for Facebook</li>
+      </ul>
+      <p>Click <strong>Save &amp; Restart Agent</strong>.</p>
+
+      <div class="warning-box">
+        <strong>Token refresh:</strong> If you used a long-lived User Token first (Option A/B in Part 2), your Page Access Token will not expire. If you used a short-lived token directly, it will expire in about one hour and you will need to repeat Part 2.
+      </div>
+
+      <hr class="section-divider">
+
+      <h2>Troubleshooting</h2>
+
+      <h3>I cannot find my Page ID</h3>
+      <p>Go to your Page on Facebook, click the three dots (...) menu, then <strong>About</strong>. Scroll to the bottom — the Page ID is listed under Page Transparency. You can also find it in the URL when you are on the classic Pages experience: <code>facebook.com/pages/edit/?id=123456789</code>.</p>
+
+      <h3>Graph API Explorer says "insufficient permissions"</h3>
+      <p>Click <strong>Add a Permission</strong> in the Explorer and add <code>pages_manage_posts</code> and <code>instagram_content_publish</code>. Then click <strong>Generate Access Token</strong> again and re-authorize the app.</p>
+
+      <h3>Instagram Business Account field is missing</h3>
+      <p>Three things to check:</p>
+      <ul>
+        <li>Your Instagram account must be a <strong>Business</strong> or <strong>Creator</strong> account (not Personal)</li>
+        <li>It must be <strong>linked</strong> to your Facebook Page (Page Settings &gt; Linked Accounts)</li>
+        <li>Your app must have the <strong>instagram_basic</strong> permission</li>
+      </ul>
+
+      <h3>My agent posted once then stopped</h3>
+      <p>Your token likely expired. Go to the Access Token Debugger (<strong>developers.facebook.com/tools/debug/accesstoken/</strong>), paste your token, and check the expiration. If expired, repeat Part 2 to generate a new long-lived token, then reconfigure the module in your dashboard.</p>
+
+      <h3>How do I make the token permanent?</h3>
+      <p>Generate a long-lived User Token first (extend via the Debugger or API). Then use that long-lived User Token to request a Page Access Token. The resulting Page Token will be permanent (no expiry). The Access Token Debugger will show "Expires: Never" for a permanent token.</p>
+
+    </div>
+  </div>
+
+  <!-- Related Posts -->
+  <div class="container-narrow">
+    <div class="related-posts">
+      <h2>More from the blog</h2>
+      <div class="card-grid" id="related-posts"></div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <h2>Deploy your AI CBO today</h2>
+    <p>Your AI CBO goes live within 24 hours. 90-day satisfaction guarantee — full refund if minimum deliverables aren't met.</p>
+    <div style="display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap">
+      <a href="https://agentgrow.io/onboard/" class="btn-lime">Get Started</a>
+      <a href="../" class="btn-outline">Back to Blog</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="inner">
+      <div class="brand">
+        <a href="https://agentgrow.io/" style="display:flex;align-items:center;gap:0.5rem;color:var(--white);text-decoration:none;font-weight:700;font-size:1.125rem;margin-bottom:1rem">
+          <div style="width:32px;height:32px;background:var(--lime);border-radius:8px;display:flex;align-items:center;justify-content:center">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;color:var(--obsidian)"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          AgentGrow
+        </a>
+        <p>AI-powered Chief Business Officer that grows your business 24/7 — content, leads, social, SEO.</p>
+        <p class="addr">2146 Sunscape, Sobha Hillview, Kanakapura Road, Bengaluru, Karnataka, INDIA 560109</p>
+        <p class="copy">&copy; 2026 gheWARE uniGPS Solutions LLP. All rights reserved.</p>
+      </div>
+      <div>
+        <h3>Product</h3>
+        <ul>
+          <li><a href="https://agentgrow.io/#features">Features</a></li>
+          <li><a href="https://agentgrow.io/#pricing">Pricing</a></li>
+          <li><a href="https://agentgrow.io/onboard/">Get Started</a></li>
+          <li><a href="../guide/">Getting Started Guide</a></li>
+          <li><a href="https://agentgrow.io/help">Help Center</a></li>
+          <li><a href="../">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="https://agentgrow.io/about/">About Us</a></li>
+          <li><a href="https://agentgrow.io/terms/">Terms of Service</a></li>
+          <li><a href="https://agentgrow.io/privacy/">Privacy Policy</a></li>
+          <li><a href="https://agentgrow.io/refund/">Refund Policy</a></li>
+          <li><a href="https://agentgrow.io/contact/">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    fetch('../posts-data.json')
+      .then(r => r.json())
+      .then(posts => {
+        const BADGE_CLASS = {'Platform':'badge-platform','Getting Started':'badge-getting-started','How-To':'badge-how-to','Strategy':'badge-strategy'};
+        const current = 'facebook-instagram-setup';
+        const related = posts.filter(p => p.slug !== current).slice(0, 3);
+        document.getElementById('related-posts').innerHTML = related.map(p =>
+          '<div class="card">' +
+            '<span class="badge ' + (BADGE_CLASS[p.category]||'') + '">' + p.category + '</span>' +
+            '<h2><a href="' + p.slug + '.html">' + p.title + '</a></h2>' +
+            '<p class="excerpt">' + p.excerpt + '</p>' +
+            '<div class="card-meta"><span>' + p.publishedAt + '</span><span>&middot;</span><span>' + p.readTime + '</span></div>' +
+          '</div>'
+        ).join('');
+      });
+  </script>
+
+</body>
+</html>
