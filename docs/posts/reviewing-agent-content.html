@@ -11,7 +11,7 @@
   <meta property="og:url" content="https://agentgrow.io/blog/posts/reviewing-agent-content.html">
   <meta name="twitter:card" content="summary">
   <link rel="canonical" href="https://agentgrow.io/blog/posts/reviewing-agent-content.html">
-  <link rel="stylesheet" href="/blog/css/blog.css">
+  <link rel="stylesheet" href="../css/blog.css">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -39,8 +39,8 @@
       <nav>
         <a href="https://agentgrow.io/#features">Features</a>
         <a href="https://agentgrow.io/#pricing">Pricing</a>
-        <a href="/blog/guide/">Guide</a>
-        <a href="/blog">Blog</a>
+        <a href="../guide/">Guide</a>
+        <a href="../">Blog</a>
       </nav>
       <a href="https://agentgrow.io/onboard/" class="cta-btn">Start Free Trial</a>
     </div>
@@ -49,7 +49,7 @@
   <!-- Article Header -->
   <div class="article-header">
     <div class="container-narrow">
-      <p class="breadcrumb"><a href="/blog">&larr; Blog</a> / How-To</p>
+      <p class="breadcrumb"><a href="../">&larr; Blog</a> / How-To</p>
       <span class="badge badge-how-to">How-To</span>
       <h1>How to Review and Approve Your Agent's Content</h1>
       <p class="excerpt-text">Your AI CBO creates content based on your business profile. Before anything goes live, it appears in your dashboard for review. Here is how the approval workflow operates.</p>
@@ -125,7 +125,7 @@
     <p>Your AI CBO goes live within 24 hours. 90-day satisfaction guarantee — full refund if minimum deliverables aren't met.</p>
     <div style="display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap">
       <a href="https://agentgrow.io/onboard/" class="btn-lime">Get Started</a>
-      <a href="/blog" class="btn-outline">Back to Blog</a>
+      <a href="../" class="btn-outline">Back to Blog</a>
     </div>
   </section>
 
@@ -149,9 +149,9 @@
           <li><a href="https://agentgrow.io/#features">Features</a></li>
           <li><a href="https://agentgrow.io/#pricing">Pricing</a></li>
           <li><a href="https://agentgrow.io/onboard/">Get Started</a></li>
-          <li><a href="/blog/guide/">Getting Started Guide</a></li>
+          <li><a href="../guide/">Getting Started Guide</a></li>
           <li><a href="https://agentgrow.io/help">Help Center</a></li>
-          <li><a href="/blog">Blog</a></li>
+          <li><a href="../">Blog</a></li>
         </ul>
       </div>
       <div>
@@ -168,7 +168,7 @@
   </footer>
 
   <script>
-    fetch('/blog/posts-data.json')
+    fetch('../posts-data.json')
       .then(r => r.json())
       .then(posts => {
         const BADGE_CLASS = {'Platform':'badge-platform','Getting Started':'badge-getting-started','How-To':'badge-how-to','Strategy':'badge-strategy'};
@@ -177,7 +177,7 @@
         document.getElementById('related-posts').innerHTML = related.map(p =>
           '<div class="card">' +
             '<span class="badge ' + (BADGE_CLASS[p.category]||'') + '">' + p.category + '</span>' +
-            '<h2><a href="/blog/posts/' + p.slug + '.html">' + p.title + '</a></h2>' +
+            '<h2><a href="' + p.slug + '.html">' + p.title + '</a></h2>' +
             '<p class="excerpt">' + p.excerpt + '</p>' +
             '<div class="card-meta"><span>' + p.publishedAt + '</span><span>&middot;</span><span>' + p.readTime + '</span></div>' +
           '</div>'
