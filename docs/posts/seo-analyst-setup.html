@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Set Up SEO Analyst (Google Search Console) for AgentGrow &mdash; AgentGrow</title>
+  <meta name="description" content="Step-by-step guide to creating a Google Cloud service account and granting Search Console access so your AI agent can monitor your SEO performance.">
+  <meta property="og:title" content="How to Set Up SEO Analyst (Google Search Console) for AgentGrow">
+  <meta property="og:description" content="Step-by-step guide to creating a Google Cloud service account and granting Search Console access so your AI agent can monitor your SEO performance.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://agentgrow.io/blog/posts/seo-analyst-setup.html">
+  <meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://agentgrow.io/blog/posts/seo-analyst-setup.html">
+  <link rel="stylesheet" href="../css/blog.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "How to Set Up SEO Analyst (Google Search Console) for AgentGrow",
+    "description": "Step-by-step guide to creating a Google Cloud service account and granting Search Console access so your AI agent can monitor your SEO performance.",
+    "datePublished": "2026-03-03",
+    "author": {"@type": "Organization", "name": "AgentGrow"},
+    "publisher": {"@type": "Organization", "name": "AgentGrow", "url": "https://agentgrow.io"},
+    "mainEntityOfPage": "https://agentgrow.io/blog/posts/seo-analyst-setup.html"
+  }
+  </script>
+  <style>
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      background: var(--lime);
+      color: var(--obsidian);
+      border-radius: 50%;
+      font-weight: 700;
+      font-size: 0.85rem;
+      margin-right: 0.5rem;
+      flex-shrink: 0;
+    }
+    .step-heading {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.75rem;
+    }
+    .step-heading h3 {
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+    .screenshot-placeholder {
+      background: var(--glass-bg);
+      border: 1px dashed var(--border-subtle);
+      border-radius: 8px;
+      padding: 1.5rem;
+      text-align: center;
+      color: var(--zinc-500);
+      font-size: 0.85rem;
+      margin: 1rem 0 1.5rem;
+    }
+    .code-block {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-size: 0.85rem;
+      color: var(--lime);
+      overflow-x: auto;
+      margin: 0.75rem 0 1.25rem;
+      word-break: break-all;
+    }
+    .warning-box {
+      background: rgba(251, 191, 36, 0.08);
+      border-left: 3px solid var(--amber);
+      border-radius: 0 8px 8px 0;
+      padding: 1rem 1.25rem;
+      margin: 1.25rem 0;
+      color: var(--zinc-300);
+      font-size: 0.9rem;
+    }
+    .warning-box strong {
+      color: var(--amber);
+    }
+    .section-divider {
+      border: none;
+      border-top: 1px solid var(--border-subtle);
+      margin: 2.5rem 0;
+    }
+    .field-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0 1.5rem;
+    }
+    .field-table th {
+      text-align: left;
+      padding: 0.6rem 0.75rem;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--zinc-500);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .field-table td {
+      padding: 0.6rem 0.75rem;
+      font-size: 0.9rem;
+      border-bottom: 1px solid var(--glass-border);
+    }
+    .field-table td:first-child {
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-size: 0.85rem;
+      color: var(--lime);
+      white-space: nowrap;
+    }
+    .field-table td:last-child {
+      color: var(--zinc-400);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="inner">
+      <a href="https://agentgrow.io/" class="logo">
+        <div class="logo-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </div>
+        AgentGrow
+      </a>
+      <nav>
+        <a href="https://agentgrow.io/#features">Features</a>
+        <a href="https://agentgrow.io/#pricing">Pricing</a>
+        <a href="../guide/">Guide</a>
+        <a href="../">Blog</a>
+      </nav>
+      <a href="https://agentgrow.io/onboard/" class="cta-btn">Start Free Trial</a>
+    </div>
+  </header>
+
+  <!-- Article Header -->
+  <div class="article-header">
+    <div class="container-narrow">
+      <p class="breadcrumb"><a href="../">&larr; Blog</a> / How-To</p>
+      <span class="badge badge-how-to">How-To</span>
+      <h1>How to Set Up SEO Analyst (Google Search Console) for AgentGrow</h1>
+      <p class="excerpt-text">Step-by-step guide to creating a Google Cloud service account and granting Search Console access so your AI agent can monitor your SEO performance.</p>
+      <div class="meta">
+        <span>AgentGrow</span>
+        <span>&middot;</span>
+        <span>Mar 3, 2026</span>
+        <span>&middot;</span>
+        <span>7 min read</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Article Body -->
+  <div class="article-body">
+    <div class="container-narrow">
+
+      <p>The SEO Analyst module lets your AI agent monitor your website&rsquo;s search performance &mdash; tracking keywords, impressions, clicks, and indexing issues automatically. It connects to <strong>Google Search Console</strong> using a service account, so your agent can pull data without needing your personal Google login.</p>
+
+      <p>To set this up, you need to provide one credential through the Integrations page in your AgentGrow dashboard:</p>
+
+      <h2>What You Will Need</h2>
+
+      <table class="field-table">
+        <thead>
+          <tr><th>Field</th><th>What it is</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>GOOGLE_SERVICE_ACCOUNT_JSON</td><td>The full JSON contents of a Google Cloud service account key file that has access to your Search Console property</td></tr>
+        </tbody>
+      </table>
+
+      <div class="callout">Google Search Console and Google Cloud service accounts are completely free. No billing account is required for this setup.</div>
+
+      <h2>Prerequisites</h2>
+
+      <ul>
+        <li>A <strong>Google account</strong> (the same one you use for Google Search Console)</li>
+        <li>Your website <strong>verified in Google Search Console</strong> (if not yet, Google will walk you through verification when you add a property)</li>
+        <li>A web browser &mdash; no coding or command-line knowledge required</li>
+      </ul>
+
+      <hr class="section-divider">
+
+      <!-- PART 1: Create a Google Cloud Project -->
+      <h2>Part 1 &mdash; Create a Google Cloud Project</h2>
+
+      <p>If you already have a Google Cloud project you want to use, skip to <strong>Part 2</strong>.</p>
+
+      <div class="step-heading">
+        <span class="step-number">1</span>
+        <h3>Go to Google Cloud Console</h3>
+      </div>
+      <p>Open <strong>console.cloud.google.com</strong> and sign in with your Google account.</p>
+
+      <div class="step-heading">
+        <span class="step-number">2</span>
+        <h3>Create a new project</h3>
+      </div>
+      <p>Click the project dropdown at the top of the page (it may say &ldquo;Select a project&rdquo; or show an existing project name), then click <strong>New Project</strong>.</p>
+      <ul>
+        <li><strong>Project name:</strong> something descriptive like <code>agentgrow-seo</code></li>
+        <li><strong>Organization:</strong> leave as default (or &ldquo;No organization&rdquo;)</li>
+      </ul>
+      <p>Click <strong>Create</strong>. Google will create the project in a few seconds. Make sure it is selected as your active project (check the dropdown at the top).</p>
+
+      <hr class="section-divider">
+
+      <!-- PART 2: Enable the Search Console API -->
+      <h2>Part 2 &mdash; Enable the Search Console API</h2>
+
+      <div class="step-heading">
+        <span class="step-number">1</span>
+        <h3>Open the API Library</h3>
+      </div>
+      <p>In the Google Cloud Console, navigate to <strong>APIs &amp; Services</strong> &rarr; <strong>Library</strong> (or use the search bar at the top and type &ldquo;API Library&rdquo;).</p>
+
+      <div class="step-heading">
+        <span class="step-number">2</span>
+        <h3>Find and enable the API</h3>
+      </div>
+      <p>Search for <strong>&ldquo;Google Search Console API&rdquo;</strong>. Click on it, then click the <strong>Enable</strong> button.</p>
+
+      <div class="callout">Enabling the API is free &mdash; it just allows your project to make Search Console API calls. There are no charges for normal usage volumes.</div>
+
+      <hr class="section-divider">
+
+      <!-- PART 3: Create a Service Account -->
+      <h2>Part 3 &mdash; Create a Service Account &amp; Download the Key</h2>
+
+      <div class="step-heading">
+        <span class="step-number">1</span>
+        <h3>Go to Credentials</h3>
+      </div>
+      <p>Navigate to <strong>APIs &amp; Services</strong> &rarr; <strong>Credentials</strong>.</p>
+
+      <div class="step-heading">
+        <span class="step-number">2</span>
+        <h3>Create a service account</h3>
+      </div>
+      <p>Click <strong>Create Credentials</strong> at the top, then select <strong>Service account</strong>.</p>
+      <ul>
+        <li><strong>Service account name:</strong> something like <code>agentgrow-seo</code></li>
+        <li><strong>Service account ID:</strong> auto-generated from the name (e.g. <code>agentgrow-seo@your-project.iam.gserviceaccount.com</code>)</li>
+      </ul>
+      <p>Click <strong>Create and Continue</strong>.</p>
+
+      <div class="step-heading">
+        <span class="step-number">3</span>
+        <h3>Skip optional steps</h3>
+      </div>
+      <p>The next two steps (&ldquo;Grant this service account access to project&rdquo; and &ldquo;Grant users access to this service account&rdquo;) are optional. Click <strong>Continue</strong> and then <strong>Done</strong>.</p>
+
+      <div class="step-heading">
+        <span class="step-number">4</span>
+        <h3>Create a JSON key</h3>
+      </div>
+      <p>You will see the service account listed on the Credentials page. Click on the service account email to open its details.</p>
+      <ul>
+        <li>Go to the <strong>Keys</strong> tab</li>
+        <li>Click <strong>Add Key</strong> &rarr; <strong>Create new key</strong></li>
+        <li>Select <strong>JSON</strong> and click <strong>Create</strong></li>
+      </ul>
+      <p>A JSON file will download to your computer. It will look something like:</p>
+      <div class="code-block">{
+  "type": "service_account",
+  "project_id": "your-project-id",
+  "private_key_id": "abc123...",
+  "private_key": "-----BEGIN PRIVATE KEY-----\n...",
+  "client_email": "agentgrow-seo@your-project.iam.gserviceaccount.com",
+  ...
+}</div>
+
+      <div class="warning-box">
+        <strong>Important:</strong> Keep this file safe. It contains a private key that grants access to your Search Console data. Do not share it publicly or commit it to a public repository.
+      </div>
+
+      <p>Note the <strong>client_email</strong> value &mdash; you will need it in the next step.</p>
+
+      <hr class="section-divider">
+
+      <!-- PART 4: Grant Search Console Access -->
+      <h2>Part 4 &mdash; Grant Search Console Access to the Service Account</h2>
+
+      <div class="step-heading">
+        <span class="step-number">1</span>
+        <h3>Open Google Search Console</h3>
+      </div>
+      <p>Go to <strong>search.google.com/search-console</strong> and select the property (website) you want your agent to monitor.</p>
+
+      <div class="step-heading">
+        <span class="step-number">2</span>
+        <h3>Open Users and Permissions</h3>
+      </div>
+      <p>In the left sidebar, click <strong>Settings</strong>, then click <strong>Users and permissions</strong>.</p>
+
+      <div class="step-heading">
+        <span class="step-number">3</span>
+        <h3>Add the service account</h3>
+      </div>
+      <p>Click the <strong>Add user</strong> button. Enter the <strong>service account email</strong> from the JSON file (the <code>client_email</code> field). It will look like:</p>
+      <div class="code-block">agentgrow-seo@your-project.iam.gserviceaccount.com</div>
+
+      <div class="step-heading">
+        <span class="step-number">4</span>
+        <h3>Set the permission level</h3>
+      </div>
+      <p>Select <strong>Full</strong> permission (recommended) so your agent can view all search analytics data. <strong>Restricted</strong> also works if you prefer read-only access to most data.</p>
+      <p>Click <strong>Add</strong>.</p>
+
+      <div class="callout">The service account is now authorized to read your Search Console data. It cannot modify your website or its configuration &mdash; it can only read analytics.</div>
+
+      <hr class="section-divider">
+
+      <!-- PART 5: Enter credentials in AgentGrow -->
+      <h2>Part 5 &mdash; Enter Credentials in AgentGrow</h2>
+
+      <div class="step-heading">
+        <span class="step-number">1</span>
+        <h3>Open the JSON file</h3>
+      </div>
+      <p>Open the downloaded JSON key file in any text editor (Notepad, TextEdit, VS Code, etc.). Select <strong>all the text</strong> and copy it.</p>
+
+      <div class="step-heading">
+        <span class="step-number">2</span>
+        <h3>Open your Integrations page</h3>
+      </div>
+      <p>Log in to your AgentGrow dashboard at <strong>agentgrow.io/user/integrations</strong>.</p>
+
+      <div class="step-heading">
+        <span class="step-number">3</span>
+        <h3>Configure SEO Analyst</h3>
+      </div>
+      <p>Find the <strong>SEO Analyst</strong> module and click <strong>Configure</strong> (or <strong>Reconfigure</strong> if already set up). Paste the entire JSON contents into the <strong>GOOGLE_SERVICE_ACCOUNT_JSON</strong> field.</p>
+
+      <p>Click <strong>Save &amp; Restart Agent</strong>. Your agent pod will restart in about 30 seconds.</p>
+
+      <div class="step-heading">
+        <span class="step-number">4</span>
+        <h3>Verify it works</h3>
+      </div>
+      <p>After the restart, your agent will begin analyzing your search performance data. Check the <strong>Dashboard</strong> for SEO-related activity updates. Your agent will report on keyword rankings, impressions, click-through rates, and indexing issues.</p>
+
+      <div class="callout">Your agent checks Search Console data regularly and surfaces actionable insights &mdash; new keyword opportunities, ranking drops, crawl errors, and more.</div>
+
+      <hr class="section-divider">
+
+      <h2>Troubleshooting</h2>
+
+      <h3>Agent says &ldquo;permission denied&rdquo; or &ldquo;403 Forbidden&rdquo;</h3>
+      <p>The service account email has not been added to your Search Console property, or it was added to the wrong property. Double-check:</p>
+      <ul>
+        <li>Go to <strong>Search Console &rarr; Settings &rarr; Users and permissions</strong></li>
+        <li>Confirm the service account email is listed</li>
+        <li>Make sure you are looking at the correct property (domain or URL prefix)</li>
+      </ul>
+
+      <h3>Agent says &ldquo;Search Console API not enabled&rdquo;</h3>
+      <p>The API was not enabled in your Google Cloud project. Go back to <strong>Part 2</strong> and make sure you clicked <strong>Enable</strong> on the Google Search Console API page. Make sure you are in the correct project (check the project dropdown at the top of Google Cloud Console).</p>
+
+      <h3>The JSON is rejected as invalid</h3>
+      <p>Make sure you copied the <strong>entire</strong> contents of the JSON file, including the opening <code>{</code> and closing <code>}</code> braces. Common mistakes:</p>
+      <ul>
+        <li>Missing the first or last character when copying</li>
+        <li>Accidentally adding extra spaces or characters before or after the JSON</li>
+        <li>Copying from a PDF or formatted document that added invisible characters</li>
+      </ul>
+      <p>Open the file in a plain text editor (not Word or Google Docs) to get clean text.</p>
+
+      <h3>I have multiple websites &mdash; can my agent monitor all of them?</h3>
+      <p>The service account needs to be added as a user to each Search Console property you want monitored. Repeat <strong>Part 4</strong> for each property. The same JSON key file works for all of them &mdash; you only need one service account.</p>
+
+      <h3>How do I rotate or update the service account key?</h3>
+      <p>In Google Cloud Console, go to your service account, open the <strong>Keys</strong> tab, click <strong>Add Key &rarr; Create new key &rarr; JSON</strong>. Download the new file, then go to <strong>agentgrow.io/user/integrations</strong>, click <strong>Reconfigure</strong> on SEO Analyst, paste the new JSON, and save. You can then delete the old key from Google Cloud Console.</p>
+
+      <h3>Do I need a billing account for Google Cloud?</h3>
+      <p>No. The Search Console API is free to use and does not require a billing account. Creating a Google Cloud project and service account is also free.</p>
+
+    </div>
+  </div>
+
+  <!-- Related Posts -->
+  <div class="container-narrow">
+    <div class="related-posts">
+      <h2>More from the blog</h2>
+      <div class="card-grid" id="related-posts"></div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <h2>Deploy your AI CBO today</h2>
+    <p>Your AI CBO goes live within 24 hours. 90-day satisfaction guarantee &mdash; full refund if minimum deliverables aren't met.</p>
+    <div style="display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap">
+      <a href="https://agentgrow.io/onboard/" class="btn-lime">Get Started</a>
+      <a href="../" class="btn-outline">Back to Blog</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="inner">
+      <div class="brand">
+        <a href="https://agentgrow.io/" style="display:flex;align-items:center;gap:0.5rem;color:var(--white);text-decoration:none;font-weight:700;font-size:1.125rem;margin-bottom:1rem">
+          <div style="width:32px;height:32px;background:var(--lime);border-radius:8px;display:flex;align-items:center;justify-content:center">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;color:var(--obsidian)"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          AgentGrow
+        </a>
+        <p>AI-powered Chief Business Officer that grows your business 24/7 &mdash; content, leads, social, SEO.</p>
+        <p class="addr">2146 Sunscape, Sobha Hillview, Kanakapura Road, Bengaluru, Karnataka, INDIA 560109</p>
+        <p class="copy">&copy; 2026 gheWARE uniGPS Solutions LLP. All rights reserved.</p>
+      </div>
+      <div>
+        <h3>Product</h3>
+        <ul>
+          <li><a href="https://agentgrow.io/#features">Features</a></li>
+          <li><a href="https://agentgrow.io/#pricing">Pricing</a></li>
+          <li><a href="https://agentgrow.io/onboard/">Get Started</a></li>
+          <li><a href="../guide/">Getting Started Guide</a></li>
+          <li><a href="https://agentgrow.io/help">Help Center</a></li>
+          <li><a href="../">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="https://agentgrow.io/about/">About Us</a></li>
+          <li><a href="https://agentgrow.io/terms/">Terms of Service</a></li>
+          <li><a href="https://agentgrow.io/privacy/">Privacy Policy</a></li>
+          <li><a href="https://agentgrow.io/refund/">Refund Policy</a></li>
+          <li><a href="https://agentgrow.io/contact/">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    fetch('../posts-data.json')
+      .then(r => r.json())
+      .then(posts => {
+        const BADGE_CLASS = {'Platform':'badge-platform','Getting Started':'badge-getting-started','How-To':'badge-how-to','Strategy':'badge-strategy'};
+        const current = 'seo-analyst-setup';
+        const related = posts.filter(p => p.slug !== current).slice(0, 3);
+        document.getElementById('related-posts').innerHTML = related.map(p =>
+          '<div class="card">' +
+            '<span class="badge ' + (BADGE_CLASS[p.category]||'') + '">' + p.category + '</span>' +
+            '<h2><a href="' + p.slug + '.html">' + p.title + '</a></h2>' +
+            '<p class="excerpt">' + p.excerpt + '</p>' +
+            '<div class="card-meta"><span>' + p.publishedAt + '</span><span>&middot;</span><span>' + p.readTime + '</span></div>' +
+          '</div>'
+        ).join('');
+      });
+  </script>
+
+</body>
+</html>

@@ -38,5 +38,21 @@
     "category": "How-To",
     "readTime": "8 min read",
     "publishedAt": "Mar 3, 2026"
+  },
+  {
+    "slug": "blog-publisher-setup",
+    "title": "How to Set Up Blog Publisher (GitHub Pages) for AgentGrow",
+    "excerpt": "Step-by-step guide to creating a GitHub repository and Personal Access Token so your AI agent can publish blog posts to your website via GitHub Pages.",
+    "category": "How-To",
+    "readTime": "6 min read",
+    "publishedAt": "Mar 3, 2026"
+  },
+  {
+    "slug": "seo-analyst-setup",
+    "title": "How to Set Up SEO Analyst (Google Search Console) for AgentGrow",
+    "excerpt": "Step-by-step guide to creating a Google Cloud service account and granting Search Console access so your AI agent can monitor your SEO performance.",
+    "category": "How-To",
+    "readTime": "7 min read",
+    "publishedAt": "Mar 3, 2026"
   }
 ]
