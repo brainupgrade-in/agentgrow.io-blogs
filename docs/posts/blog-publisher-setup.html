@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Set Up Blog Publisher (GitHub Pages) for AgentGrow &mdash; AgentGrow</title>
+  <meta name="description" content="Step-by-step guide to creating a GitHub repository and Personal Access Token so your AI agent can publish blog posts to your website via GitHub Pages.">
+  <meta property="og:title" content="How to Set Up Blog Publisher (GitHub Pages) for AgentGrow">
+  <meta property="og:description" content="Step-by-step guide to creating a GitHub repository and Personal Access Token so your AI agent can publish blog posts to your website via GitHub Pages.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://agentgrow.io/blog/posts/blog-publisher-setup.html">
+  <meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://agentgrow.io/blog/posts/blog-publisher-setup.html">
+  <link rel="stylesheet" href="../css/blog.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "How to Set Up Blog Publisher (GitHub Pages) for AgentGrow",
+    "description": "Step-by-step guide to creating a GitHub repository and Personal Access Token so your AI agent can publish blog posts to your website via GitHub Pages.",
+    "datePublished": "2026-03-03",
+    "author": {"@type": "Organization", "name": "AgentGrow"},
+    "publisher": {"@type": "Organization", "name": "AgentGrow", "url": "https://agentgrow.io"},
+    "mainEntityOfPage": "https://agentgrow.io/blog/posts/blog-publisher-setup.html"
+  }
+  </script>
+  <style>
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      background: var(--lime);
+      color: var(--obsidian);
+      border-radius: 50%;
+      font-weight: 700;
+      font-size: 0.85rem;
+      margin-right: 0.5rem;
+      flex-shrink: 0;
+    }
+    .step-heading {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.75rem;
+    }
+    .step-heading h3 {
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+    .screenshot-placeholder {
+      background: var(--glass-bg);
+      border: 1px dashed var(--border-subtle);
+      border-radius: 8px;
+      padding: 1.5rem;
+      text-align: center;
+      color: var(--zinc-500);
+      font-size: 0.85rem;
+      margin: 1rem 0 1.5rem;
+    }
+    .code-block {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-size: 0.85rem;
+      color: var(--lime);
+      overflow-x: auto;
+      margin: 0.75rem 0 1.25rem;
+      word-break: break-all;
+    }
+    .warning-box {
+      background: rgba(251, 191, 36, 0.08);
+      border-left: 3px solid var(--amber);
+      border-radius: 0 8px 8px 0;
+      padding: 1rem 1.25rem;
+      margin: 1.25rem 0;
+      color: var(--zinc-300);
+      font-size: 0.9rem;
+    }
+    .warning-box strong {
+      color: var(--amber);
+    }
+    .section-divider {
+      border: none;
+      border-top: 1px solid var(--border-subtle);
+      margin: 2.5rem 0;
+    }
+    .field-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0 1.5rem;
+    }
+    .field-table th {
+      text-align: left;
+      padding: 0.6rem 0.75rem;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--zinc-500);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .field-table td {
+      padding: 0.6rem 0.75rem;
+      font-size: 0.9rem;
+      border-bottom: 1px solid var(--glass-border);
+    }
+    .field-table td:first-child {
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-size: 0.85rem;
+      color: var(--lime);
+      white-space: nowrap;
+    }
+    .field-table td:last-child {
+      color: var(--zinc-400);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="inner">
+      <a href="https://agentgrow.io/" class="logo">
+        <div class="logo-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </div>
+        AgentGrow
+      </a>
+      <nav>
+        <a href="https://agentgrow.io/#features">Features</a>
+        <a href="https://agentgrow.io/#pricing">Pricing</a>
+        <a href="../guide/">Guide</a>
+        <a href="../">Blog</a>
+      </nav>
+      <a href="https://agentgrow.io/onboard/" class="cta-btn">Start Free Trial</a>
+    </div>
+  </header>
+
+  <!-- Article Header -->
+  <div class="article-header">
+    <div class="container-narrow">
+      <p class="breadcrumb"><a href="../">&larr; Blog</a> / How-To</p>
+      <span class="badge badge-how-to">How-To</span>
+      <h1>How to Set Up Blog Publisher (GitHub Pages) for AgentGrow</h1>
+      <p class="excerpt-text">Step-by-step guide to creating a GitHub repository and Personal Access Token so your AI agent can publish blog posts to your website via GitHub Pages.</p>
+      <div class="meta">
+        <span>AgentGrow</span>
+        <span>&middot;</span>
+        <span>Mar 3, 2026</span>
+        <span>&middot;</span>
+        <span>6 min read</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Article Body -->
+  <div class="article-body">
+    <div class="container-narrow">
+
+      <p>The Blog Publisher module lets your AI agent write and publish SEO-optimized blog posts directly to your website. Under the hood, it uses <strong>GitHub Pages</strong> &mdash; a free static hosting service from GitHub. Your agent commits new posts to a repository, and GitHub automatically publishes them to the web.</p>
+
+      <p>To set this up, you need to provide two things through the Integrations page in your AgentGrow dashboard:</p>
+
+      <h2>What You Will Need</h2>
+
+      <table class="field-table">
+        <thead>
+          <tr><th>Field</th><th>What it is</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>GITHUB_REPO_URL</td><td>The HTTPS URL of the GitHub repository where blog posts will be published</td></tr>
+          <tr><td>GITHUB_PAT</td><td>A Personal Access Token that gives your agent permission to push commits to the repository</td></tr>
+        </tbody>
+      </table>
+
+      <div class="callout">GitHub Pages is completely free for public repositories. Your agent pushes HTML files to the repo, and GitHub serves them as a live website within seconds.</div>
+
+      <h2>Prerequisites</h2>
+
+      <ul>
+        <li>A <strong>GitHub account</strong> (free at <strong>github.com</strong>)</li>
+        <li>A web browser &mdash; no coding or command-line knowledge required</li>
+      </ul>
+
+      <hr class="section-divider">
+
+      <!-- PART 1: Create a GitHub Repository -->
+      <h2>Part 1 &mdash; Create a GitHub Repository</h2>
+
+      <p>If you already have a GitHub Pages repository for your blog, skip to <strong>Part 2</strong>.</p>
+
+      <div class="step-heading">
+        <span class="step-number">1</span>
+        <h3>Sign in to GitHub</h3>
+      </div>
+      <p>Go to <strong>github.com</strong> and sign in (or create an account if you do not have one).</p>
+
+      <div class="step-heading">
+        <span class="step-number">2</span>
+        <h3>Create a new repository</h3>
+      </div>
+      <p>Click the <strong>+</strong> icon in the top-right corner, then <strong>New repository</strong>.</p>
+      <ul>
+        <li><strong>Repository name:</strong> choose a name like <code>my-business-blog</code> or <code>yourdomain-blog</code></li>
+        <li><strong>Visibility:</strong> select <strong>Public</strong> (required for free GitHub Pages)</li>
+        <li><strong>Initialize:</strong> check <strong>"Add a README file"</strong></li>
+      </ul>
+      <p>Click <strong>Create repository</strong>.</p>
+
+      <div class="step-heading">
+        <span class="step-number">3</span>
+        <h3>Enable GitHub Pages</h3>
+      </div>
+      <p>In your new repository:</p>
+      <ul>
+        <li>Go to <strong>Settings</strong> (tab at the top)</li>
+        <li>In the left sidebar, click <strong>Pages</strong></li>
+        <li>Under <strong>Source</strong>, select <strong>"Deploy from a branch"</strong></li>
+        <li>Set <strong>Branch</strong> to <strong>main</strong> and folder to <strong>/ (root)</strong> or <strong>/docs</strong></li>
+        <li>Click <strong>Save</strong></li>
+      </ul>
+      <p>GitHub will display your site URL. It will look like:</p>
+      <div class="code-block">https://yourusername.github.io/my-business-blog/</div>
+
+      <div class="callout">It may take 1&ndash;2 minutes for the site to go live the first time. Subsequent updates publish within seconds.</div>
+
+      <div class="step-heading">
+        <span class="step-number">4</span>
+        <h3>Copy the repository URL</h3>
+      </div>
+      <p>Go to the main page of your repository. Click the green <strong>Code</strong> button and copy the <strong>HTTPS</strong> URL. It will look like:</p>
+      <div class="code-block">https://github.com/yourusername/my-business-blog</div>
+      <p>This is your <strong>GITHUB_REPO_URL</strong>.</p>
+
+      <hr class="section-divider">
+
+      <!-- PART 2: Create a Personal Access Token -->
+      <h2>Part 2 &mdash; Create a Personal Access Token (PAT)</h2>
+
+      <p>A Personal Access Token lets your AI agent push blog posts to your repository without needing your GitHub password.</p>
+
+      <div class="step-heading">
+        <span class="step-number">1</span>
+        <h3>Open GitHub token settings</h3>
+      </div>
+      <p>Go to <strong>github.com/settings/tokens</strong>. You can also get there by clicking your profile picture (top-right) &rarr; <strong>Settings</strong> &rarr; <strong>Developer settings</strong> (bottom of left sidebar) &rarr; <strong>Personal access tokens</strong>.</p>
+
+      <div class="step-heading">
+        <span class="step-number">2</span>
+        <h3>Choose token type</h3>
+      </div>
+      <p>You will see two options. We recommend <strong>Fine-grained tokens</strong> for better security, but classic tokens also work.</p>
+
+      <h4>Option A &mdash; Fine-grained token (recommended)</h4>
+      <ul>
+        <li>Click <strong>Fine-grained tokens</strong> &rarr; <strong>Generate new token</strong></li>
+        <li><strong>Token name:</strong> something like <code>AgentGrow Blog Publisher</code></li>
+        <li><strong>Expiration:</strong> select <strong>90 days</strong> or <strong>No expiration</strong> (your preference)</li>
+        <li><strong>Repository access:</strong> select <strong>"Only select repositories"</strong> and choose your blog repository</li>
+        <li><strong>Permissions:</strong> under <strong>Repository permissions</strong>, set:
+          <ul>
+            <li><strong>Contents:</strong> Read and write</li>
+            <li><strong>Metadata:</strong> Read-only (automatically selected)</li>
+          </ul>
+        </li>
+        <li>Click <strong>Generate token</strong></li>
+      </ul>
+
+      <h4>Option B &mdash; Classic token</h4>
+      <ul>
+        <li>Click <strong>Tokens (classic)</strong> &rarr; <strong>Generate new token</strong> &rarr; <strong>Generate new token (classic)</strong></li>
+        <li><strong>Note:</strong> <code>AgentGrow Blog Publisher</code></li>
+        <li><strong>Expiration:</strong> 90 days or No expiration</li>
+        <li><strong>Scopes:</strong> check <strong>repo</strong> (full control of private repositories)</li>
+        <li>Click <strong>Generate token</strong></li>
+      </ul>
+
+      <div class="step-heading">
+        <span class="step-number">3</span>
+        <h3>Copy the token immediately</h3>
+      </div>
+      <p>GitHub shows the token <strong>only once</strong>. Copy it now and save it somewhere safe. The token will look like:</p>
+      <div class="code-block">ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+      <p>(Fine-grained tokens start with <code>github_pat_</code> instead.)</p>
+
+      <div class="warning-box">
+        <strong>Important:</strong> If you lose this token, you cannot retrieve it. You will need to generate a new one and update your AgentGrow configuration.
+      </div>
+
+      <p>This is your <strong>GITHUB_PAT</strong>.</p>
+
+      <hr class="section-divider">
+
+      <!-- PART 3: Enter credentials in AgentGrow -->
+      <h2>Part 3 &mdash; Enter Credentials in AgentGrow</h2>
+
+      <div class="step-heading">
+        <span class="step-number">1</span>
+        <h3>Open your Integrations page</h3>
+      </div>
+      <p>Log in to your AgentGrow dashboard at <strong>agentgrow.io/user/integrations</strong>.</p>
+
+      <div class="step-heading">
+        <span class="step-number">2</span>
+        <h3>Configure Blog Publisher</h3>
+      </div>
+      <p>Find the <strong>Blog Publisher</strong> module and click <strong>Configure</strong> (or <strong>Reconfigure</strong>). Enter:</p>
+      <ul>
+        <li><strong>GitHub Repo URL:</strong> the HTTPS URL from Part 1 (e.g. <code>https://github.com/yourusername/my-business-blog</code>)</li>
+        <li><strong>GitHub PAT:</strong> the Personal Access Token from Part 2</li>
+      </ul>
+      <p>Click <strong>Save &amp; Restart Agent</strong>. Your agent pod will restart in about 30 seconds.</p>
+
+      <div class="step-heading">
+        <span class="step-number">3</span>
+        <h3>Verify it works</h3>
+      </div>
+      <p>After the restart, your agent will begin publishing blog posts on its next scheduled run. You can check the <strong>Dashboard</strong> for activity updates or visit your GitHub Pages URL to see published content.</p>
+
+      <div class="callout">Your agent automatically creates well-structured HTML files, updates the blog index, and pushes everything to your repository. No manual editing required.</div>
+
+      <hr class="section-divider">
+
+      <!-- PART 4: Custom Domain (Optional) -->
+      <h2>Part 4 &mdash; Use a Custom Domain (Optional)</h2>
+
+      <p>By default, your blog is served at <code>yourusername.github.io/repo-name</code>. If you want it on your own domain (e.g. <code>blog.yourcompany.com</code>):</p>
+
+      <div class="step-heading">
+        <span class="step-number">1</span>
+        <h3>Add a CNAME record</h3>
+      </div>
+      <p>In your domain registrar or DNS provider, add a <strong>CNAME</strong> record:</p>
+      <table class="field-table">
+        <thead>
+          <tr><th>Type</th><th>Name</th><th>Value</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>CNAME</td><td>blog</td><td>yourusername.github.io</td></tr>
+        </tbody>
+      </table>
+
+      <div class="step-heading">
+        <span class="step-number">2</span>
+        <h3>Set the domain in GitHub</h3>
+      </div>
+      <p>In your repository, go to <strong>Settings</strong> &rarr; <strong>Pages</strong> &rarr; <strong>Custom domain</strong>. Enter your domain (e.g. <code>blog.yourcompany.com</code>) and click <strong>Save</strong>. Check <strong>"Enforce HTTPS"</strong> once the DNS propagates (usually a few minutes).</p>
+
+      <div class="callout">GitHub will automatically create a <code>CNAME</code> file in your repository. Your agent will preserve this file when publishing new posts.</div>
+
+      <hr class="section-divider">
+
+      <h2>Troubleshooting</h2>
+
+      <h3>My GitHub Pages site shows a 404</h3>
+      <p>Check these settings in your repository under <strong>Settings &rarr; Pages</strong>:</p>
+      <ul>
+        <li>Source is set to <strong>"Deploy from a branch"</strong></li>
+        <li>The correct branch (<strong>main</strong>) and folder (<strong>/ (root)</strong> or <strong>/docs</strong>) are selected</li>
+        <li>The repository is <strong>Public</strong> (GitHub Pages requires public repos on free plans)</li>
+      </ul>
+      <p>After changing settings, wait 1&ndash;2 minutes for the site to rebuild.</p>
+
+      <h3>Agent says "authentication failed" or "403 Forbidden"</h3>
+      <p>Your Personal Access Token may have expired or lacks the right permissions. Generate a new token following Part 2 and make sure:</p>
+      <ul>
+        <li>Fine-grained token: <strong>Contents &rarr; Read and write</strong> permission is set for the correct repository</li>
+        <li>Classic token: the <strong>repo</strong> scope is checked</li>
+      </ul>
+      <p>Update the token in your Integrations page and click <strong>Save &amp; Restart Agent</strong>.</p>
+
+      <h3>Agent published but I do not see the post on my site</h3>
+      <p>GitHub Pages takes a few seconds to rebuild after a push. If you still do not see the post after a minute:</p>
+      <ul>
+        <li>Go to your repository on GitHub and check if the new HTML file exists</li>
+        <li>Check the <strong>Actions</strong> tab for any failed deployments</li>
+        <li>Make sure the file is in the correct folder (<code>/docs</code> if your Pages source is set to <code>/docs</code>)</li>
+      </ul>
+
+      <h3>How do I rotate or update my token?</h3>
+      <p>Generate a new token on GitHub following Part 2, then go to <strong>agentgrow.io/user/integrations</strong>, click <strong>Reconfigure</strong> on Blog Publisher, paste the new token, and save. Your agent will use the new token after the restart.</p>
+
+      <h3>Can I use a private repository?</h3>
+      <p>Yes, but free GitHub accounts only get GitHub Pages for public repositories. If you have <strong>GitHub Pro</strong>, <strong>Team</strong>, or <strong>Enterprise</strong>, you can use private repos with Pages. Your agent works the same either way &mdash; only the repository visibility differs.</p>
+
+    </div>
+  </div>
+
+  <!-- Related Posts -->
+  <div class="container-narrow">
+    <div class="related-posts">
+      <h2>More from the blog</h2>
+      <div class="card-grid" id="related-posts"></div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <h2>Deploy your AI CBO today</h2>
+    <p>Your AI CBO goes live within 24 hours. 90-day satisfaction guarantee &mdash; full refund if minimum deliverables aren't met.</p>
+    <div style="display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap">
+      <a href="https://agentgrow.io/onboard/" class="btn-lime">Get Started</a>
+      <a href="../" class="btn-outline">Back to Blog</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="inner">
+      <div class="brand">
+        <a href="https://agentgrow.io/" style="display:flex;align-items:center;gap:0.5rem;color:var(--white);text-decoration:none;font-weight:700;font-size:1.125rem;margin-bottom:1rem">
+          <div style="width:32px;height:32px;background:var(--lime);border-radius:8px;display:flex;align-items:center;justify-content:center">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;color:var(--obsidian)"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          AgentGrow
+        </a>
+        <p>AI-powered Chief Business Officer that grows your business 24/7 &mdash; content, leads, social, SEO.</p>
+        <p class="addr">2146 Sunscape, Sobha Hillview, Kanakapura Road, Bengaluru, Karnataka, INDIA 560109</p>
+        <p class="copy">&copy; 2026 gheWARE uniGPS Solutions LLP. All rights reserved.</p>
+      </div>
+      <div>
+        <h3>Product</h3>
+        <ul>
+          <li><a href="https://agentgrow.io/#features">Features</a></li>
+          <li><a href="https://agentgrow.io/#pricing">Pricing</a></li>
+          <li><a href="https://agentgrow.io/onboard/">Get Started</a></li>
+          <li><a href="../guide/">Getting Started Guide</a></li>
+          <li><a href="https://agentgrow.io/help">Help Center</a></li>
+          <li><a href="../">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="https://agentgrow.io/about/">About Us</a></li>
+          <li><a href="https://agentgrow.io/terms/">Terms of Service</a></li>
+          <li><a href="https://agentgrow.io/privacy/">Privacy Policy</a></li>
+          <li><a href="https://agentgrow.io/refund/">Refund Policy</a></li>
+          <li><a href="https://agentgrow.io/contact/">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    fetch('../posts-data.json')
+      .then(r => r.json())
+      .then(posts => {
+        const BADGE_CLASS = {'Platform':'badge-platform','Getting Started':'badge-getting-started','How-To':'badge-how-to','Strategy':'badge-strategy'};
+        const current = 'blog-publisher-setup';
+        const related = posts.filter(p => p.slug !== current).slice(0, 3);
+        document.getElementById('related-posts').innerHTML = related.map(p =>
+          '<div class="card">' +
+            '<span class="badge ' + (BADGE_CLASS[p.category]||'') + '">' + p.category + '</span>' +
+            '<h2><a href="' + p.slug + '.html">' + p.title + '</a></h2>' +
+            '<p class="excerpt">' + p.excerpt + '</p>' +
+            '<div class="card-meta"><span>' + p.publishedAt + '</span><span>&middot;</span><span>' + p.readTime + '</span></div>' +
+          '</div>'
+        ).join('');
+      });
+  </script>
+
+</body>
+</html>
