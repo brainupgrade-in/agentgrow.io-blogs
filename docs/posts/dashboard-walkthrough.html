@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Client Dashboard: A Complete Walkthrough &mdash; AgentGrow</title>
+  <meta name="description" content="A guided tour of the AgentGrow client dashboard &mdash; agent status, KPI goals with sparklines, approval queue, activity feed, prospect pipeline, and ROI tracking.">
+  <meta property="og:title" content="Your Client Dashboard: A Complete Walkthrough">
+  <meta property="og:description" content="A guided tour of the AgentGrow client dashboard &mdash; agent status, KPI goals with sparklines, approval queue, activity feed, prospect pipeline, and ROI tracking.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://agentgrow.io/blog/posts/dashboard-walkthrough.html">
+  <meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://agentgrow.io/blog/posts/dashboard-walkthrough.html">
+  <link rel="stylesheet" href="../css/blog.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BlogPosting","headline":"Your Client Dashboard: A Complete Walkthrough","description":"A guided tour of the AgentGrow client dashboard — agent status, KPI goals with sparklines, approval queue, activity feed, prospect pipeline, and ROI tracking.","datePublished":"2026-03-04","author":{"@type":"Organization","name":"AgentGrow"},"publisher":{"@type":"Organization","name":"AgentGrow","url":"https://agentgrow.io"},"mainEntityOfPage":"https://agentgrow.io/blog/posts/dashboard-walkthrough.html"}
+  </script>
+  <style>
+    .step-number { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; background: var(--lime); color: var(--obsidian); border-radius: 50%; font-weight: 700; font-size: 0.85rem; margin-right: 0.5rem; flex-shrink: 0; }
+    .step-heading { display: flex; align-items: center; margin-bottom: 0.75rem; }
+    .step-heading h3 { margin: 0 !important; padding: 0 !important; }
+    .section-divider { border: none; border-top: 1px solid var(--border-subtle); margin: 2.5rem 0; }
+
+    .dashboard-section {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 1.75rem 0;
+    }
+    .dashboard-section-label {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--zinc-500);
+      margin-bottom: 0.5rem;
+    }
+    .dashboard-section h3 {
+      color: var(--white);
+      font-size: 1.05rem;
+      margin-bottom: 0.6rem;
+    }
+    .status-dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      margin-right: 0.4rem;
+      vertical-align: middle;
+    }
+    .status-dot.green { background: #22c55e; box-shadow: 0 0 6px #22c55e88; }
+    .status-dot.amber { background: var(--amber); box-shadow: 0 0 6px #fbbf2488; }
+    .kpi-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+    .kpi-chip {
+      flex: 1 1 calc(50% - 0.75rem);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      min-width: 140px;
+    }
+    .kpi-chip .kpi-label { font-size: 0.75rem; color: var(--zinc-500); margin-bottom: 0.25rem; }
+    .kpi-chip .kpi-value { font-size: 1.25rem; font-weight: 700; color: var(--white); }
+    .kpi-chip .kpi-trend { font-size: 0.75rem; color: #22c55e; margin-top: 0.2rem; }
+    .tip-list { list-style: none; padding: 0; margin: 0.75rem 0 0; }
+    .tip-list li { padding: 0.5rem 0; border-bottom: 1px solid var(--glass-border); color: var(--zinc-400); font-size: 0.95rem; }
+    .tip-list li:last-child { border-bottom: none; }
+    .tip-list li::before { content: "→ "; color: var(--lime); font-weight: 700; }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a href="https://agentgrow.io/" class="logo">
+        <div class="logo-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </div>
+        AgentGrow
+      </a>
+      <nav>
+        <a href="https://agentgrow.io/#features">Features</a>
+        <a href="https://agentgrow.io/#pricing">Pricing</a>
+        <a href="../guide/">Guide</a>
+        <a href="../">Blog</a>
+      </nav>
+      <a href="https://agentgrow.io/onboard/" class="cta-btn">Start Free Trial</a>
+    </div>
+  </header>
+
+  <div class="article-header">
+    <div class="container-narrow">
+      <p class="breadcrumb"><a href="../">&larr; Blog</a> / Getting Started</p>
+      <span class="badge badge-getting-started">Getting Started</span>
+      <h1>Your Client Dashboard: A Complete Walkthrough</h1>
+      <p class="excerpt-text">A guided tour of the AgentGrow client dashboard &mdash; agent status, KPI goals with sparklines, approval queue, activity feed, prospect pipeline, and ROI tracking.</p>
+      <div class="meta">
+        <span>AgentGrow</span>
+        <span>&middot;</span>
+        <span>Mar 4, 2026</span>
+        <span>&middot;</span>
+        <span>5 min read</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="article-body">
+    <div class="container-narrow">
+
+      <p>Once your AI CBO is live, everything it does on your behalf flows into one place: <strong>agentgrow.io/user/dashboard</strong>. This is your command center &mdash; a live view of your agent's health, output, and business impact. You do not need to check Telegram every hour or dig through social media apps to know what is happening. The dashboard surfaces exactly what matters, when it matters.</p>
+
+      <p>This walkthrough covers every section of the dashboard in the order you will encounter them, from the top-level status indicator down to ROI event tracking.</p>
+
+      <hr class="section-divider">
+
+      <h2>1. Overview &mdash; Your Command Center</h2>
+
+      <p>The dashboard opens with a full picture of your agent's current state. The layout is intentionally top-heavy with status information: the most urgent things (agent health, pending approvals) appear before the historical data (activity feed, pipeline). If anything needs your attention right now, you will see it within the first scroll.</p>
+
+      <p>Navigation is handled through a persistent sidebar (desktop) or bottom tab bar (mobile). The sections are: Dashboard, Prospects, Calendar, Assets, and Integrations. Everything discussed in this post lives under the Dashboard tab.</p>
+
+      <div class="callout">The dashboard refreshes automatically every 60 seconds. You can also force a refresh by reloading the page &mdash; there is no manual refresh button needed.</div>
+
+      <hr class="section-divider">
+
+      <h2>2. Agent Status</h2>
+
+      <div class="dashboard-section">
+        <span class="dashboard-section-label">Live indicator</span>
+        <h3>Agent Health at a Glance</h3>
+        <p style="color:var(--zinc-400);font-size:0.95rem;margin-bottom:0.75rem">The status panel shows three signals in a compact card at the top of the page:</p>
+        <ul style="color:var(--zinc-400);padding-left:1.25rem;line-height:2">
+          <li><span class="status-dot green"></span><strong style="color:var(--white)">Heartbeat indicator</strong> &mdash; green pulse = agent is running and responsive. Amber = agent has not checked in within the expected window. Red = agent is offline.</li>
+          <li><span class="status-dot green"></span><strong style="color:var(--white)">Current task</strong> &mdash; a short description of what the agent is doing right now (e.g. "Writing blog post: 7 Low-GI Indian Breakfasts").</li>
+          <li><span class="status-dot green"></span><strong style="color:var(--white)">Last active</strong> &mdash; timestamp of the most recent agent activity, displayed as relative time ("3 minutes ago").</li>
+        </ul>
+      </div>
+
+      <p>The heartbeat is reported by the agent at the end of every task. If you see an amber indicator, it usually means the agent is mid-task on something long-running (a research or competitor analysis pass can take 10&ndash;15 minutes). If the indicator stays amber for more than 30 minutes, reach out via Telegram &mdash; the agent will respond immediately.</p>
+
+      <p>The "current task" field updates per module. If your agent is working on blog content, it shows the post title in progress. If it is doing SEO analysis, it shows the keyword cluster being researched. This level of transparency is intentional: you should always know what your agent is working on, not just that it is "busy".</p>
+
+      <hr class="section-divider">
+
+      <h2>3. KPI Goals</h2>
+
+      <p>Below the agent status card you will find the KPI Goals panel. This is the most customisable part of the dashboard. You configure up to five goals that reflect the outcomes you care most about &mdash; not just activity metrics.</p>
+
+      <div class="dashboard-section">
+        <span class="dashboard-section-label">Example KPI set</span>
+        <h3>Typical Goals for a B2B SaaS Client</h3>
+        <div class="kpi-row">
+          <div class="kpi-chip">
+            <div class="kpi-label">Blog Posts Published</div>
+            <div class="kpi-value">11 / 12</div>
+            <div class="kpi-trend">&#x2191; on track</div>
+          </div>
+          <div class="kpi-chip">
+            <div class="kpi-label">New Leads This Month</div>
+            <div class="kpi-value">27 / 30</div>
+            <div class="kpi-trend">&#x2191; +18% vs last month</div>
+          </div>
+          <div class="kpi-chip">
+            <div class="kpi-label">Social Posts</div>
+            <div class="kpi-value">38 / 40</div>
+            <div class="kpi-trend">&#x2191; consistent</div>
+          </div>
+          <div class="kpi-chip">
+            <div class="kpi-label">Organic Impressions</div>
+            <div class="kpi-value">4.2K / 5K</div>
+            <div class="kpi-trend">&#x2192; steady</div>
+          </div>
+        </div>
+      </div>
+
+      <p>Each KPI displays three things: the current value, your target for the period, and a progress bar that fills left-to-right as you approach the goal. The trend arrow (up, down, or flat) compares this period against the previous one of the same length.</p>
+
+      <p>Below the progress bar is a <strong>30-day sparkline</strong> &mdash; a miniature line chart showing daily values for the metric. Sparklines are particularly useful for spotting patterns: a flat sparkline on leads might indicate the blog content is not yet indexed, while a sharp uptick on impressions often correlates with a post that hit a high-traffic keyword.</p>
+
+      <p>To configure your KPI goals, go to the Integrations page and scroll to the Goals section. You choose the metric type (content, leads, social, SEO, or custom), set a target number, and specify the reset period (weekly or monthly).</p>
+
+      <hr class="section-divider">
+
+      <h2>4. This Week Stats</h2>
+
+      <p>Directly below the KPI panel is a row of three quick-stat cards covering the current calendar week:</p>
+
+      <ul>
+        <li><strong>Content published</strong> &mdash; total pieces pushed live (blog posts, social captions, LinkedIn articles) since Monday</li>
+        <li><strong>Leads captured</strong> &mdash; form submissions that arrived via your lead capture integration this week</li>
+        <li><strong>Social posts</strong> &mdash; count of posts published across all connected platforms (Facebook, Instagram, LinkedIn counted separately)</li>
+      </ul>
+
+      <p>These three numbers reset every Monday at midnight. They are intentionally simple: a weekly snapshot you can read in three seconds. For deeper analysis, the Activity Feed (section 6) gives you the full history with per-action detail.</p>
+
+      <p>If a number looks lower than expected, click it &mdash; you will jump directly to the filtered activity feed showing only that category of action for the current week.</p>
+
+      <hr class="section-divider">
+
+      <h2>5. Approval Queue</h2>
+
+      <p>The Approval Queue is where your agent asks for your sign-off before publishing. Nothing in the queue has gone live yet. This section is deliberately positioned high on the page &mdash; if you have pending items, you will see them before scrolling to analytics.</p>
+
+      <div class="dashboard-section">
+        <span class="dashboard-section-label">How approvals work</span>
+        <h3>Review Before Anything Goes Live</h3>
+        <p style="color:var(--zinc-400);font-size:0.95rem">Each card in the queue shows:</p>
+        <ul style="color:var(--zinc-400);padding-left:1.25rem;margin-top:0.5rem;line-height:2">
+          <li>Content type (blog post, social caption, LinkedIn article)</li>
+          <li>Title or first 120 characters of the content</li>
+          <li>Which platform it is intended for</li>
+          <li>When the agent created it</li>
+        </ul>
+      </div>
+
+      <p>Clicking a card opens the full content preview. You have three options:</p>
+
+      <ul>
+        <li><strong>Approve</strong> &mdash; the agent publishes immediately (or at the scheduled time, if a schedule is configured)</li>
+        <li><strong>Reject with note</strong> &mdash; the agent receives your feedback and produces a revised version within a few hours</li>
+        <li><strong>Discard</strong> &mdash; removes the item from the queue without requesting a revision</li>
+      </ul>
+
+      <p>You can also approve and reject directly from Telegram. When the agent submits content for review, it sends you a message in your Telegram group with the title and a preview snippet. Reply "approve" or send a note and the agent handles it. Most clients find that Telegram approval is faster for quick decisions &mdash; the dashboard is better for reading long-form content before sign-off.</p>
+
+      <div class="callout">Tip: If you find yourself approving everything without changes, ask your agent to switch to auto-publish mode for social posts. You keep manual approval for blog content, which is worth reviewing, while social captions go live on schedule without a queue building up.</div>
+
+      <hr class="section-divider">
+
+      <h2>6. Activity Feed</h2>
+
+      <p>The Activity Feed is the complete chronological log of everything your agent has done. Unlike the This Week Stats summary, the feed goes back as far as your subscription has been active &mdash; you can scroll back to the first day your agent was live and see exactly what it published.</p>
+
+      <p>Each entry in the feed shows:</p>
+
+      <ul>
+        <li>Action type with a colour-coded icon (blog = purple, social = sky blue, leads = lime, SEO = amber, email = zinc)</li>
+        <li>Title or brief description of the action</li>
+        <li>Timestamp (relative for recent items, absolute date for older ones)</li>
+        <li>A "View" link that opens the published content or the relevant detail (e.g. the lead record, the SEO report)</li>
+      </ul>
+
+      <p>The feed is filterable by category using the tabs above it: All, Blog, Social, Leads, SEO, Email. If you want to see all the blog posts published in February, click Blog and scroll &mdash; you will find every post with its publication date and a direct link to the live URL.</p>
+
+      <p>The activity feed is also useful for auditing agent behaviour. If something was published that you did not expect, the feed shows the exact timestamp and context. If a lead arrived but was not in the CRM, the Leads tab will confirm whether it was captured and what data was recorded.</p>
+
+      <hr class="section-divider">
+
+      <h2>7. Prospect Pipeline</h2>
+
+      <p>The Prospect Pipeline section gives you a funnel visualisation of your leads by stage. This is powered by the CRM module (Growth and Enterprise plans), which your agent maintains on your behalf.</p>
+
+      <div class="dashboard-section">
+        <span class="dashboard-section-label">Pipeline stages</span>
+        <h3>Default Lead Stages</h3>
+        <ul style="color:var(--zinc-400);padding-left:1.25rem;line-height:2.2;margin-top:0.25rem">
+          <li><strong style="color:var(--white)">New</strong> &mdash; just captured, not yet contacted</li>
+          <li><strong style="color:var(--white)">Contacted</strong> &mdash; agent has sent introduction email or message</li>
+          <li><strong style="color:var(--white)">Engaged</strong> &mdash; lead replied or showed measurable interest</li>
+          <li><strong style="color:var(--white)">Proposal</strong> &mdash; a proposal or demo has been shared</li>
+          <li><strong style="color:var(--white)">Closed</strong> &mdash; won or lost (tracked separately in the funnel totals)</li>
+        </ul>
+      </div>
+
+      <p>The funnel on the dashboard is a read-only summary: it shows how many prospects are in each stage right now and how that compares to last week (small delta badge on each stage). For full CRM operations &mdash; moving a lead between stages, adding interaction notes, or exporting the pipeline &mdash; go to the Prospects tab in the sidebar.</p>
+
+      <p>If you have the Growth or Enterprise plan, your agent automatically moves leads through the pipeline based on email interactions. A lead who replies to an outreach email is moved from Contacted to Engaged without you touching the CRM. You can always override a stage manually from the Prospects tab.</p>
+
+      <p>Starter plan clients see the pipeline section with a prompt to upgrade. If you are on Starter and capture leads via a form integration, those leads still appear under the Leads tab of the activity feed &mdash; they are just not tracked with stage progression.</p>
+
+      <hr class="section-divider">
+
+      <h2>8. ROI Events</h2>
+
+      <p>ROI Events are the most intentional part of the dashboard &mdash; and the most underused by new clients. The idea is straightforward: not every business outcome shows up in a content or lead metric. A new client signing a contract, a speaking invitation that came through the blog, a partnership that started with a LinkedIn post &mdash; these are real returns on the agent's work, and they deserve to be tracked.</p>
+
+      <p>You log ROI events manually (or ask your agent to log them for you via Telegram). Each event has:</p>
+
+      <ul>
+        <li><strong>Type</strong> &mdash; client signed, revenue generated, partnership, media mention, cost saved, other</li>
+        <li><strong>Value</strong> &mdash; optional monetary amount (INR or USD)</li>
+        <li><strong>Source</strong> &mdash; which agent activity contributed (a specific blog post URL, a social campaign, an outreach email)</li>
+        <li><strong>Date</strong> &mdash; when the outcome occurred</li>
+        <li><strong>Notes</strong> &mdash; free text for context</li>
+      </ul>
+
+      <p>Over time, the ROI Events panel builds a cumulative picture of agent-attributed business value. If your plan is up for renewal and you are evaluating whether AgentGrow is worth it, this is the section to open. Every linked outcome is traceable back to a specific action the agent took.</p>
+
+      <div class="callout">Ask your agent to log ROI events for you. When a deal closes, send a Telegram message: "New client signed &mdash; INR 1,20,000 contract. Attribution: blog post on Kubernetes monitoring." The agent will create the event and link it to the correct activity.</div>
+
+      <hr class="section-divider">
+
+      <h2>9. Tips for Getting the Most Out of Your Dashboard</h2>
+
+      <ul class="tip-list">
+        <li>Check the Approval Queue daily, not hourly. Content submitted for review does not expire &mdash; a daily review session is more efficient than interrupting your workflow repeatedly.</li>
+        <li>Configure your KPI goals before the first full month is complete. Once you have 30 days of data, the sparklines become genuinely useful for spotting trends. Goals set too late miss the early baseline.</li>
+        <li>Use the Activity Feed filter when reviewing a specific module. If you just configured the SEO Analyst integration, click the SEO tab in the feed to see exactly what it has done since setup.</li>
+        <li>Log ROI events the same week they happen. Memory fades. A quick Telegram message to your agent takes 20 seconds and keeps the historical record accurate.</li>
+        <li>Reject with a note rather than discarding content. The agent uses your rejection notes to improve future output. A discard gives it no signal. A rejection note like "too technical &mdash; write for decision-makers not engineers" immediately refines the agent's understanding of your audience.</li>
+        <li>If the pipeline funnel looks stale, check the CRM directly from the Prospects tab. The dashboard funnel refreshes every few minutes, but a manual stage change made by you in the CRM takes one page reload to reflect on the dashboard.</li>
+        <li>Share dashboard access with your co-founder or marketing lead. The client dashboard supports a single login, but you can share your credentials with a trusted team member. A dedicated multi-user access system is on the roadmap.</li>
+      </ul>
+
+      <hr class="section-divider">
+
+      <h2>What the Dashboard Does Not Replace</h2>
+
+      <p>The dashboard is a summary layer. It consolidates signals from your agent's activity into a single view, but the underlying actions happen on the platforms your agent manages. Blog posts live on your GitHub Pages site. Social posts are on Facebook, Instagram, and LinkedIn. Leads are in the PostgreSQL CRM. The dashboard surfaces all of this so you do not have to visit five platforms &mdash; but the primary record is always the source platform.</p>
+
+      <p>If you ever need raw data exports (for your own BI tools, for a board report, or for an audit), reach out to support. CSV exports for the activity feed and CRM are available on request.</p>
+
+      <p>For feature requests or questions about the dashboard, the fastest channel is your Telegram group with the agent. It can answer questions about your own data, log events, and relay requests to the AgentGrow team.</p>
+
+    </div>
+  </div>
+
+  <div class="container-narrow">
+    <div class="related-posts">
+      <h2>More from the blog</h2>
+      <div class="card-grid" id="related-posts"></div>
+    </div>
+  </div>
+
+  <section class="cta-section">
+    <h2>Deploy your AI CBO today</h2>
+    <p>Your AI CBO goes live within an hour. 90-day satisfaction guarantee &mdash; full refund if minimum deliverables aren't met.</p>
+    <div style="display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap">
+      <a href="https://agentgrow.io/onboard/" class="btn-lime">Get Started</a>
+      <a href="../" class="btn-outline">Back to Blog</a>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="inner">
+      <div class="brand">
+        <a href="https://agentgrow.io/" style="display:flex;align-items:center;gap:0.5rem;color:var(--white);text-decoration:none;font-weight:700;font-size:1.125rem;margin-bottom:1rem">
+          <div style="width:32px;height:32px;background:var(--lime);border-radius:8px;display:flex;align-items:center;justify-content:center">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;color:var(--obsidian)"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          AgentGrow
+        </a>
+        <p>AI-powered Chief Business Officer that grows your business 24/7.</p>
+        <p class="addr">2146 Sunscape, Sobha Hillview, Kanakapura Road, Bengaluru, Karnataka, INDIA 560109</p>
+        <p class="copy">&copy; 2026 gheWARE uniGPS Solutions LLP. All rights reserved.</p>
+      </div>
+      <div>
+        <h3>Product</h3>
+        <ul>
+          <li><a href="https://agentgrow.io/#features">Features</a></li>
+          <li><a href="https://agentgrow.io/#pricing">Pricing</a></li>
+          <li><a href="https://agentgrow.io/onboard/">Get Started</a></li>
+          <li><a href="../guide/">Getting Started Guide</a></li>
+          <li><a href="https://agentgrow.io/help">Help Center</a></li>
+          <li><a href="../">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="https://agentgrow.io/about/">About Us</a></li>
+          <li><a href="https://agentgrow.io/terms/">Terms of Service</a></li>
+          <li><a href="https://agentgrow.io/privacy/">Privacy Policy</a></li>
+          <li><a href="https://agentgrow.io/refund/">Refund Policy</a></li>
+          <li><a href="https://agentgrow.io/contact/">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    fetch('../posts-data.json').then(r=>r.json()).then(posts=>{
+      const BADGE_CLASS={'Platform':'badge-platform','Getting Started':'badge-getting-started','How-To':'badge-how-to','Strategy':'badge-strategy'};
+      const current='dashboard-walkthrough';
+      const related=posts.filter(p=>p.slug!==current).slice(0,3);
+      document.getElementById('related-posts').innerHTML=related.map(p=>'<div class="card"><span class="badge '+(BADGE_CLASS[p.category]||'')+'">'+ p.category+'</span><h2><a href="'+p.slug+'.html">'+p.title+'</a></h2><p class="excerpt">'+p.excerpt+'</p><div class="card-meta"><span>'+p.publishedAt+'</span><span>&middot;</span><span>'+p.readTime+'</span></div></div>').join('');
+    });
+  </script>
+
+</body>
+</html>

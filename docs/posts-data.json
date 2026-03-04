@@ -10,7 +10,7 @@
   {
     "slug": "how-agentgrow-works",
     "title": "How AgentGrow Works: From Sign-Up to Your First Published Post",
-    "excerpt": "Getting a dedicated AI agent working on your business takes less than 24 hours. Here is the complete walkthrough from choosing a plan to reading your first activity report.",
+    "excerpt": "Getting a dedicated AI agent working on your business takes less than an hour. Here is the complete walkthrough from choosing a plan to reading your first activity report.",
     "category": "Getting Started",
     "readTime": "5 min read",
     "publishedAt": "Feb 21, 2026"
@@ -54,5 +54,53 @@
     "category": "How-To",
     "readTime": "7 min read",
     "publishedAt": "Mar 3, 2026"
+  },
+  {
+    "slug": "linkedin-setup",
+    "title": "How to Set Up LinkedIn Posting for AgentGrow",
+    "excerpt": "Step-by-step guide to creating a LinkedIn app, getting an access token with w_member_social scope, and configuring your AI agent to post on your LinkedIn profile.",
+    "category": "How-To",
+    "readTime": "7 min read",
+    "publishedAt": "Mar 4, 2026"
+  },
+  {
+    "slug": "integrations-guide",
+    "title": "How to Configure Your Agent Modules on the Integrations Page",
+    "excerpt": "A complete guide to the AgentGrow Integrations page — self-configure blog, social, SEO, and email modules, request admin setup for complex modules, and pause or resume any module.",
+    "category": "How-To",
+    "readTime": "6 min read",
+    "publishedAt": "Mar 4, 2026"
+  },
+  {
+    "slug": "dashboard-walkthrough",
+    "title": "Your Client Dashboard: A Complete Walkthrough",
+    "excerpt": "A guided tour of the AgentGrow client dashboard — agent status, KPI goals with sparklines, approval queue, activity feed, prospect pipeline, and ROI tracking.",
+    "category": "Getting Started",
+    "readTime": "5 min read",
+    "publishedAt": "Mar 4, 2026"
+  },
+  {
+    "slug": "email-marketing-setup",
+    "title": "How to Set Up Email Marketing for AgentGrow",
+    "excerpt": "Choose between platform-managed email (recommended, zero setup) or bring your own SMTP credentials. Configure email outreach for your AI agent in minutes.",
+    "category": "How-To",
+    "readTime": "5 min read",
+    "publishedAt": "Mar 4, 2026"
+  },
+  {
+    "slug": "agent-settings-guide",
+    "title": "How to Update Your Agent Settings and CBO Setup Form",
+    "excerpt": "Re-edit your business details, target audience, brand voice, platforms, and goals after onboarding. Changes trigger agent re-briefing so your CBO stays aligned with your strategy.",
+    "category": "How-To",
+    "readTime": "4 min read",
+    "publishedAt": "Mar 4, 2026"
+  },
+  {
+    "slug": "brand-kit-guide",
+    "title": "How to Upload and Manage Your Brand Kit",
+    "excerpt": "Upload logos, brand guidelines, images, and creative briefs to your AgentGrow brand kit. Your AI agent uses these assets to maintain consistent branding across all content.",
+    "category": "How-To",
+    "readTime": "4 min read",
+    "publishedAt": "Mar 4, 2026"
   }
 ]

@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Configure Your Agent Modules on the Integrations Page &mdash; AgentGrow</title>
+  <meta name="description" content="A complete guide to the AgentGrow Integrations page — self-configure blog, social, SEO, and email modules, request admin setup for complex modules, and pause or resume any module.">
+  <meta property="og:title" content="How to Configure Your Agent Modules on the Integrations Page">
+  <meta property="og:description" content="A complete guide to the AgentGrow Integrations page — self-configure blog, social, SEO, and email modules, request admin setup for complex modules, and pause or resume any module.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://agentgrow.io/blog/posts/integrations-guide.html">
+  <meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://agentgrow.io/blog/posts/integrations-guide.html">
+  <link rel="stylesheet" href="../css/blog.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "How to Configure Your Agent Modules on the Integrations Page",
+    "description": "A complete guide to the AgentGrow Integrations page — self-configure blog, social, SEO, and email modules, request admin setup for complex modules, and pause or resume any module.",
+    "datePublished": "2026-03-04",
+    "author": {"@type": "Organization", "name": "AgentGrow"},
+    "publisher": {"@type": "Organization", "name": "AgentGrow", "url": "https://agentgrow.io"},
+    "mainEntityOfPage": "https://agentgrow.io/blog/posts/integrations-guide.html"
+  }
+  </script>
+  <style>
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      background: var(--lime);
+      color: var(--obsidian);
+      border-radius: 50%;
+      font-weight: 700;
+      font-size: 0.85rem;
+      margin-right: 0.5rem;
+      flex-shrink: 0;
+    }
+    .step-heading {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.75rem;
+    }
+    .step-heading h3 {
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+    .code-block {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-size: 0.85rem;
+      color: var(--lime);
+      overflow-x: auto;
+      margin: 0.75rem 0 1.25rem;
+      word-break: break-all;
+    }
+    .warning-box {
+      background: rgba(251, 191, 36, 0.08);
+      border-left: 3px solid var(--amber);
+      border-radius: 0 8px 8px 0;
+      padding: 1rem 1.25rem;
+      margin: 1.25rem 0;
+      color: var(--zinc-300);
+      font-size: 0.9rem;
+    }
+    .warning-box strong {
+      color: var(--amber);
+    }
+    .section-divider {
+      border: none;
+      border-top: 1px solid var(--border-subtle);
+      margin: 2.5rem 0;
+    }
+    .field-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0 1.5rem;
+    }
+    .field-table th {
+      text-align: left;
+      padding: 0.6rem 0.75rem;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--zinc-500);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .field-table td {
+      padding: 0.6rem 0.75rem;
+      font-size: 0.9rem;
+      border-bottom: 1px solid var(--glass-border);
+    }
+    .field-table td:first-child {
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-size: 0.85rem;
+      color: var(--lime);
+      white-space: nowrap;
+    }
+    .field-table td:last-child {
+      color: var(--zinc-400);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="inner">
+      <a href="https://agentgrow.io/" class="logo">
+        <div class="logo-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </div>
+        AgentGrow
+      </a>
+      <nav>
+        <a href="https://agentgrow.io/#features">Features</a>
+        <a href="https://agentgrow.io/#pricing">Pricing</a>
+        <a href="../guide/">Guide</a>
+        <a href="../">Blog</a>
+      </nav>
+      <a href="https://agentgrow.io/onboard/" class="cta-btn">Start Free Trial</a>
+    </div>
+  </header>
+
+  <!-- Article Header -->
+  <div class="article-header">
+    <div class="container-narrow">
+      <p class="breadcrumb"><a href="../">&larr; Blog</a> / How-To</p>
+      <span class="badge badge-how-to">How-To</span>
+      <h1>How to Configure Your Agent Modules on the Integrations Page</h1>
+      <p class="excerpt-text">A complete guide to the AgentGrow Integrations page &mdash; self-configure blog, social, SEO, and email modules, request admin setup for complex modules, and pause or resume any module.</p>
+      <div class="meta">
+        <span>AgentGrow</span>
+        <span>&middot;</span>
+        <span>Mar 4, 2026</span>
+        <span>&middot;</span>
+        <span>6 min read</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Article Body -->
+  <div class="article-body">
+    <div class="container-narrow">
+
+      <h2>Overview</h2>
+
+      <p>The <strong>Integrations page</strong> is your control panel for every capability your AI agent has. It lives at <strong>agentgrow.io/user/integrations</strong> and is accessible from the left-hand navigation in your client dashboard.</p>
+
+      <p>From this single page you can:</p>
+      <ul>
+        <li>Connect your own accounts (GitHub, Facebook, Instagram, LinkedIn, Google) so your agent can act on your behalf</li>
+        <li>Enable the platform-managed email service with one click</li>
+        <li>Request admin assistance for advanced modules (lead prospecting and AI voice calls)</li>
+        <li>Temporarily pause any module without losing its configuration</li>
+      </ul>
+
+      <p>Your agent is only as capable as the modules you unlock. An agent with zero integrations configured will sit idle. An agent with all relevant modules connected runs blog publishing, social media, SEO monitoring, and email outreach on autopilot.</p>
+
+      <div class="callout">You do not need to configure every module on day one. Start with the one that matters most to your business &mdash; typically Blog Publisher or a social media module &mdash; and add more as you settle in.</div>
+
+      <hr class="section-divider">
+
+      <h2>Module Types</h2>
+
+      <p>Modules fall into two groups depending on how they are set up.</p>
+
+      <h3>Safe Modules &mdash; You Configure Yourself</h3>
+
+      <p>These modules require credentials that only you can generate (such as a GitHub Personal Access Token or a Facebook Page Access Token). AgentGrow cannot create these for you, but you can enter them directly on the Integrations page without waiting for admin intervention.</p>
+
+      <table class="field-table">
+        <thead>
+          <tr><th>Module</th><th>What it does</th><th>Setup guide</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Blog Publisher</td>
+            <td>Publishes SEO blog posts to your GitHub Pages site</td>
+            <td><a href="blog-publisher-setup.html">Blog Publisher Setup</a></td>
+          </tr>
+          <tr>
+            <td>Facebook</td>
+            <td>Posts content and updates to your Facebook Page</td>
+            <td><a href="facebook-instagram-setup.html">Facebook &amp; Instagram Setup</a></td>
+          </tr>
+          <tr>
+            <td>Instagram</td>
+            <td>Publishes images and captions to your Instagram Business account</td>
+            <td><a href="facebook-instagram-setup.html">Facebook &amp; Instagram Setup</a></td>
+          </tr>
+          <tr>
+            <td>LinkedIn</td>
+            <td>Shares thought-leadership posts on your LinkedIn profile or Page</td>
+            <td>LinkedIn Setup (coming soon)</td>
+          </tr>
+          <tr>
+            <td>Email Marketer</td>
+            <td>Sends nurture emails and outreach on your behalf via SES or your own SMTP</td>
+            <td>&mdash;</td>
+          </tr>
+          <tr>
+            <td>SEO Analyst</td>
+            <td>Reads Google Search Console data to track rankings and surface opportunities</td>
+            <td><a href="seo-analyst-setup.html">SEO Analyst Setup</a></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Complex Modules &mdash; Admin Sets Up for You</h3>
+
+      <p>These modules involve infrastructure that AgentGrow provisions on the platform side &mdash; such as dedicated phone numbers or third-party API accounts. You request them through the Integrations page and an AgentGrow admin completes the setup, typically within one business day.</p>
+
+      <table class="field-table">
+        <thead>
+          <tr><th>Module</th><th>What it does</th><th>How to get it</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Prospector</td>
+            <td>Automatically discovers and enriches leads matching your ideal customer profile</td>
+            <td>Click "Request Setup" on the Integrations page</td>
+          </tr>
+          <tr>
+            <td>Voice Outreach</td>
+            <td>AI-powered phone calls to prospects using a dedicated outbound number</td>
+            <td>Click "Request Setup" on the Integrations page</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="warning-box">
+        <strong>Plan availability:</strong> Not all modules are available on every plan. If a module card is greyed out or missing, it may not be included in your current plan. <a href="https://agentgrow.io/#pricing">Compare plans</a> or contact support to upgrade.
+      </div>
+
+      <hr class="section-divider">
+
+      <h2>How to Configure a Safe Module</h2>
+
+      <p>The process is the same for all self-configure modules: Blog Publisher, Facebook, Instagram, LinkedIn, Email Marketer, and SEO Analyst.</p>
+
+      <div class="step-heading">
+        <span class="step-number">1</span>
+        <h3>Go to the Integrations page</h3>
+      </div>
+      <p>Log in and navigate to <strong>agentgrow.io/user/integrations</strong>. You will see a card for each module included in your plan.</p>
+
+      <div class="step-heading">
+        <span class="step-number">2</span>
+        <h3>Click Configure (or Reconfigure)</h3>
+      </div>
+      <p>Find the module you want to set up. If it has never been configured, the button reads <strong>Configure</strong>. If credentials were previously saved, it reads <strong>Reconfigure</strong>. Click it to open the credential form.</p>
+
+      <div class="step-heading">
+        <span class="step-number">3</span>
+        <h3>Fill in your credentials</h3>
+      </div>
+      <p>Each module asks for different values. Refer to the dedicated setup guide for that module (linked in the table above) if you are unsure where to find a specific value. Common fields include:</p>
+
+      <table class="field-table">
+        <thead>
+          <tr><th>Module</th><th>Required credentials</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Blog Publisher</td>
+            <td>GitHub Repo URL, GitHub Personal Access Token (PAT)</td>
+          </tr>
+          <tr>
+            <td>Facebook</td>
+            <td>Facebook Page ID, Facebook Page Access Token</td>
+          </tr>
+          <tr>
+            <td>Instagram</td>
+            <td>Instagram Business Account ID, Facebook Page Access Token (same token as Facebook)</td>
+          </tr>
+          <tr>
+            <td>LinkedIn</td>
+            <td>LinkedIn OAuth Access Token</td>
+          </tr>
+          <tr>
+            <td>Email Marketer</td>
+            <td>Platform SES (no credentials needed) or your own SMTP host, port, username, password</td>
+          </tr>
+          <tr>
+            <td>SEO Analyst</td>
+            <td>Google Service Account JSON, Google Cloud Project ID, Search Console site URL</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="step-heading">
+        <span class="step-number">4</span>
+        <h3>Click Save &amp; Restart Agent</h3>
+      </div>
+      <p>Once you submit the form, AgentGrow securely stores your credentials as encrypted Kubernetes secrets and restarts your agent pod. The restart takes about 30 seconds. After that, your agent immediately has access to the new module.</p>
+
+      <div class="callout">Your credentials are stored as encrypted Kubernetes secrets in your dedicated agent namespace. They are never logged or stored in plain text, and are never shared with other agents or clients.</div>
+
+      <div class="step-heading">
+        <span class="step-number">5</span>
+        <h3>Verify the module is active</h3>
+      </div>
+      <p>After the restart, the module card will show a green <strong>Active</strong> status badge. Your agent will begin using the module on its next scheduled task. You can also check the <strong>Dashboard</strong> activity feed to see the first run.</p>
+
+      <hr class="section-divider">
+
+      <h2>Platform Default vs. Custom SMTP (Email Marketer)</h2>
+
+      <p>The Email Marketer module offers two options for sending email:</p>
+
+      <h3>Option A &mdash; Use Platform Email Service (Recommended)</h3>
+
+      <p>AgentGrow provides a managed email service powered by <strong>AWS SES</strong>. Emails are sent from <code>admin@agentgrow.io</code> on your behalf. This option requires zero configuration &mdash; simply select <strong>"Use platform email service"</strong> in the form and save.</p>
+
+      <p>This is the right choice if:</p>
+      <ul>
+        <li>You do not have your own domain or SMTP server set up</li>
+        <li>You want to get started quickly without additional configuration</li>
+        <li>You are on Starter or Growth tier and do not need a custom from-address</li>
+      </ul>
+
+      <h3>Option B &mdash; Use Your Own SMTP Credentials</h3>
+
+      <p>If you want emails to arrive from your own domain (e.g. <code>hello@yourcompany.com</code>), select <strong>"Use my own SMTP credentials"</strong> and provide:</p>
+
+      <table class="field-table">
+        <thead>
+          <tr><th>Field</th><th>Example</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>SMTP Host</td><td>smtp.yourprovider.com</td></tr>
+          <tr><td>SMTP Port</td><td>587 (TLS) or 465 (SSL)</td></tr>
+          <tr><td>SMTP Username</td><td>hello@yourcompany.com</td></tr>
+          <tr><td>SMTP Password</td><td>your app password or SMTP key</td></tr>
+          <tr><td>From Address</td><td>hello@yourcompany.com</td></tr>
+        </tbody>
+      </table>
+
+      <p>Common SMTP providers: Gmail (use an App Password), Mailgun, SendGrid, Postmark, AWS SES (your own account), Zoho Mail, or any standard SMTP relay.</p>
+
+      <div class="warning-box">
+        <strong>Gmail users:</strong> Do not use your Gmail login password. Enable 2-factor authentication on your Google account, then go to <strong>myaccount.google.com/apppasswords</strong> to generate a dedicated App Password for AgentGrow. Use <code>smtp.gmail.com</code> on port <code>587</code>.
+      </div>
+
+      <hr class="section-divider">
+
+      <h2>How to Request Setup for Complex Modules</h2>
+
+      <p>Prospector and Voice Outreach are provisioned by the AgentGrow team. The process is straightforward:</p>
+
+      <div class="step-heading">
+        <span class="step-number">1</span>
+        <h3>Find the module on the Integrations page</h3>
+      </div>
+      <p>Complex modules show a <strong>"Request Setup"</strong> button instead of a credential form. This tells you that an admin will handle the configuration.</p>
+
+      <div class="step-heading">
+        <span class="step-number">2</span>
+        <h3>Click "Request Setup"</h3>
+      </div>
+      <p>Clicking the button creates an admin task on the AgentGrow team's dashboard. The task includes your account details and the module you are requesting. You do not need to fill in anything else.</p>
+
+      <div class="step-heading">
+        <span class="step-number">3</span>
+        <h3>Wait for confirmation</h3>
+      </div>
+      <p>An AgentGrow admin will complete the setup, typically within one business day. You will receive an email confirmation when the module is live. The module card on your Integrations page will update to show <strong>Active</strong> status.</p>
+
+      <div class="callout">If you need Prospector or Voice Outreach urgently, email <strong>admin@agentgrow.io</strong> after submitting the request and mention your account email. We will prioritize your setup.</div>
+
+      <hr class="section-divider">
+
+      <h2>Pause and Resume a Module</h2>
+
+      <p>Every module has a toggle that lets you temporarily disable it without losing its configuration. This is useful when:</p>
+      <ul>
+        <li>You are running a campaign pause and do not want social posts going out for a week</li>
+        <li>Your LinkedIn token has expired and you are waiting to re-authenticate</li>
+        <li>You want to test your agent's blog output before enabling social distribution</li>
+      </ul>
+
+      <div class="step-heading">
+        <span class="step-number">1</span>
+        <h3>Find the module on the Integrations page</h3>
+      </div>
+      <p>Each configured module has a toggle switch in the top-right corner of its card.</p>
+
+      <div class="step-heading">
+        <span class="step-number">2</span>
+        <h3>Click the toggle to pause</h3>
+      </div>
+      <p>The module card will dim and display a <strong>"Paused"</strong> status badge. Your agent will immediately stop using that module for new tasks. Your credentials and configuration are preserved exactly as they were.</p>
+
+      <div class="step-heading">
+        <span class="step-number">3</span>
+        <h3>Click the toggle again to resume</h3>
+      </div>
+      <p>The module returns to <strong>Active</strong> status instantly. No agent restart is required &mdash; your agent picks up the module on its next task run.</p>
+
+      <div class="warning-box">
+        <strong>Note:</strong> Pausing a module does not cancel any tasks that are already in progress. If your agent is mid-way through a blog post or social media run, it will complete the current task before respecting the pause.
+      </div>
+
+      <hr class="section-divider">
+
+      <h2>Setup Guides</h2>
+
+      <p>Each module that requires third-party credentials has a dedicated step-by-step guide. These walk you through exactly where to find each credential on the external platform, with no assumed technical knowledge.</p>
+
+      <table class="field-table">
+        <thead>
+          <tr><th>Module</th><th>Setup Guide</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Blog Publisher</td>
+            <td><a href="blog-publisher-setup.html">How to Set Up Blog Publisher (GitHub Pages) for AgentGrow</a></td>
+          </tr>
+          <tr>
+            <td>Facebook &amp; Instagram</td>
+            <td><a href="facebook-instagram-setup.html">How to Get Your Facebook &amp; Instagram Credentials for AgentGrow</a></td>
+          </tr>
+          <tr>
+            <td>SEO Analyst</td>
+            <td><a href="seo-analyst-setup.html">How to Set Up SEO Analyst (Google Search Console) for AgentGrow</a></td>
+          </tr>
+          <tr>
+            <td>LinkedIn</td>
+            <td>LinkedIn Setup Guide (coming soon &mdash; contact support in the meantime)</td>
+          </tr>
+          <tr>
+            <td>Email Marketer</td>
+            <td>See <strong>Platform Default vs. Custom SMTP</strong> section above</td>
+          </tr>
+          <tr>
+            <td>Prospector</td>
+            <td>Admin-provisioned &mdash; click "Request Setup" and the team handles it</td>
+          </tr>
+          <tr>
+            <td>Voice Outreach</td>
+            <td>Admin-provisioned &mdash; click "Request Setup" and the team handles it</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="callout">Setup guides are linked directly from each module card on the Integrations page. Look for the "How to get credentials" link below the module name.</div>
+
+      <hr class="section-divider">
+
+      <h2>Frequently Asked Questions</h2>
+
+      <h3>My credentials were saved, but the module still shows "Not Configured" &mdash; what happened?</h3>
+      <p>This usually means the agent restart did not complete successfully. Check your Dashboard &mdash; if the agent status shows offline or restarting for more than two minutes, the pod may be in a restart loop. Email <strong>admin@agentgrow.io</strong> with your account email and we will investigate. In the meantime, try clicking <strong>Reconfigure</strong> and saving the same credentials again to trigger a fresh restart.</p>
+
+      <h3>Can I configure a module that is not included in my plan?</h3>
+      <p>No. Module cards for features not included in your plan are either hidden or shown as locked. To unlock additional modules, <a href="https://agentgrow.io/#pricing">upgrade your plan</a>. Contact <strong>admin@agentgrow.io</strong> if you are unsure which plan includes the module you need.</p>
+
+      <h3>What happens to my credentials if I cancel my subscription?</h3>
+      <p>When a subscription is cancelled, the agent namespace (including all encrypted secrets) is scheduled for deletion after a 30-day grace period. You can export any credentials you entered before cancellation &mdash; your tokens and access keys remain valid on the external platform (GitHub, Facebook, etc.) and can be used elsewhere. You do not need to revoke them.</p>
+
+      <h3>My LinkedIn token stopped working after a few weeks. Do I need to reconfigure it?</h3>
+      <p>Yes. LinkedIn OAuth access tokens expire approximately every 60 days. When your token expires, your agent will stop posting to LinkedIn and report an authentication error in the Dashboard activity feed. Go to the Integrations page, click <strong>Reconfigure</strong> on the LinkedIn module, generate a fresh token from the LinkedIn Developer Portal, paste it in, and save. Your agent will resume LinkedIn posting after the restart.</p>
+
+    </div>
+  </div>
+
+  <!-- Related Posts -->
+  <div class="container-narrow">
+    <div class="related-posts">
+      <h2>More from the blog</h2>
+      <div class="card-grid" id="related-posts"></div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <h2>Deploy your AI CBO today</h2>
+    <p>Your AI CBO goes live within an hour. 90-day satisfaction guarantee &mdash; full refund if minimum deliverables aren't met.</p>
+    <div style="display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap">
+      <a href="https://agentgrow.io/onboard/" class="btn-lime">Get Started</a>
+      <a href="../" class="btn-outline">Back to Blog</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="inner">
+      <div class="brand">
+        <a href="https://agentgrow.io/" style="display:flex;align-items:center;gap:0.5rem;color:var(--white);text-decoration:none;font-weight:700;font-size:1.125rem;margin-bottom:1rem">
+          <div style="width:32px;height:32px;background:var(--lime);border-radius:8px;display:flex;align-items:center;justify-content:center">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;color:var(--obsidian)"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          AgentGrow
+        </a>
+        <p>AI-powered Chief Business Officer that grows your business 24/7.</p>
+        <p class="addr">2146 Sunscape, Sobha Hillview, Kanakapura Road, Bengaluru, Karnataka, INDIA 560109</p>
+        <p class="copy">&copy; 2026 gheWARE uniGPS Solutions LLP. All rights reserved.</p>
+      </div>
+      <div>
+        <h3>Product</h3>
+        <ul>
+          <li><a href="https://agentgrow.io/#features">Features</a></li>
+          <li><a href="https://agentgrow.io/#pricing">Pricing</a></li>
+          <li><a href="https://agentgrow.io/onboard/">Get Started</a></li>
+          <li><a href="../guide/">Getting Started Guide</a></li>
+          <li><a href="https://agentgrow.io/help">Help Center</a></li>
+          <li><a href="../">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="https://agentgrow.io/about/">About Us</a></li>
+          <li><a href="https://agentgrow.io/terms/">Terms of Service</a></li>
+          <li><a href="https://agentgrow.io/privacy/">Privacy Policy</a></li>
+          <li><a href="https://agentgrow.io/refund/">Refund Policy</a></li>
+          <li><a href="https://agentgrow.io/contact/">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    fetch('../posts-data.json')
+      .then(r => r.json())
+      .then(posts => {
+        const BADGE_CLASS = {'Platform':'badge-platform','Getting Started':'badge-getting-started','How-To':'badge-how-to','Strategy':'badge-strategy'};
+        const current = 'integrations-guide';
+        const related = posts.filter(p => p.slug !== current).slice(0, 3);
+        document.getElementById('related-posts').innerHTML = related.map(p =>
+          '<div class="card">' +
+            '<span class="badge ' + (BADGE_CLASS[p.category]||'') + '">' + p.category + '</span>' +
+            '<h2><a href="' + p.slug + '.html">' + p.title + '</a></h2>' +
+            '<p class="excerpt">' + p.excerpt + '</p>' +
+            '<div class="card-meta"><span>' + p.publishedAt + '</span><span>&middot;</span><span>' + p.readTime + '</span></div>' +
+          '</div>'
+        ).join('');
+      });
+  </script>
+
+</body>
+</html>

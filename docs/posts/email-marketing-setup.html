@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Set Up Email Marketing for AgentGrow &mdash; AgentGrow</title>
+  <meta name="description" content="Choose between platform-managed email (recommended, zero setup) or bring your own SMTP credentials. Configure email outreach for your AI agent in minutes.">
+  <meta property="og:title" content="How to Set Up Email Marketing for AgentGrow">
+  <meta property="og:description" content="Choose between platform-managed email (recommended, zero setup) or bring your own SMTP credentials. Configure email outreach for your AI agent in minutes.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://agentgrow.io/blog/posts/email-marketing-setup.html">
+  <meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://agentgrow.io/blog/posts/email-marketing-setup.html">
+  <link rel="stylesheet" href="../css/blog.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BlogPosting","headline":"How to Set Up Email Marketing for AgentGrow","description":"Choose between platform-managed email (recommended, zero setup) or bring your own SMTP credentials. Configure email outreach for your AI agent in minutes.","datePublished":"2026-03-04","author":{"@type":"Organization","name":"AgentGrow"},"publisher":{"@type":"Organization","name":"AgentGrow","url":"https://agentgrow.io"},"mainEntityOfPage":"https://agentgrow.io/blog/posts/email-marketing-setup.html"}
+  </script>
+  <style>
+    .step-number { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; background: var(--lime); color: var(--obsidian); border-radius: 50%; font-weight: 700; font-size: 0.85rem; margin-right: 0.5rem; flex-shrink: 0; }
+    .step-heading { display: flex; align-items: center; margin-bottom: 0.75rem; }
+    .step-heading h3 { margin: 0 !important; padding: 0 !important; }
+    .code-block { background: rgba(255,255,255,0.05); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.75rem 1rem; font-family: 'SF Mono', 'Fira Code', monospace; font-size: 0.85rem; color: var(--lime); overflow-x: auto; margin: 0.75rem 0 1.25rem; word-break: break-all; }
+    .warning-box { background: rgba(251, 191, 36, 0.08); border-left: 3px solid var(--amber); border-radius: 0 8px 8px 0; padding: 1rem 1.25rem; margin: 1.25rem 0; color: var(--zinc-300); font-size: 0.9rem; }
+    .warning-box strong { color: var(--amber); }
+    .section-divider { border: none; border-top: 1px solid var(--border-subtle); margin: 2.5rem 0; }
+    .field-table { width: 100%; border-collapse: collapse; margin: 1rem 0 1.5rem; }
+    .field-table th { text-align: left; padding: 0.6rem 0.75rem; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--zinc-500); border-bottom: 1px solid var(--border-subtle); }
+    .field-table td { padding: 0.6rem 0.75rem; font-size: 0.9rem; border-bottom: 1px solid var(--glass-border); }
+    .field-table td:first-child { font-family: 'SF Mono', 'Fira Code', monospace; font-size: 0.85rem; color: var(--lime); white-space: nowrap; }
+    .field-table td:last-child { color: var(--zinc-400); }
+    .option-card { background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 12px; padding: 1.5rem 1.75rem; margin: 1rem 0 1.5rem; }
+    .option-card h3 { margin-top: 0; margin-bottom: 0.5rem; font-size: 1.05rem; }
+    .option-card .tag { display: inline-block; background: rgba(163,230,53,0.15); color: var(--lime); font-size: 0.75rem; font-weight: 600; border-radius: 4px; padding: 0.15rem 0.5rem; margin-left: 0.5rem; vertical-align: middle; letter-spacing: 0.04em; }
+    .option-card p { margin-bottom: 0; color: var(--zinc-300); font-size: 0.95rem; }
+    .option-card ul { color: var(--zinc-300); font-size: 0.95rem; margin-bottom: 0; }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="inner">
+      <a href="https://agentgrow.io/" class="logo">
+        <div class="logo-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </div>
+        AgentGrow
+      </a>
+      <nav>
+        <a href="https://agentgrow.io/#features">Features</a>
+        <a href="https://agentgrow.io/#pricing">Pricing</a>
+        <a href="../guide/">Guide</a>
+        <a href="../">Blog</a>
+      </nav>
+      <a href="https://agentgrow.io/onboard/" class="cta-btn">Start Free Trial</a>
+    </div>
+  </header>
+
+  <!-- Article Header -->
+  <div class="article-header">
+    <div class="container-narrow">
+      <p class="breadcrumb"><a href="../">&larr; Blog</a> / How-To</p>
+      <span class="badge badge-how-to">How-To</span>
+      <h1>How to Set Up Email Marketing for AgentGrow</h1>
+      <p class="excerpt-text">Choose between platform-managed email (recommended, zero setup) or bring your own SMTP credentials. Configure email outreach for your AI agent in minutes.</p>
+      <div class="meta">
+        <span>AgentGrow</span>
+        <span>&middot;</span>
+        <span>Mar 4, 2026</span>
+        <span>&middot;</span>
+        <span>5 min read</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Article Body -->
+  <div class="article-body">
+    <div class="container-narrow">
+
+      <h2>Overview</h2>
+
+      <p>The <strong>Email Marketer</strong> module gives your AI agent the ability to send personalised prospect outreach, follow-up sequences, and lead nurture campaigns on your behalf &mdash; automatically, around the clock. It is available on the <strong>Growth tier and above</strong>.</p>
+
+      <p>Unlike social media integrations that require third-party developer apps, email is simpler: your agent just needs an SMTP connection to send from your domain. You have two ways to provide that connection.</p>
+
+      <div class="callout">Email Marketer is a Growth+ feature. If you are on the Starter plan, <a href="https://agentgrow.io/#pricing">upgrade your plan</a> to unlock this module.</div>
+
+      <hr class="section-divider">
+
+      <h2>Two Options: Platform Default vs. Custom SMTP</h2>
+
+      <p>When you open the Email Marketer module on your <a href="https://agentgrow.io/user/integrations">Integrations page</a>, you will see two configuration paths. Choose the one that fits your situation.</p>
+
+      <div class="option-card">
+        <h3>Option A &mdash; Platform Default (Recommended) <span class="tag">Zero Setup</span></h3>
+        <p>AgentGrow provides a shared email sending infrastructure powered by <strong>AWS Simple Email Service (SES)</strong>. Your agent sends from a verified <code>@agentgrow.io</code> address on your behalf. No SMTP credentials, no domain verification, no configuration required.</p>
+        <ul style="margin-top:0.75rem;">
+          <li>Sending domain is already warmed up and verified with Bing, Google, and major ISPs</li>
+          <li>SPF, DKIM, and DMARC records are pre-configured</li>
+          <li>You are live in seconds &mdash; just click <strong>Use platform email service</strong> and save</li>
+          <li>Best for teams that do not have a business email domain set up yet</li>
+        </ul>
+      </div>
+
+      <div class="option-card">
+        <h3>Option B &mdash; Custom SMTP (Bring Your Own)</h3>
+        <p>If you want emails to arrive from your own domain (e.g. <code>hello@yourcompany.com</code>), provide your SMTP server credentials. Works with Gmail Workspace, Zoho Mail, Mailgun, SendGrid, Postmark, or any SMTP-compatible provider.</p>
+        <ul style="margin-top:0.75rem;">
+          <li>Full control over the sending domain and &ldquo;From&rdquo; address</li>
+          <li>Replies land in your own inbox</li>
+          <li>Requires SMTP host, port, username, password, and a from address</li>
+          <li>Best for teams that already have a business email domain and want brand consistency</li>
+        </ul>
+      </div>
+
+      <hr class="section-divider">
+
+      <h2>How to Configure on the Integrations Page</h2>
+
+      <p>All email configuration happens at <strong>agentgrow.io/user/integrations</strong>. Follow the steps for whichever option you chose.</p>
+
+      <h3>Option A &mdash; Platform Default Setup</h3>
+
+      <div class="step-heading">
+        <span class="step-number">1</span>
+        <h3>Open Integrations</h3>
+      </div>
+      <p>Log in to your AgentGrow dashboard and navigate to <strong>Integrations</strong>. Find the <strong>Email Marketer</strong> module card.</p>
+
+      <div class="step-heading">
+        <span class="step-number">2</span>
+        <h3>Select the platform option</h3>
+      </div>
+      <p>Click <strong>Configure</strong> on the Email Marketer card. You will see two radio buttons at the top of the form:</p>
+      <ul>
+        <li><strong>Use platform email service</strong> (recommended)</li>
+        <li>Use my own SMTP credentials</li>
+      </ul>
+      <p>Select <strong>Use platform email service</strong>.</p>
+
+      <div class="step-heading">
+        <span class="step-number">3</span>
+        <h3>Save</h3>
+      </div>
+      <p>Click <strong>Save &amp; Restart Agent</strong>. Your agent will restart in about 30 seconds and immediately have email sending capability. No further action needed.</p>
+
+      <div class="callout">When using the platform default, your agent sends from <code>agent@agentgrow.io</code>. Recipients can reply to this address and you will receive the replies forwarded to your registered email.</div>
+
+      <hr class="section-divider">
+
+      <h3>Option B &mdash; Custom SMTP Setup</h3>
+
+      <div class="step-heading">
+        <span class="step-number">1</span>
+        <h3>Gather your SMTP credentials</h3>
+      </div>
+      <p>You will need the following from your email provider. Most providers display these in their settings or developer documentation:</p>
+
+      <table class="field-table">
+        <thead>
+          <tr><th>Field</th><th>What it is</th><th>Example</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>SMTP_HOST</td><td>Your SMTP server hostname</td><td>smtp.gmail.com</td></tr>
+          <tr><td>SMTP_PORT</td><td>SMTP port (TLS or SSL)</td><td>587 (TLS) or 465 (SSL)</td></tr>
+          <tr><td>SMTP_USERNAME</td><td>Your SMTP login username</td><td>hello@yourcompany.com</td></tr>
+          <tr><td>SMTP_PASSWORD</td><td>Your SMTP password or app password</td><td>your-app-password</td></tr>
+          <tr><td>SMTP_FROM</td><td>The &ldquo;From&rdquo; address recipients will see</td><td>hello@yourcompany.com</td></tr>
+        </tbody>
+      </table>
+
+      <div class="warning-box">
+        <strong>Gmail Workspace users:</strong> If you use Gmail (personal or Workspace), you must create an <strong>App Password</strong> rather than using your regular Google account password. Go to <strong>myaccount.google.com &rarr; Security &rarr; 2-Step Verification &rarr; App passwords</strong> and generate one for &ldquo;Mail.&rdquo; Use port <code>587</code> and host <code>smtp.gmail.com</code>.
+      </div>
+
+      <div class="step-heading">
+        <span class="step-number">2</span>
+        <h3>Open the Email Marketer configuration</h3>
+      </div>
+      <p>Go to <strong>agentgrow.io/user/integrations</strong>, find the <strong>Email Marketer</strong> card, and click <strong>Configure</strong>.</p>
+
+      <div class="step-heading">
+        <span class="step-number">3</span>
+        <h3>Select custom SMTP and fill in the fields</h3>
+      </div>
+      <p>Select <strong>Use my own SMTP credentials</strong>. Five fields will appear. Fill in each one with the values you gathered in Step 1.</p>
+
+      <div class="step-heading">
+        <span class="step-number">4</span>
+        <h3>Save and verify</h3>
+      </div>
+      <p>Click <strong>Save &amp; Restart Agent</strong>. The platform will test the connection before saving &mdash; if any credentials are wrong, an error message will explain what to check. Your agent restarts in about 30 seconds once the save is successful.</p>
+
+      <div class="callout">Not sure which SMTP host and port to use? Check the table below for common providers. Your email provider&rsquo;s help centre will have the exact values if your provider is not listed.</div>
+
+      <table class="field-table">
+        <thead>
+          <tr><th>Provider</th><th>SMTP Host</th><th>Port</th><th>Notes</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Gmail / Workspace</td><td>smtp.gmail.com</td><td>587</td><td>Requires App Password</td></tr>
+          <tr><td>Zoho Mail</td><td>smtp.zoho.in</td><td>587</td><td>Use your Zoho login</td></tr>
+          <tr><td>Mailgun</td><td>smtp.mailgun.org</td><td>587</td><td>Use SMTP credentials from Mailgun dashboard</td></tr>
+          <tr><td>SendGrid</td><td>smtp.sendgrid.net</td><td>587</td><td>Username is always &ldquo;apikey&rdquo;, password is your API key</td></tr>
+          <tr><td>Postmark</td><td>smtp.postmarkapp.com</td><td>587</td><td>Use message stream credentials</td></tr>
+          <tr><td>Amazon SES (own account)</td><td>email-smtp.ap-south-1.amazonaws.com</td><td>587</td><td>Region-specific; create SMTP credentials in SES console</td></tr>
+        </tbody>
+      </table>
+
+      <hr class="section-divider">
+
+      <h2>What Your Agent Does With Email</h2>
+
+      <p>Once the Email Marketer module is active, your agent can:</p>
+
+      <ul>
+        <li><strong>Prospect outreach &mdash;</strong> Compose and send personalised first-contact emails to leads in your CRM pipeline. The agent tailors the message to each prospect&rsquo;s industry, role, and context gathered from your business profile.</li>
+        <li><strong>Follow-up sequences &mdash;</strong> Automatically send follow-ups when a prospect has not replied within a configured window. The tone escalates gradually from a gentle nudge to a direct ask &mdash; never spammy, always on-brand.</li>
+        <li><strong>Nurture campaigns &mdash;</strong> For leads that are not yet ready to buy, the agent sends periodic value-adding emails (case studies, tips, relevant content from your blog) to keep your brand top of mind.</li>
+        <li><strong>Re-engagement &mdash;</strong> Reach back out to cold leads who went quiet, with a fresh angle or a new offer.</li>
+        <li><strong>Approval-gated sends &mdash;</strong> High-stakes emails (new campaigns, offers) are submitted for your approval in the dashboard before they are sent. Routine follow-ups are sent automatically based on your configured rules.</li>
+      </ul>
+
+      <p>All outbound emails are logged in your <strong>Dashboard &rarr; Activity Feed</strong> so you can see exactly what was sent and to whom.</p>
+
+      <hr class="section-divider">
+
+      <h2>Best Practices</h2>
+
+      <h3>Warm up your sending domain</h3>
+      <p>If you are using a custom SMTP with a domain that has not sent marketing email before, start with low volumes. Sending hundreds of cold emails on day one signals spam to inbox providers. Let your agent ramp up gradually over the first two weeks &mdash; 20&ndash;30 emails per day, increasing steadily. The platform default avoids this concern because the AgentGrow sending domain is already warmed up.</p>
+
+      <h3>Personalise beyond first name</h3>
+      <p>Your agent automatically pulls context from your CRM to personalise emails &mdash; company name, industry, prospect role, and any notes you have added. Make sure your CRM data is filled in for the prospects you want to reach. The more context the agent has, the more relevant the outreach.</p>
+
+      <h3>Keep subject lines clear and honest</h3>
+      <p>Avoid clickbait subject lines. Your agent is trained to write subject lines that accurately reflect the email content. This improves open rates long-term and keeps your domain reputation healthy. Misleading subject lines are a violation of most anti-spam laws (CAN-SPAM, GDPR, India&rsquo;s DPDPA).</p>
+
+      <h3>Include an unsubscribe link</h3>
+      <p>Your agent automatically appends a plain-text unsubscribe line to all marketing emails. Do not remove this &mdash; it is legally required in most jurisdictions. Prospects who unsubscribe are automatically flagged in your CRM so the agent does not contact them again.</p>
+
+      <h3>Review your first campaign</h3>
+      <p>When you first activate Email Marketer, your agent will submit the first batch of outreach emails for your approval in the dashboard before sending. Review the tone, messaging, and target list. Once you are comfortable with the quality, you can allow automatic sends for routine follow-ups.</p>
+
+      <hr class="section-divider">
+
+      <h2>Troubleshooting</h2>
+
+      <h3>Save fails with &ldquo;SMTP authentication error&rdquo;</h3>
+      <p>Your username or password is incorrect, or the SMTP server is rejecting the connection. Check:</p>
+      <ul>
+        <li>For Gmail, make sure you are using an <strong>App Password</strong> (not your regular password). Regular passwords are rejected even if 2FA is off.</li>
+        <li>For other providers, double-check the username format &mdash; some require the full email address, others require just the username part.</li>
+        <li>Confirm the SMTP host and port match exactly what your provider specifies.</li>
+      </ul>
+
+      <h3>Emails are delivered but land in spam</h3>
+      <p>This is almost always a domain reputation issue. If you are using a custom SMTP:</p>
+      <ul>
+        <li>Verify that SPF, DKIM, and DMARC DNS records are correctly set up for your sending domain. Your email provider&rsquo;s documentation will list the required DNS entries.</li>
+        <li>Check that you are not sending to a list with many invalid addresses (high bounce rates damage sender reputation).</li>
+        <li>Consider switching to <strong>platform default</strong> while your domain warms up.</li>
+      </ul>
+
+      <h3>Agent is not sending emails despite being configured</h3>
+      <p>Check the <strong>Dashboard &rarr; Activity Feed</strong> to see if email tasks are being logged. If tasks appear but no emails arrive:</p>
+      <ul>
+        <li>Check your spam folder at the receiving address.</li>
+        <li>Confirm the module is <strong>enabled</strong> (not paused) on the Integrations page &mdash; a paused module shows a &ldquo;Paused&rdquo; badge and the toggle is off.</li>
+        <li>If the activity feed shows no email activity at all, check whether your CRM pipeline has prospects in an &ldquo;outreach&rdquo; or &ldquo;follow-up&rdquo; stage. The agent only sends to prospects that are ready for contact.</li>
+      </ul>
+
+      <h3>I want to change from platform default to my own SMTP (or vice versa)</h3>
+      <p>Go to <strong>agentgrow.io/user/integrations</strong>, click <strong>Reconfigure</strong> on Email Marketer, switch the radio button to your new preference, fill in any required fields, and click <strong>Save &amp; Restart Agent</strong>. The new settings take effect after the agent restarts (~30 seconds).</p>
+
+    </div>
+  </div>
+
+  <!-- Related Posts -->
+  <div class="container-narrow">
+    <div class="related-posts">
+      <h2>More from the blog</h2>
+      <div class="card-grid" id="related-posts"></div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <h2>Deploy your AI CBO today</h2>
+    <p>Your AI CBO goes live within an hour. 90-day satisfaction guarantee &mdash; full refund if minimum deliverables aren&rsquo;t met.</p>
+    <div style="display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap">
+      <a href="https://agentgrow.io/onboard/" class="btn-lime">Get Started</a>
+      <a href="../" class="btn-outline">Back to Blog</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="inner">
+      <div class="brand">
+        <a href="https://agentgrow.io/" style="display:flex;align-items:center;gap:0.5rem;color:var(--white);text-decoration:none;font-weight:700;font-size:1.125rem;margin-bottom:1rem">
+          <div style="width:32px;height:32px;background:var(--lime);border-radius:8px;display:flex;align-items:center;justify-content:center">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;color:var(--obsidian)"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          AgentGrow
+        </a>
+        <p>AI-powered Chief Business Officer that grows your business 24/7.</p>
+        <p class="addr">2146 Sunscape, Sobha Hillview, Kanakapura Road, Bengaluru, Karnataka, INDIA 560109</p>
+        <p class="copy">&copy; 2026 gheWARE uniGPS Solutions LLP. All rights reserved.</p>
+      </div>
+      <div>
+        <h3>Product</h3>
+        <ul>
+          <li><a href="https://agentgrow.io/#features">Features</a></li>
+          <li><a href="https://agentgrow.io/#pricing">Pricing</a></li>
+          <li><a href="https://agentgrow.io/onboard/">Get Started</a></li>
+          <li><a href="../guide/">Getting Started Guide</a></li>
+          <li><a href="https://agentgrow.io/help">Help Center</a></li>
+          <li><a href="../">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="https://agentgrow.io/about/">About Us</a></li>
+          <li><a href="https://agentgrow.io/terms/">Terms of Service</a></li>
+          <li><a href="https://agentgrow.io/privacy/">Privacy Policy</a></li>
+          <li><a href="https://agentgrow.io/refund/">Refund Policy</a></li>
+          <li><a href="https://agentgrow.io/contact/">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    fetch('../posts-data.json')
+      .then(r => r.json())
+      .then(posts => {
+        const BADGE_CLASS = {'Platform':'badge-platform','Getting Started':'badge-getting-started','How-To':'badge-how-to','Strategy':'badge-strategy'};
+        const current = 'email-marketing-setup';
+        const related = posts.filter(p => p.slug !== current).slice(0, 3);
+        document.getElementById('related-posts').innerHTML = related.map(p =>
+          '<div class="card">' +
+            '<span class="badge ' + (BADGE_CLASS[p.category]||'') + '">' + p.category + '</span>' +
+            '<h2><a href="' + p.slug + '.html">' + p.title + '</a></h2>' +
+            '<p class="excerpt">' + p.excerpt + '</p>' +
+            '<div class="card-meta"><span>' + p.publishedAt + '</span><span>&middot;</span><span>' + p.readTime + '</span></div>' +
+          '</div>'
+        ).join('');
+      });
+  </script>
+
+</body>
+</html>
