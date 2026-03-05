@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Connect LinkedIn (OAuth) for AgentGrow &mdash; AgentGrow</title>
+  <meta name="description" content="Step-by-step guide to creating a LinkedIn App and connecting it to AgentGrow via OAuth. Your agent gets automatic token refresh — no manual token pasting required.">
+  <meta property="og:title" content="How to Connect LinkedIn (OAuth) for AgentGrow">
+  <meta property="og:description" content="Step-by-step guide to creating a LinkedIn App and connecting it to AgentGrow via OAuth. Your agent gets automatic token refresh — no manual token pasting required.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://agentgrow.io/blog/posts/linkedin-oauth-setup.html">
+  <meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://agentgrow.io/blog/posts/linkedin-oauth-setup.html">
+  <link rel="stylesheet" href="../css/blog.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "How to Connect LinkedIn (OAuth) for AgentGrow",
+    "description": "Step-by-step guide to creating a LinkedIn App and connecting it to AgentGrow via OAuth. Your agent gets automatic token refresh — no manual token pasting required.",
+    "datePublished": "2026-03-05",
+    "author": {"@type": "Organization", "name": "AgentGrow"},
+    "publisher": {"@type": "Organization", "name": "AgentGrow", "url": "https://agentgrow.io"},
+    "mainEntityOfPage": "https://agentgrow.io/blog/posts/linkedin-oauth-setup.html"
+  }
+  </script>
+  <style>
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      background: var(--lime);
+      color: var(--obsidian);
+      border-radius: 50%;
+      font-weight: 700;
+      font-size: 0.85rem;
+      margin-right: 0.5rem;
+      flex-shrink: 0;
+    }
+    .step-heading {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.75rem;
+    }
+    .step-heading h3 {
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+    .code-block {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-size: 0.85rem;
+      color: var(--lime);
+      overflow-x: auto;
+      margin: 0.75rem 0 1.25rem;
+      word-break: break-all;
+    }
+    .warning-box {
+      background: rgba(251, 191, 36, 0.08);
+      border-left: 3px solid var(--amber);
+      border-radius: 0 8px 8px 0;
+      padding: 1rem 1.25rem;
+      margin: 1.25rem 0;
+      color: var(--zinc-300);
+      font-size: 0.9rem;
+    }
+    .warning-box strong {
+      color: var(--amber);
+    }
+    .section-divider {
+      border: none;
+      border-top: 1px solid var(--border-subtle);
+      margin: 2.5rem 0;
+    }
+    .field-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0 1.5rem;
+    }
+    .field-table th {
+      text-align: left;
+      padding: 0.6rem 0.75rem;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--zinc-500);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .field-table td {
+      padding: 0.6rem 0.75rem;
+      font-size: 0.9rem;
+      border-bottom: 1px solid var(--glass-border);
+    }
+    .field-table td:first-child {
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-size: 0.85rem;
+      color: var(--lime);
+      white-space: nowrap;
+    }
+    .field-table td:last-child {
+      color: var(--zinc-400);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="inner">
+      <a href="https://agentgrow.io/" class="logo">
+        <div class="logo-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </div>
+        AgentGrow
+      </a>
+      <nav>
+        <a href="https://agentgrow.io/#features">Features</a>
+        <a href="https://agentgrow.io/#pricing">Pricing</a>
+        <a href="../guide/">Guide</a>
+        <a href="../">Blog</a>
+      </nav>
+      <a href="https://agentgrow.io/onboard/" class="cta-btn">Start Free Trial</a>
+    </div>
+  </header>
+
+  <!-- Article Header -->
+  <div class="article-header">
+    <div class="container-narrow">
+      <p class="breadcrumb"><a href="../">&larr; Blog</a> / How-To</p>
+      <span class="badge badge-how-to">How-To</span>
+      <h1>How to Connect LinkedIn (OAuth) for AgentGrow</h1>
+      <p class="excerpt-text">Create a LinkedIn App, paste the Client ID and Secret into AgentGrow, and click Connect. The platform handles token exchange and automatic refresh &mdash; no manual token management required.</p>
+      <div class="meta">
+        <span>AgentGrow</span>
+        <span>&middot;</span>
+        <span>Mar 5, 2026</span>
+        <span>&middot;</span>
+        <span>5 min read</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Article Body -->
+  <div class="article-body">
+    <div class="container-narrow">
+
+      <p>The LinkedIn module lets your AI agent publish posts to your LinkedIn profile or company page. AgentGrow uses <strong>OAuth 2.0</strong> to connect securely &mdash; you create a LinkedIn App, enter its credentials, and click a button. The platform handles token exchange, encrypted storage, and <strong>automatic daily refresh</strong> so your connection never expires silently.</p>
+
+      <h2>How It Works</h2>
+
+      <p>Instead of manually generating and pasting access tokens (which expire every 60 days), AgentGrow&rsquo;s OAuth flow works in three steps:</p>
+      <ol>
+        <li><strong>You create a LinkedIn App</strong> and paste the Client ID + Client Secret into AgentGrow</li>
+        <li><strong>You click "Connect LinkedIn"</strong> &mdash; you are redirected to LinkedIn to authorize</li>
+        <li><strong>AgentGrow stores the tokens</strong> and refreshes them automatically before they expire</li>
+      </ol>
+
+      <div class="callout">Posts will appear as <strong>your identity</strong> (your LinkedIn profile or company page), not AgentGrow&rsquo;s. You own the LinkedIn App and control exactly what permissions are granted.</div>
+
+      <h2>What You Will Need</h2>
+
+      <table class="field-table">
+        <thead>
+          <tr><th>Field</th><th>What it is</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Client ID</td><td>Your LinkedIn App&rsquo;s public identifier (found in the app settings)</td></tr>
+          <tr><td>Client Secret</td><td>Your LinkedIn App&rsquo;s secret key (shown once when generated)</td></tr>
+          <tr><td>Page URL</td><td>(Optional) Your LinkedIn company page URL, so your agent knows where to post</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Prerequisites</h2>
+
+      <ul>
+        <li>A <strong>LinkedIn account</strong></li>
+        <li>Admin access to a <strong>LinkedIn Company Page</strong> (if you want to post as the company rather than your personal profile)</li>
+        <li>An <strong>AgentGrow account</strong> on the Growth or Enterprise plan</li>
+      </ul>
+
+      <hr class="section-divider">
+
+      <!-- PART 1 -->
+      <h2>Part 1 &mdash; Create a LinkedIn App</h2>
+
+      <div class="step-heading">
+        <span class="step-number">1</span>
+        <h3>Go to LinkedIn Developers</h3>
+      </div>
+      <p>Open <strong>linkedin.com/developers/apps</strong> and sign in with your LinkedIn account.</p>
+
+      <div class="step-heading">
+        <span class="step-number">2</span>
+        <h3>Create a new app</h3>
+      </div>
+      <p>Click <strong>Create app</strong> and fill in:</p>
+      <ul>
+        <li><strong>App name:</strong> something like <code>My Business Agent</code> or <code>AgentGrow LinkedIn</code></li>
+        <li><strong>LinkedIn Page:</strong> select your company page (required &mdash; create one first if needed)</li>
+        <li><strong>App logo:</strong> upload any square image (your company logo works well)</li>
+        <li><strong>Legal agreement:</strong> check the box and click <strong>Create app</strong></li>
+      </ul>
+
+      <div class="step-heading">
+        <span class="step-number">3</span>
+        <h3>Request the required products</h3>
+      </div>
+      <p>After creating the app, go to the <strong>Products</strong> tab and request access to:</p>
+      <ul>
+        <li><strong>Share on LinkedIn</strong> &mdash; allows your agent to create posts</li>
+        <li><strong>Sign In with LinkedIn using OpenID Connect</strong> &mdash; allows the OAuth login flow</li>
+      </ul>
+      <p>"Share on LinkedIn" is usually approved instantly. "Sign In with LinkedIn" may also be instant or take a few minutes.</p>
+
+      <div class="warning-box">
+        <strong>Important:</strong> Both products must show as <strong>"Added"</strong> before you proceed. Without "Share on LinkedIn", your agent cannot create posts. Without "Sign In with LinkedIn using OpenID Connect", the OAuth flow will fail.
+      </div>
+
+      <div class="step-heading">
+        <span class="step-number">4</span>
+        <h3>Set the OAuth redirect URI</h3>
+      </div>
+      <p>Go to the <strong>Auth</strong> tab in your LinkedIn App settings. Under <strong>OAuth 2.0 settings</strong>, add this redirect URL:</p>
+      <div class="code-block">https://agentgrow.io/api/linkedin/callback</div>
+      <p>Click <strong>Update</strong> to save. This is where LinkedIn sends you back after authorization.</p>
+
+      <div class="step-heading">
+        <span class="step-number">5</span>
+        <h3>Copy Client ID and Client Secret</h3>
+      </div>
+      <p>Still on the <strong>Auth</strong> tab:</p>
+      <ul>
+        <li><strong>Client ID</strong> is shown directly &mdash; copy it</li>
+        <li><strong>Client Secret</strong> &mdash; click the eye icon or "Show" to reveal it, then copy</li>
+      </ul>
+
+      <div class="warning-box">
+        <strong>Keep the Client Secret safe.</strong> Anyone with your Client ID + Secret can request tokens on behalf of your app. Do not share them publicly.
+      </div>
+
+      <hr class="section-divider">
+
+      <!-- PART 2 -->
+      <h2>Part 2 &mdash; Connect LinkedIn in AgentGrow</h2>
+
+      <div class="step-heading">
+        <span class="step-number">1</span>
+        <h3>Open your Integrations page</h3>
+      </div>
+      <p>Log in to your AgentGrow dashboard at <strong>agentgrow.io/user/integrations</strong>.</p>
+
+      <div class="step-heading">
+        <span class="step-number">2</span>
+        <h3>Configure LinkedIn</h3>
+      </div>
+      <p>Find the <strong>LinkedIn</strong> module and click <strong>Configure</strong>. You will see a two-step form:</p>
+
+      <p><strong>Step 1 &mdash; App Credentials:</strong></p>
+      <ul>
+        <li>Paste your <strong>Client ID</strong></li>
+        <li>Paste your <strong>Client Secret</strong></li>
+        <li>(Optional) Enter your <strong>LinkedIn Page URL</strong> (e.g. <code>https://www.linkedin.com/company/your-company</code>)</li>
+      </ul>
+      <p>Click <strong>Save &amp; Continue</strong>.</p>
+
+      <p><strong>Step 2 &mdash; Authorize:</strong></p>
+      <ul>
+        <li>Click the blue <strong>Connect LinkedIn</strong> button</li>
+        <li>You will be redirected to LinkedIn where you sign in and approve the permissions</li>
+        <li>LinkedIn redirects you back to AgentGrow automatically</li>
+      </ul>
+
+      <div class="step-heading">
+        <span class="step-number">3</span>
+        <h3>Verify the connection</h3>
+      </div>
+      <p>After authorization, you will see a green <strong>Connected</strong> status with your LinkedIn name and profile photo. The token expiry date is displayed &mdash; AgentGrow refreshes it automatically before it expires.</p>
+
+      <div class="callout">That&rsquo;s it! Your agent will begin posting to LinkedIn on its next scheduled run. Check your Dashboard for activity updates.</div>
+
+      <hr class="section-divider">
+
+      <h2>Troubleshooting</h2>
+
+      <h3>LinkedIn says "invalid redirect URI"</h3>
+      <p>Make sure you added this exact URL in your LinkedIn App&rsquo;s Auth settings:</p>
+      <div class="code-block">https://agentgrow.io/api/linkedin/callback</div>
+      <p>The URL must match exactly &mdash; no trailing slash, no <code>http://</code> (must be <code>https://</code>).</p>
+
+      <h3>"Share on LinkedIn" product not approved</h3>
+      <p>Go to your LinkedIn App &rarr; <strong>Products</strong> tab and check that "Share on LinkedIn" shows <strong>"Added"</strong>. If it says "Review in progress", wait for approval before trying to connect. Most approvals are instant.</p>
+
+      <h3>Connection shows "Expired"</h3>
+      <p>AgentGrow automatically refreshes tokens daily. If you still see "Expired":</p>
+      <ul>
+        <li>Click <strong>Reconfigure</strong> on the LinkedIn module</li>
+        <li>Click <strong>Connect LinkedIn</strong> to re-authorize</li>
+      </ul>
+      <p>This generates a fresh token immediately.</p>
+
+      <h3>Agent posts are not appearing on LinkedIn</h3>
+      <ul>
+        <li>Check that the LinkedIn module status shows <strong>Configured</strong> (green checkmark) on the Integrations page</li>
+        <li>Verify the module is not <strong>paused</strong> (toggle should be green, not gray)</li>
+        <li>Check your Dashboard activity feed for any error messages from the agent</li>
+      </ul>
+
+      <h3>How do I disconnect LinkedIn?</h3>
+      <p>Open the LinkedIn module on the Integrations page, click <strong>Reconfigure</strong>, then click <strong>Disconnect</strong>. This removes the access token but keeps your app credentials so you can reconnect without re-entering them.</p>
+
+      <h3>Can I switch to a different LinkedIn account?</h3>
+      <p>Yes. Disconnect the current connection, then click <strong>Connect LinkedIn</strong> again. When LinkedIn asks you to authorize, sign in with the different account.</p>
+
+    </div>
+  </div>
+
+  <!-- Related Posts -->
+  <div class="container-narrow">
+    <div class="related-posts">
+      <h2>More from the blog</h2>
+      <div class="card-grid" id="related-posts"></div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <h2>Deploy your AI CBO today</h2>
+    <p>Your AI CBO goes live within an hour. 90-day satisfaction guarantee &mdash; full refund if minimum deliverables aren't met.</p>
+    <div style="display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap">
+      <a href="https://agentgrow.io/onboard/" class="btn-lime">Get Started</a>
+      <a href="../" class="btn-outline">Back to Blog</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="inner">
+      <div class="brand">
+        <a href="https://agentgrow.io/" style="display:flex;align-items:center;gap:0.5rem;color:var(--white);text-decoration:none;font-weight:700;font-size:1.125rem;margin-bottom:1rem">
+          <div style="width:32px;height:32px;background:var(--lime);border-radius:8px;display:flex;align-items:center;justify-content:center">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;color:var(--obsidian)"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          AgentGrow
+        </a>
+        <p>AI-powered Chief Business Officer that grows your business 24/7 &mdash; content, leads, social, SEO.</p>
+        <p class="addr">2146 Sunscape, Sobha Hillview, Kanakapura Road, Bengaluru, Karnataka, INDIA 560109</p>
+        <p class="copy">&copy; 2026 gheWARE uniGPS Solutions LLP. All rights reserved.</p>
+      </div>
+      <div>
+        <h3>Product</h3>
+        <ul>
+          <li><a href="https://agentgrow.io/#features">Features</a></li>
+          <li><a href="https://agentgrow.io/#pricing">Pricing</a></li>
+          <li><a href="https://agentgrow.io/onboard/">Get Started</a></li>
+          <li><a href="../guide/">Getting Started Guide</a></li>
+          <li><a href="https://agentgrow.io/help">Help Center</a></li>
+          <li><a href="../">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="https://agentgrow.io/about/">About Us</a></li>
+          <li><a href="https://agentgrow.io/terms/">Terms of Service</a></li>
+          <li><a href="https://agentgrow.io/privacy/">Privacy Policy</a></li>
+          <li><a href="https://agentgrow.io/refund/">Refund Policy</a></li>
+          <li><a href="https://agentgrow.io/contact/">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    fetch('../posts-data.json')
+      .then(r => r.json())
+      .then(posts => {
+        const BADGE_CLASS = {'Platform':'badge-platform','Getting Started':'badge-getting-started','How-To':'badge-how-to','Strategy':'badge-strategy'};
+        const current = 'linkedin-oauth-setup';
+        const related = posts.filter(p => p.slug !== current).slice(0, 3);
+        document.getElementById('related-posts').innerHTML = related.map(p =>
+          '<div class="card">' +
+            '<span class="badge ' + (BADGE_CLASS[p.category]||'') + '">' + p.category + '</span>' +
+            '<h2><a href="' + p.slug + '.html">' + p.title + '</a></h2>' +
+            '<p class="excerpt">' + p.excerpt + '</p>' +
+            '<div class="card-meta"><span>' + p.publishedAt + '</span><span>&middot;</span><span>' + p.readTime + '</span></div>' +
+          '</div>'
+        ).join('');
+      });
+  </script>
+
+</body>
+</html>

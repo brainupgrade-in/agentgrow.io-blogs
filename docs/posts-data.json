@@ -110,5 +110,13 @@
     "category": "Strategy",
     "readTime": "5 min read",
     "publishedAt": "Jun 1, 2026"
+  },
+  {
+    "slug": "linkedin-oauth-setup",
+    "title": "How to Connect LinkedIn (OAuth) for AgentGrow",
+    "excerpt": "Create a LinkedIn App, paste the Client ID and Secret, and click Connect. AgentGrow handles token exchange and automatic refresh — no manual token management required.",
+    "category": "How-To",
+    "readTime": "5 min read",
+    "publishedAt": "Mar 5, 2026"
   }
 ]
