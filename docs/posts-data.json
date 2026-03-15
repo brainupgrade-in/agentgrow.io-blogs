@@ -238,5 +238,13 @@
     "category": "Platform",
     "readTime": "9 min read",
     "publishedAt": "Mar 12, 2026"
+  },
+  {
+    "slug": "youtube-shorts-setup",
+    "title": "How to Connect YouTube Shorts for AgentGrow",
+    "excerpt": "Create a Google Cloud project, enable the YouTube Data API, paste your OAuth credentials into AgentGrow, and click Connect. Your agent uploads Shorts automatically with token auto-refresh.",
+    "category": "How-To",
+    "readTime": "6 min read",
+    "publishedAt": "Mar 15, 2026"
   }
 ]

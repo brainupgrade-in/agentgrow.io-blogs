@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Connect YouTube Shorts for AgentGrow &mdash; AgentGrow</title>
+  <meta name="description" content="Step-by-step guide to connecting your YouTube channel to AgentGrow via Google OAuth. Your agent uploads Shorts automatically with token auto-refresh.">
+  <meta property="og:title" content="How to Connect YouTube Shorts for AgentGrow">
+  <meta property="og:description" content="Step-by-step guide to connecting your YouTube channel to AgentGrow via Google OAuth. Your agent uploads Shorts automatically with token auto-refresh.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://agentgrow.io/blog/posts/youtube-shorts-setup.html">
+  <meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://agentgrow.io/blog/posts/youtube-shorts-setup.html">
+  <link rel="stylesheet" href="../css/blog.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "How to Connect YouTube Shorts for AgentGrow",
+    "description": "Step-by-step guide to connecting your YouTube channel to AgentGrow via Google OAuth. Your agent uploads Shorts automatically with token auto-refresh.",
+    "datePublished": "2026-03-15",
+    "author": {"@type": "Organization", "name": "AgentGrow"},
+    "publisher": {"@type": "Organization", "name": "AgentGrow", "url": "https://agentgrow.io"},
+    "mainEntityOfPage": "https://agentgrow.io/blog/posts/youtube-shorts-setup.html"
+  }
+  </script>
+  <style>
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      background: var(--lime);
+      color: var(--obsidian);
+      border-radius: 50%;
+      font-weight: 700;
+      font-size: 0.85rem;
+      margin-right: 0.5rem;
+      flex-shrink: 0;
+    }
+    .step-heading {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.75rem;
+    }
+    .step-heading h3 {
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+    .code-block {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-size: 0.85rem;
+      color: var(--lime);
+      overflow-x: auto;
+      margin: 0.75rem 0 1.25rem;
+      word-break: break-all;
+    }
+    .warning-box {
+      background: rgba(251, 191, 36, 0.08);
+      border-left: 3px solid var(--amber);
+      border-radius: 0 8px 8px 0;
+      padding: 1rem 1.25rem;
+      margin: 1.25rem 0;
+      color: var(--zinc-300);
+      font-size: 0.9rem;
+    }
+    .warning-box strong {
+      color: var(--amber);
+    }
+    .section-divider {
+      border: none;
+      border-top: 1px solid var(--border-subtle);
+      margin: 2.5rem 0;
+    }
+    .field-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0 1.5rem;
+    }
+    .field-table th {
+      text-align: left;
+      padding: 0.6rem 0.75rem;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--zinc-500);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .field-table td {
+      padding: 0.6rem 0.75rem;
+      font-size: 0.9rem;
+      border-bottom: 1px solid var(--glass-border);
+    }
+    .field-table td:first-child {
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-size: 0.85rem;
+      color: var(--lime);
+      white-space: nowrap;
+    }
+    .field-table td:last-child {
+      color: var(--zinc-400);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="inner">
+      <a href="https://agentgrow.io/" class="logo">
+        <div class="logo-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </div>
+        AgentGrow
+      </a>
+      <nav>
+        <a href="https://agentgrow.io/#features">Features</a>
+        <a href="https://agentgrow.io/#pricing">Pricing</a>
+        <a href="../guide/">Guide</a>
+        <a href="../">Blog</a>
+      </nav>
+      <a href="https://agentgrow.io/onboard/" class="cta-btn">Start Free Trial</a>
+    </div>
+  </header>
+
+  <!-- Article Header -->
+  <div class="article-header">
+    <div class="container-narrow">
+      <p class="breadcrumb"><a href="../">&larr; Blog</a> / How-To</p>
+      <span class="badge badge-how-to">How-To</span>
+      <h1>How to Connect YouTube Shorts for AgentGrow</h1>
+      <p class="excerpt-text">Create a Google Cloud project, enable the YouTube Data API, paste your OAuth credentials into AgentGrow, and click Connect. The platform handles token exchange and automatic refresh every 45 minutes &mdash; your Shorts get uploaded on autopilot.</p>
+      <div class="meta">
+        <span>AgentGrow</span>
+        <span>&middot;</span>
+        <span>Mar 15, 2026</span>
+        <span>&middot;</span>
+        <span>6 min read</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Article Body -->
+  <div class="article-body">
+    <div class="container-narrow">
+
+      <p>The YouTube Shorts module lets your AI agent upload short-form vertical videos (up to 60 seconds) directly to your YouTube channel. AgentGrow uses <strong>Google OAuth 2.0</strong> to connect securely &mdash; you create a Google Cloud project, enter its credentials, and click a button. The platform handles token exchange, encrypted storage, and <strong>automatic refresh every 45 minutes</strong> so your connection never expires.</p>
+
+      <h2>How It Works</h2>
+
+      <p>YouTube requires OAuth 2.0 for video uploads &mdash; API keys alone are not sufficient. AgentGrow&rsquo;s OAuth flow works in three steps:</p>
+      <ol>
+        <li><strong>You create a Google Cloud project</strong> with the YouTube Data API enabled and paste the OAuth Client ID + Client Secret into AgentGrow</li>
+        <li><strong>You click "Connect YouTube"</strong> &mdash; you are redirected to Google to authorize your channel</li>
+        <li><strong>AgentGrow stores the tokens</strong> and refreshes them automatically before they expire (Google tokens expire every hour)</li>
+      </ol>
+
+      <div class="callout">Videos are uploaded to <strong>your YouTube channel</strong>, not AgentGrow&rsquo;s. You own the Google Cloud project and control exactly what permissions are granted.</div>
+
+      <h2>What You Will Need</h2>
+
+      <table class="field-table">
+        <thead>
+          <tr><th>Field</th><th>What it is</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Client ID</td><td>Your Google Cloud OAuth 2.0 client identifier (ends in <code>.apps.googleusercontent.com</code>)</td></tr>
+          <tr><td>Client Secret</td><td>Your OAuth 2.0 client secret key</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Prerequisites</h2>
+
+      <ul>
+        <li>A <strong>Google account</strong> with a <strong>YouTube channel</strong> (create one at <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">youtube.com</a> if needed)</li>
+        <li>Access to <strong>Google Cloud Console</strong> (free &mdash; no billing required for OAuth setup)</li>
+        <li>An <strong>AgentGrow account</strong> on the Enterprise plan</li>
+      </ul>
+
+      <hr class="section-divider">
+
+      <!-- PART 1 -->
+      <h2>Part 1 &mdash; Create a Google Cloud Project</h2>
+
+      <div class="step-heading">
+        <span class="step-number">1</span>
+        <h3>Go to Google Cloud Console</h3>
+      </div>
+      <p>Open <a href="https://console.cloud.google.com" target="_blank" rel="noopener noreferrer"><strong>console.cloud.google.com</strong></a> and sign in with the Google account that owns your YouTube channel.</p>
+
+      <div class="step-heading">
+        <span class="step-number">2</span>
+        <h3>Create a new project</h3>
+      </div>
+      <p>Click the project dropdown at the top of the page, then <strong>New Project</strong>. Name it something like <code>AgentGrow YouTube</code> and click <strong>Create</strong>.</p>
+      <p>Make sure the new project is selected in the project dropdown before continuing.</p>
+
+      <div class="step-heading">
+        <span class="step-number">3</span>
+        <h3>Enable the YouTube Data API v3</h3>
+      </div>
+      <p>Go to <strong>APIs &amp; Services &rarr; Library</strong>, search for <strong>YouTube Data API v3</strong>, and click <strong>Enable</strong>.</p>
+
+      <div class="warning-box">
+        <strong>Important:</strong> You must enable the <strong>YouTube Data API v3</strong> specifically. Do not confuse it with "YouTube Analytics API" or "YouTube Reporting API" &mdash; those are for reading data, not uploading videos.
+      </div>
+
+      <div class="step-heading">
+        <span class="step-number">4</span>
+        <h3>Configure the OAuth consent screen</h3>
+      </div>
+      <p>Go to <strong>APIs &amp; Services &rarr; OAuth consent screen</strong>:</p>
+      <ul>
+        <li><strong>User Type:</strong> Select <strong>External</strong> and click <strong>Create</strong></li>
+        <li><strong>App name:</strong> Enter your business name (e.g. <code>My Business Agent</code>)</li>
+        <li><strong>User support email:</strong> Select your email</li>
+        <li><strong>Developer contact email:</strong> Enter your email</li>
+        <li>Click <strong>Save and Continue</strong></li>
+      </ul>
+
+      <p>On the <strong>Scopes</strong> page, click <strong>Add or Remove Scopes</strong> and add these two scopes:</p>
+      <div class="code-block">https://www.googleapis.com/auth/youtube.upload
+https://www.googleapis.com/auth/youtube.readonly</div>
+      <p>Click <strong>Update</strong>, then <strong>Save and Continue</strong>.</p>
+
+      <p>On the <strong>Test users</strong> page, click <strong>Add Users</strong> and add your own Google email address. Click <strong>Save and Continue</strong>.</p>
+
+      <div class="warning-box">
+        <strong>Note:</strong> While the app is in "Testing" mode, only the test users you add can authorize it. This is fine for your own channel. If you need others to connect, you can submit the app for Google verification later.
+      </div>
+
+      <div class="step-heading">
+        <span class="step-number">5</span>
+        <h3>Create OAuth 2.0 credentials</h3>
+      </div>
+      <p>Go to <strong>APIs &amp; Services &rarr; Credentials</strong> and click <strong>Create Credentials &rarr; OAuth client ID</strong>:</p>
+      <ul>
+        <li><strong>Application type:</strong> Select <strong>Web application</strong></li>
+        <li><strong>Name:</strong> Enter <code>AgentGrow</code> (or any name you prefer)</li>
+        <li><strong>Authorized redirect URIs:</strong> Click <strong>Add URI</strong> and enter:</li>
+      </ul>
+      <div class="code-block">https://agentgrow.io/api/youtube/callback</div>
+      <p>Click <strong>Create</strong>.</p>
+
+      <div class="step-heading">
+        <span class="step-number">6</span>
+        <h3>Copy Client ID and Client Secret</h3>
+      </div>
+      <p>A dialog will show your credentials:</p>
+      <ul>
+        <li><strong>Client ID</strong> &mdash; looks like <code>123456789-abc.apps.googleusercontent.com</code></li>
+        <li><strong>Client Secret</strong> &mdash; a shorter alphanumeric string</li>
+      </ul>
+      <p>Copy both values. You can also find them later under <strong>Credentials &rarr; OAuth 2.0 Client IDs</strong>.</p>
+
+      <div class="warning-box">
+        <strong>Keep the Client Secret safe.</strong> Anyone with your Client ID + Secret can request tokens on behalf of your app. Do not share them publicly.
+      </div>
+
+      <hr class="section-divider">
+
+      <!-- PART 2 -->
+      <h2>Part 2 &mdash; Connect YouTube in AgentGrow</h2>
+
+      <div class="step-heading">
+        <span class="step-number">1</span>
+        <h3>Open your Integrations page</h3>
+      </div>
+      <p>Log in to your AgentGrow dashboard at <strong>agentgrow.io/user/integrations</strong>.</p>
+
+      <div class="step-heading">
+        <span class="step-number">2</span>
+        <h3>Configure YouTube Shorts</h3>
+      </div>
+      <p>Find the <strong>YouTube Shorts</strong> module and click <strong>Configure</strong>. You will see a two-step form:</p>
+
+      <p><strong>Step 1 &mdash; Google Cloud Credentials:</strong></p>
+      <ul>
+        <li>Paste your <strong>Client ID</strong></li>
+        <li>Paste your <strong>Client Secret</strong></li>
+      </ul>
+      <p>Click <strong>Save &amp; Continue</strong>.</p>
+
+      <p><strong>Step 2 &mdash; Authorize:</strong></p>
+      <ul>
+        <li>Click the red <strong>Connect YouTube</strong> button</li>
+        <li>You will be redirected to Google where you sign in and approve the permissions</li>
+        <li>Select the YouTube channel you want to use (if you have multiple)</li>
+        <li>Google redirects you back to AgentGrow automatically</li>
+      </ul>
+
+      <div class="step-heading">
+        <span class="step-number">3</span>
+        <h3>Verify the connection</h3>
+      </div>
+      <p>After authorization, you will see a green <strong>Connected</strong> status with your channel name and thumbnail. The token expiry is displayed &mdash; AgentGrow refreshes it automatically every 45 minutes (Google tokens expire every hour).</p>
+
+      <div class="callout">That&rsquo;s it! Your agent will begin uploading YouTube Shorts on its next scheduled run (daily at 11:00 AM IST). Check your Dashboard for activity updates.</div>
+
+      <hr class="section-divider">
+
+      <h2>What Your Agent Uploads</h2>
+
+      <p>Your AI agent creates and uploads <strong>YouTube Shorts</strong> &mdash; vertical videos up to 60 seconds long. These are the same style of videos your agent already creates for Instagram Reels and Facebook Reels, now cross-posted to YouTube for additional reach.</p>
+
+      <ul>
+        <li><strong>Format:</strong> 9:16 vertical MP4, under 60 seconds</li>
+        <li><strong>Cadence:</strong> One Short per day (24-hour minimum gap)</li>
+        <li><strong>Content:</strong> Auto-generated from your business topics with AI voiceover and animated slides</li>
+        <li><strong>Hashtags:</strong> <code>#Shorts</code> is included automatically so YouTube classifies the video correctly</li>
+      </ul>
+
+      <hr class="section-divider">
+
+      <h2>Troubleshooting</h2>
+
+      <h3>Google says "redirect_uri_mismatch"</h3>
+      <p>Make sure you added this exact URL in your Google Cloud OAuth client&rsquo;s <strong>Authorized redirect URIs</strong>:</p>
+      <div class="code-block">https://agentgrow.io/api/youtube/callback</div>
+      <p>The URL must match exactly &mdash; no trailing slash, no <code>http://</code> (must be <code>https://</code>). After adding it, wait a few minutes for Google to propagate the change.</p>
+
+      <h3>"Access blocked: This app's request is invalid" error</h3>
+      <p>This usually means the YouTube Data API v3 is not enabled in your Google Cloud project. Go to <strong>APIs &amp; Services &rarr; Library</strong>, search for "YouTube Data API v3", and ensure it shows as <strong>Enabled</strong>.</p>
+
+      <h3>"This app isn't verified" warning</h3>
+      <p>This is normal for apps in "Testing" mode. Click <strong>Continue</strong> (you may need to click "Advanced" first). Since you created the app and added yourself as a test user, this is safe.</p>
+
+      <h3>Connection shows "Expired"</h3>
+      <p>AgentGrow automatically refreshes YouTube tokens every 45 minutes. If you still see "Expired":</p>
+      <ul>
+        <li>Click <strong>Reconfigure</strong> on the YouTube Shorts module</li>
+        <li>Click <strong>Connect YouTube</strong> to re-authorize</li>
+      </ul>
+      <p>This generates a fresh token immediately.</p>
+
+      <h3>Agent is not uploading Shorts</h3>
+      <ul>
+        <li>Check that the YouTube Shorts module status shows <strong>Configured</strong> (green checkmark) on the Integrations page</li>
+        <li>Verify the module is not <strong>paused</strong> (toggle should be green, not gray)</li>
+        <li>Ensure the <strong>Video Reels</strong> module is also active (it generates the videos that get uploaded)</li>
+        <li>Check your Dashboard activity feed for any error messages from the agent</li>
+      </ul>
+
+      <h3>How do I disconnect YouTube?</h3>
+      <p>Open the YouTube Shorts module on the Integrations page, click <strong>Reconfigure</strong>, then click <strong>Disconnect</strong>. This removes the access token but keeps your app credentials so you can reconnect without re-entering them.</p>
+
+      <h3>Can I switch to a different YouTube channel?</h3>
+      <p>Yes. Disconnect the current connection, then click <strong>Connect YouTube</strong> again. When Google asks you to authorize, select a different channel.</p>
+
+      <h3>YouTube API quota limits</h3>
+      <p>The YouTube Data API has a default quota of 10,000 units per day. Each video upload costs 1,600 units, so you can upload up to 6 videos per day. AgentGrow&rsquo;s daily cadence (1 Short/day) is well within this limit.</p>
+
+    </div>
+  </div>
+
+  <!-- Related Posts -->
+  <div class="container-narrow">
+    <div class="related-posts">
+      <h2>More from the blog</h2>
+      <div class="card-grid" id="related-posts"></div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <h2>Deploy your AI CBO today</h2>
+    <p>Your AI CBO goes live within an hour. 90-day satisfaction guarantee &mdash; full refund if minimum deliverables aren't met.</p>
+    <div style="display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap">
+      <a href="https://agentgrow.io/onboard/" class="btn-lime">Get Started</a>
+      <a href="../" class="btn-outline">Back to Blog</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="inner">
+      <div class="brand">
+        <a href="https://agentgrow.io/" style="display:flex;align-items:center;gap:0.5rem;color:var(--white);text-decoration:none;font-weight:700;font-size:1.125rem;margin-bottom:1rem">
+          <div style="width:32px;height:32px;background:var(--lime);border-radius:8px;display:flex;align-items:center;justify-content:center">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;color:var(--obsidian)"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          AgentGrow
+        </a>
+        <p>AI-powered Chief Business Officer that grows your business 24/7 &mdash; content, leads, social, SEO.</p>
+        <div style="display:flex;gap:0.75rem;margin-top:1rem">
+          <a href="https://www.facebook.com/profile.php?id=61586359084622" target="_blank" rel="noopener noreferrer" aria-label="Facebook" style="color:var(--zinc-400);transition:color 0.2s" onmouseover="this.style.color='var(--white)'" onmouseout="this.style.color='var(--zinc-400)'"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="https://www.instagram.com/agentgrowio/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style="color:var(--zinc-400);transition:color 0.2s" onmouseover="this.style.color='var(--white)'" onmouseout="this.style.color='var(--zinc-400)'"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></a>
+          <a href="https://www.linkedin.com/company/agentgrow-io" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="color:var(--zinc-400);transition:color 0.2s" onmouseover="this.style.color='var(--white)'" onmouseout="this.style.color='var(--zinc-400)'"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>
+        </div>
+        <p class="addr">2146 Sunscape, Sobha Hillview, Kanakapura Road, Bengaluru, Karnataka, INDIA 560109</p>
+        <p class="copy">&copy; 2026 gheWARE uniGPS Solutions LLP. All rights reserved.</p>
+      </div>
+      <div>
+        <h3>Product</h3>
+        <ul>
+          <li><a href="https://agentgrow.io/#features">Features</a></li>
+          <li><a href="https://agentgrow.io/#pricing">Pricing</a></li>
+          <li><a href="https://agentgrow.io/onboard/">Get Started</a></li>
+          <li><a href="../guide/">Getting Started Guide</a></li>
+          <li><a href="https://agentgrow.io/help">Help Center</a></li>
+          <li><a href="../">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="https://agentgrow.io/about/">About Us</a></li>
+          <li><a href="https://agentgrow.io/terms/">Terms of Service</a></li>
+          <li><a href="https://agentgrow.io/privacy/">Privacy Policy</a></li>
+          <li><a href="https://agentgrow.io/refund/">Refund Policy</a></li>
+          <li><a href="https://agentgrow.io/contact/">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    fetch('../posts-data.json')
+      .then(r => r.json())
+      .then(posts => {
+        const BADGE_CLASS = {'Platform':'badge-platform','Getting Started':'badge-getting-started','How-To':'badge-how-to','Strategy':'badge-strategy'};
+        const current = 'youtube-shorts-setup';
+        const related = posts.filter(p => p.slug !== current).slice(0, 3);
+        document.getElementById('related-posts').innerHTML = related.map(p =>
+          '<div class="card">' +
+            '<span class="badge ' + (BADGE_CLASS[p.category]||'') + '">' + p.category + '</span>' +
+            '<h2><a href="' + p.slug + '.html">' + p.title + '</a></h2>' +
+            '<p class="excerpt">' + p.excerpt + '</p>' +
+            '<div class="card-meta"><span>' + p.publishedAt + '</span><span>&middot;</span><span>' + p.readTime + '</span></div>' +
+          '</div>'
+        ).join('');
+      });
+  </script>
+
+</body>
+</html>
