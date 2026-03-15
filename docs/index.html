@@ -147,7 +147,7 @@
 
     fetch('posts-data.json')
       .then(r => r.json())
-      .then(data => { posts = data; renderFilters(); renderPosts(); })
+      .then(data => { posts = data.reverse(); renderFilters(); renderPosts(); })
       .catch(() => {
         document.getElementById('posts-grid').innerHTML = '<p style="color:var(--zinc-500)">Unable to load posts.</p>';
       });
