@@ -231,8 +231,16 @@ https://www.googleapis.com/auth/youtube.readonly</div>
       <p>On the <strong>Test users</strong> page, click <strong>Add Users</strong> and add your own Google email address. Click <strong>Save and Continue</strong>.</p>
 
       <div class="warning-box">
-        <strong>Note:</strong> While the app is in "Testing" mode, only the test users you add can authorize it. This is fine for your own channel. If you need others to connect, you can submit the app for Google verification later.
+        <strong>About Google verification:</strong> The <code>youtube.upload</code> and <code>youtube.readonly</code> scopes are classified as "sensitive" by Google. You have two options:
+        <ul style="margin:0.5rem 0 0;padding-left:1.25rem">
+          <li><strong>Testing mode (recommended):</strong> Add yourself as a test user and skip verification entirely. You can add up to 100 test users. This is the fastest path &mdash; no review needed, works immediately.</li>
+          <li><strong>Submit for verification:</strong> Only needed if you want more than 100 users to connect. Google will ask for a justification and a demo video of the OAuth flow. Verification typically takes 2&ndash;6 weeks.</li>
+        </ul>
+        For most AgentGrow clients, <strong>Testing mode is all you need</strong> &mdash; you are connecting your own channel.
       </div>
+
+      <p>Google will also ask <strong>"How will the scopes be used?"</strong> on the consent screen configuration. You can paste this justification:</p>
+      <div class="code-block" style="white-space:pre-wrap;word-break:normal">This application uploads short-form vertical videos (YouTube Shorts) to the authenticated user's own YouTube channel on their behalf. The youtube.upload scope is required to upload video files via the YouTube Data API v3 resumable upload endpoint. The youtube.readonly scope is required to fetch the authenticated user's channel ID, name, and thumbnail during the OAuth connection flow. No other YouTube data is accessed. The user explicitly authorizes the connection and can disconnect at any time.</div>
 
       <div class="step-heading">
         <span class="step-number">5</span>
