@@ -29,8 +29,7 @@
     "excerpt": "Building a content and marketing operation in-house takes time and money. Here is how the cost, speed, and output of an AI CBO compare to a traditional marketing hire.",
     "category": "Strategy",
     "readTime": "5 min read",
-    "publishedAt": "Feb 28, 2026",
-    "youtubeId": "VbDM75h7gI8"
+    "publishedAt": "Feb 28, 2026"
   },
   {
     "slug": "facebook-instagram-setup",
@@ -241,19 +240,19 @@
     "publishedAt": "Mar 12, 2026"
   },
   {
-    "slug": "youtube-shorts-setup",
-    "title": "How to Connect YouTube Shorts for AgentGrow",
-    "excerpt": "Create a Google Cloud project, enable the YouTube Data API, paste your OAuth credentials into AgentGrow, and click Connect. Your agent uploads Shorts automatically with token auto-refresh.",
-    "category": "How-To",
-    "readTime": "6 min read",
-    "publishedAt": "Mar 15, 2026"
-  },
-  {
-    "slug": "b2b-lead-generation-coaches-consultants",
-    "title": "B2B Lead Generation for Coaches and Consultants: Fill Your Pipeline Without a Sales Team",
-    "excerpt": "Most coaches and consultants rely on referrals that eventually dry up. Here is how to build a predictable B2B lead generation system that runs around the clock without hiring a single salesperson.",
+    "slug": "ai-b2b-lead-generation-10x",
+    "title": "How to Use AI to Generate 10x More Qualified B2B Leads",
+    "excerpt": "Most B2B businesses are sitting on a lead generation opportunity they're completely ignoring. Here's how to use AI to generate 10x more qualified leads without increasing your budget.",
     "category": "Strategy",
     "readTime": "8 min read",
+    "publishedAt": "Mar 16, 2026"
+  },
+  {
+    "slug": "smb-marketing-calendar-guide",
+    "title": "The SMB Marketing Calendar: What to Post, When, and Why",
+    "excerpt": "Stop guessing what to post and when. This SMB marketing calendar gives you a repeatable weekly system for content, social, and email \u2014 so your marketing never goes quiet again.",
+    "category": "How-To",
+    "readTime": "7 min read",
     "publishedAt": "Mar 16, 2026"
   }
 ]
