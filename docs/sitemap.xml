@@ -11,12 +11,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://agentgrow.io/blog/posts/b2b-lead-nurturing-automation.html</loc>
-    <lastmod>2026-03-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://agentgrow.io/blog/posts/what-is-ai-cbo.html</loc>
     <lastmod>2026-02-18</lastmod>
     <changefreq>monthly</changefreq>
@@ -205,6 +199,12 @@
   <url>
     <loc>https://agentgrow.io/blog/posts/smb-marketing-calendar-guide.html</loc>
     <lastmod>2026-03-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://agentgrow.io/blog/posts/b2b-lead-nurturing-automation.html</loc>
+    <lastmod>2026-03-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
