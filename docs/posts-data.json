@@ -1,258 +1,274 @@
 [
-  {
-    "slug": "what-is-ai-cbo",
-    "title": "What Is an AI Chief Business Officer (CBO)?",
-    "excerpt": "Your business needs consistent content, social media, and lead generation \u2014 but executing all three while running the company is nearly impossible. An AI CBO closes that gap.",
-    "category": "Platform",
-    "readTime": "4 min read",
-    "publishedAt": "Feb 18, 2026"
-  },
-  {
-    "slug": "how-agentgrow-works",
-    "title": "How AgentGrow Works: From Sign-Up to Your First Published Post",
-    "excerpt": "Getting a dedicated AI agent working on your business takes less than an hour. Here is the complete walkthrough from choosing a plan to reading your first activity report.",
-    "category": "Getting Started",
-    "readTime": "5 min read",
-    "publishedAt": "Feb 21, 2026"
-  },
-  {
-    "slug": "reviewing-agent-content",
-    "title": "How to Review and Approve Your Agent's Content",
-    "excerpt": "Your AI CBO creates content based on your business profile. Before anything goes live, it appears in your dashboard for review. Here is how the approval workflow operates.",
-    "category": "How-To",
-    "readTime": "3 min read",
-    "publishedAt": "Feb 25, 2026"
-  },
-  {
-    "slug": "ai-cbo-vs-hiring",
-    "title": "AI CBO vs. Hiring a Marketing Team: The Real Numbers",
-    "excerpt": "Building a content and marketing operation in-house takes time and money. Here is how the cost, speed, and output of an AI CBO compare to a traditional marketing hire.",
-    "category": "Strategy",
-    "readTime": "5 min read",
-    "publishedAt": "Feb 28, 2026"
-  },
-  {
-    "slug": "facebook-instagram-setup",
-    "title": "How to Get Your Facebook & Instagram Credentials for AgentGrow",
-    "excerpt": "Step-by-step guide to getting your Facebook Page ID, Page Access Token, and Instagram Account ID so your AI agent can post on your behalf.",
-    "category": "How-To",
-    "readTime": "8 min read",
-    "publishedAt": "Mar 3, 2026"
-  },
-  {
-    "slug": "blog-publisher-setup",
-    "title": "How to Set Up Blog Publisher (GitHub Pages) for AgentGrow",
-    "excerpt": "Step-by-step guide to creating a GitHub repository and Personal Access Token so your AI agent can publish blog posts to your website via GitHub Pages.",
-    "category": "How-To",
-    "readTime": "6 min read",
-    "publishedAt": "Mar 3, 2026"
-  },
-  {
-    "slug": "seo-analyst-setup",
-    "title": "How to Set Up SEO Analyst (Google Search Console) for AgentGrow",
-    "excerpt": "Step-by-step guide to creating a Google Cloud service account and granting Search Console access so your AI agent can monitor your SEO performance.",
-    "category": "How-To",
-    "readTime": "7 min read",
-    "publishedAt": "Mar 3, 2026"
-  },
-  {
-    "slug": "linkedin-setup",
-    "title": "How to Set Up LinkedIn Posting for AgentGrow",
-    "excerpt": "Step-by-step guide to creating a LinkedIn app, getting an access token with w_member_social scope, and configuring your AI agent to post on your LinkedIn profile.",
-    "category": "How-To",
-    "readTime": "7 min read",
-    "publishedAt": "Mar 4, 2026"
-  },
-  {
-    "slug": "integrations-guide",
-    "title": "How to Configure Your Agent Modules on the Integrations Page",
-    "excerpt": "A complete guide to the AgentGrow Integrations page \u2014 self-configure blog, social, SEO, and email modules, request admin setup for complex modules, and pause or resume any module.",
-    "category": "How-To",
-    "readTime": "6 min read",
-    "publishedAt": "Mar 4, 2026"
-  },
-  {
-    "slug": "dashboard-walkthrough",
-    "title": "Your Client Dashboard: A Complete Walkthrough",
-    "excerpt": "A guided tour of the AgentGrow client dashboard \u2014 agent status, KPI goals with sparklines, approval queue, activity feed, prospect pipeline, and ROI tracking.",
-    "category": "Getting Started",
-    "readTime": "5 min read",
-    "publishedAt": "Mar 4, 2026"
-  },
-  {
-    "slug": "email-marketing-setup",
-    "title": "How to Set Up Email Marketing for AgentGrow",
-    "excerpt": "Choose between platform-managed email (recommended, zero setup) or bring your own SMTP credentials. Configure email outreach for your AI agent in minutes.",
-    "category": "How-To",
-    "readTime": "5 min read",
-    "publishedAt": "Mar 4, 2026"
-  },
-  {
-    "slug": "agent-settings-guide",
-    "title": "How to Update Your Agent Settings and CBO Setup Form",
-    "excerpt": "Re-edit your business details, ICP, and brand voice after onboarding. Connect platforms via Integrations. Changes trigger agent re-briefing so your CBO stays aligned with your strategy.",
-    "category": "How-To",
-    "readTime": "4 min read",
-    "publishedAt": "Mar 4, 2026"
-  },
-  {
-    "slug": "brand-kit-guide",
-    "title": "How to Upload and Manage Your Brand Kit",
-    "excerpt": "Upload logos, brand guidelines, images, and creative briefs to your AgentGrow brand kit. Your AI agent uses these assets to maintain consistent branding across all content.",
-    "category": "How-To",
-    "readTime": "4 min read",
-    "publishedAt": "Mar 4, 2026"
-  },
-  {
-    "slug": "inconsistent-content-smb",
-    "title": "What 3 Months of Inconsistent Content Does to Your Business (And Why Most SMB Owners Never Recover)",
-    "excerpt": "You had good reasons to pause content. Google didn't care. Here's the invisible damage inconsistent publishing does to your SEO and pipeline \u2014 and how to fix it without adding to your plate.",
-    "category": "Strategy",
-    "readTime": "5 min read",
-    "publishedAt": "Jun 1, 2026"
-  },
-  {
-    "slug": "linkedin-oauth-setup",
-    "title": "How to Connect LinkedIn (OAuth) for AgentGrow",
-    "excerpt": "Create a LinkedIn App, paste the Client ID and Secret, and click Connect. AgentGrow handles token exchange and automatic refresh \u2014 no manual token management required.",
-    "category": "How-To",
-    "readTime": "5 min read",
-    "publishedAt": "Mar 5, 2026"
-  },
-  {
-    "slug": "b2b-consulting-not-getting-clients",
-    "title": "Why Your B2B Consulting Firm Isn't Getting Clients (And the Marketing Fix That Takes 1 Hour)",
-    "excerpt": "Most B2B consulting firms lose pipeline not because they lack expertise \u2014 but because prospects can't find them online. Here's the exact fix.",
-    "category": "Strategy",
-    "readTime": "8 min read",
-    "publishedAt": "Mar 5, 2026"
-  },
-  {
-    "slug": "cost-of-not-marketing-your-business",
-    "title": "The True Cost of Not Marketing Your Business \u2014 What the Numbers Actually Show",
-    "excerpt": "The decision to delay marketing feels safe. But the data shows it costs far more than the marketing itself. Here's exactly what you're losing every month.",
-    "category": "Strategy",
-    "readTime": "7 min read",
-    "publishedAt": "Mar 5, 2026"
-  },
-  {
-    "slug": "content-marketing-for-solopreneurs",
-    "title": "Content Marketing for Solopreneurs: How to Stay Consistent When You're Running Everything Alone",
-    "excerpt": "Solopreneurs who publish consistently get 3x more inbound leads. The problem isn't motivation \u2014 it's bandwidth. Here's how to solve it.",
-    "category": "Strategy",
-    "readTime": "8 min read",
-    "publishedAt": "Mar 5, 2026"
-  },
-  {
-    "slug": "seo-for-b2b-service-businesses",
-    "title": "SEO for B2B Service Businesses: The 2026 Guide to Ranking Without an Agency",
-    "excerpt": "B2B service businesses that rank on Google generate 3\u20135x more inbound leads. This guide shows you exactly how to do it without an SEO agency.",
-    "category": "How-To",
-    "readTime": "9 min read",
-    "publishedAt": "Mar 5, 2026"
-  },
-  {
-    "slug": "linkedin-marketing-b2b-founders",
-    "title": "LinkedIn Marketing for B2B Founders: Get 3\u20135 Qualified Leads Per Week Without Paid Ads",
-    "excerpt": "LinkedIn generates 80% of B2B social media leads \u2014 yet most founders post inconsistently or not at all. Here's the exact strategy to change that.",
-    "category": "Strategy",
-    "readTime": "8 min read",
-    "publishedAt": "Mar 5, 2026"
-  },
-  {
-    "slug": "cold-email-outreach-b2b-2026",
-    "title": "Cold Email Outreach That Actually Works in 2026: The Complete B2B Playbook",
-    "excerpt": "Cold email still delivers the highest ROI of any B2B outreach channel \u2014 when done right. This playbook covers subject lines, sequences, and tools.",
-    "category": "How-To",
-    "readTime": "9 min read",
-    "publishedAt": "Mar 5, 2026"
-  },
-  {
-    "slug": "b2b-leads-without-paid-ads",
-    "title": "How to Get B2B Leads Without Paid Ads in 2026 (The Complete Organic Guide)",
-    "excerpt": "Paid ads work \u2014 but they stop the moment you stop paying. These 7 organic strategies build a pipeline that compounds over time, without ad spend.",
-    "category": "Strategy",
-    "readTime": "8 min read",
-    "publishedAt": "Mar 5, 2026"
-  },
-  {
-    "slug": "automate-marketing-small-business",
-    "title": "How Small Business Owners Can Automate Their Entire Marketing in 2026 (Step-by-Step)",
-    "excerpt": "Marketing automation isn't just for enterprise. Small businesses that automate see 4x more leads with the same time investment. Here's the complete playbook.",
-    "category": "How-To",
-    "readTime": "9 min read",
-    "publishedAt": "Mar 5, 2026"
-  },
-  {
-    "slug": "what-is-autonomous-marketing-agent",
-    "title": "What Is an Autonomous Marketing Agent? (And Why Smart Founders Are Using Them in 2026)",
-    "excerpt": "An autonomous marketing agent runs your entire marketing operation \u2014 content, SEO, social media, and lead generation \u2014 without human intervention.",
-    "category": "Platform",
-    "readTime": "7 min read",
-    "publishedAt": "Mar 5, 2026"
-  },
-  {
-    "slug": "inbound-marketing-it-consultants",
-    "title": "Inbound Marketing for IT Consultants: How to Get Clients to Come to You in 2026",
-    "excerpt": "IT consultants who build inbound marketing engines get 3\u20138x more qualified leads than those relying on referrals alone. Here's the exact strategy.",
-    "category": "How-To",
-    "readTime": "8 min read",
-    "publishedAt": "Mar 5, 2026"
-  },
-  {
-    "slug": "ai-marketing-agent-vs-hiring",
-    "title": "AI Marketing Agent vs Hiring a Marketer: What's Actually Cheaper for an SMB in 2026?",
-    "excerpt": "A full-time marketing hire costs $65,000\u2013$90,000/year. An AI marketing agent costs a fraction of that \u2014 and works 24/7. Here's the full breakdown.",
-    "category": "Strategy",
-    "readTime": "7 min read",
-    "publishedAt": "Mar 5, 2026"
-  },
-  {
-    "slug": "b2b-marketing-strategy-no-budget",
-    "title": "How to Build a Complete B2B Marketing Strategy With No Budget and No Marketing Team",
-    "excerpt": "No marketing budget? No dedicated team? This guide shows you a zero-cost marketing strategy that actually generates pipeline.",
-    "category": "Strategy",
-    "readTime": "8 min read",
-    "publishedAt": "Mar 5, 2026"
-  },
-  {
-    "slug": "ai-marketing-tool-it-companies-india",
-    "title": "The Best AI Marketing Tool for IT Companies in India (2026 Guide)",
-    "excerpt": "IT companies in India struggle with marketing because technical expertise doesn't translate to visibility. Here's the AI marketing tool that changes that \u2014 without a marketing hire.",
-    "category": "Strategy",
-    "readTime": "8 min read",
-    "publishedAt": "Mar 12, 2026"
-  },
-  {
-    "slug": "marketing-automation-consulting-firms-india",
-    "title": "Marketing Automation for Consulting Firms in India: What Actually Works",
-    "excerpt": "Indian B2B consulting firms that rely on referrals hit a wall. Here's what marketing automation actually delivers \u2014 and what doesn't \u2014 for the Indian consulting market.",
-    "category": "Strategy",
-    "readTime": "9 min read",
-    "publishedAt": "Mar 12, 2026"
-  },
-  {
-    "slug": "autonomous-ai-agent-case-study-346-leads-19-days",
-    "title": "0 to 346 Leads in 19 Days: What an Autonomous AI Marketing Agent Actually Delivered",
-    "excerpt": "Real results from two live AI agent deployments: 346 CRM leads, enterprise contacts at Deloitte and JPMorgan, 80 blog posts in 6 months \u2014 zero marketing hires, zero ad dependency.",
-    "category": "Platform",
-    "readTime": "9 min read",
-    "publishedAt": "Mar 12, 2026"
-  },
-  {
-    "slug": "ai-b2b-lead-generation-10x",
-    "title": "How to Use AI to Generate 10x More Qualified B2B Leads",
-    "excerpt": "Most B2B businesses are sitting on a lead generation opportunity they're completely ignoring. Here's how to use AI to generate 10x more qualified leads without increasing your budget.",
-    "category": "Strategy",
-    "readTime": "8 min read",
-    "publishedAt": "Mar 16, 2026"
-  },
-  {
-    "slug": "smb-marketing-calendar-guide",
-    "title": "The SMB Marketing Calendar: What to Post, When, and Why",
-    "excerpt": "Stop guessing what to post and when. This SMB marketing calendar gives you a repeatable weekly system for content, social, and email \u2014 so your marketing never goes quiet again.",
-    "category": "How-To",
-    "readTime": "7 min read",
-    "publishedAt": "Mar 16, 2026"
-  }
+    {
+        "slug": "what-is-ai-cbo",
+        "title": "What Is an AI Chief Business Officer (CBO)?",
+        "excerpt": "Your business needs consistent content, social media, and lead generation — but executing all three while running the company is nearly impossible. An AI CBO closes that gap.",
+        "category": "Platform",
+        "readTime": "4 min read",
+        "publishedAt": "Feb 18, 2026"
+    },
+    {
+        "slug": "how-agentgrow-works",
+        "title": "How AgentGrow Works: From Sign-Up to Your First Published Post",
+        "excerpt": "Getting a dedicated AI agent working on your business takes less than an hour. Here is the complete walkthrough from choosing a plan to reading your first activity report.",
+        "category": "Getting Started",
+        "readTime": "5 min read",
+        "publishedAt": "Feb 21, 2026"
+    },
+    {
+        "slug": "reviewing-agent-content",
+        "title": "How to Review and Approve Your Agent's Content",
+        "excerpt": "Your AI CBO creates content based on your business profile. Before anything goes live, it appears in your dashboard for review. Here is how the approval workflow operates.",
+        "category": "How-To",
+        "readTime": "3 min read",
+        "publishedAt": "Feb 25, 2026"
+    },
+    {
+        "slug": "ai-cbo-vs-hiring",
+        "title": "AI CBO vs. Hiring a Marketing Team: The Real Numbers",
+        "excerpt": "Building a content and marketing operation in-house takes time and money. Here is how the cost, speed, and output of an AI CBO compare to a traditional marketing hire.",
+        "category": "Strategy",
+        "readTime": "5 min read",
+        "publishedAt": "Feb 28, 2026"
+    },
+    {
+        "slug": "facebook-instagram-setup",
+        "title": "How to Get Your Facebook & Instagram Credentials for AgentGrow",
+        "excerpt": "Step-by-step guide to getting your Facebook Page ID, Page Access Token, and Instagram Account ID so your AI agent can post on your behalf.",
+        "category": "How-To",
+        "readTime": "8 min read",
+        "publishedAt": "Mar 3, 2026"
+    },
+    {
+        "slug": "blog-publisher-setup",
+        "title": "How to Set Up Blog Publisher (GitHub Pages) for AgentGrow",
+        "excerpt": "Step-by-step guide to creating a GitHub repository and Personal Access Token so your AI agent can publish blog posts to your website via GitHub Pages.",
+        "category": "How-To",
+        "readTime": "6 min read",
+        "publishedAt": "Mar 3, 2026"
+    },
+    {
+        "slug": "seo-analyst-setup",
+        "title": "How to Set Up SEO Analyst (Google Search Console) for AgentGrow",
+        "excerpt": "Step-by-step guide to creating a Google Cloud service account and granting Search Console access so your AI agent can monitor your SEO performance.",
+        "category": "How-To",
+        "readTime": "7 min read",
+        "publishedAt": "Mar 3, 2026"
+    },
+    {
+        "slug": "linkedin-setup",
+        "title": "How to Set Up LinkedIn Posting for AgentGrow",
+        "excerpt": "Step-by-step guide to creating a LinkedIn app, getting an access token with w_member_social scope, and configuring your AI agent to post on your LinkedIn profile.",
+        "category": "How-To",
+        "readTime": "7 min read",
+        "publishedAt": "Mar 4, 2026"
+    },
+    {
+        "slug": "integrations-guide",
+        "title": "How to Configure Your Agent Modules on the Integrations Page",
+        "excerpt": "A complete guide to the AgentGrow Integrations page — self-configure blog, social, SEO, and email modules, request admin setup for complex modules, and pause or resume any module.",
+        "category": "How-To",
+        "readTime": "6 min read",
+        "publishedAt": "Mar 4, 2026"
+    },
+    {
+        "slug": "dashboard-walkthrough",
+        "title": "Your Client Dashboard: A Complete Walkthrough",
+        "excerpt": "A guided tour of the AgentGrow client dashboard — agent status, KPI goals with sparklines, approval queue, activity feed, prospect pipeline, and ROI tracking.",
+        "category": "Getting Started",
+        "readTime": "5 min read",
+        "publishedAt": "Mar 4, 2026"
+    },
+    {
+        "slug": "email-marketing-setup",
+        "title": "How to Set Up Email Marketing for AgentGrow",
+        "excerpt": "Choose between platform-managed email (recommended, zero setup) or bring your own SMTP credentials. Configure email outreach for your AI agent in minutes.",
+        "category": "How-To",
+        "readTime": "5 min read",
+        "publishedAt": "Mar 4, 2026"
+    },
+    {
+        "slug": "agent-settings-guide",
+        "title": "How to Update Your Agent Settings and CBO Setup Form",
+        "excerpt": "Re-edit your business details, ICP, and brand voice after onboarding. Connect platforms via Integrations. Changes trigger agent re-briefing so your CBO stays aligned with your strategy.",
+        "category": "How-To",
+        "readTime": "4 min read",
+        "publishedAt": "Mar 4, 2026"
+    },
+    {
+        "slug": "brand-kit-guide",
+        "title": "How to Upload and Manage Your Brand Kit",
+        "excerpt": "Upload logos, brand guidelines, images, and creative briefs to your AgentGrow brand kit. Your AI agent uses these assets to maintain consistent branding across all content.",
+        "category": "How-To",
+        "readTime": "4 min read",
+        "publishedAt": "Mar 4, 2026"
+    },
+    {
+        "slug": "inconsistent-content-smb",
+        "title": "What 3 Months of Inconsistent Content Does to Your Business (And Why Most SMB Owners Never Recover)",
+        "excerpt": "You had good reasons to pause content. Google didn't care. Here's the invisible damage inconsistent publishing does to your SEO and pipeline — and how to fix it without adding to your plate.",
+        "category": "Strategy",
+        "readTime": "5 min read",
+        "publishedAt": "Jun 1, 2026"
+    },
+    {
+        "slug": "linkedin-oauth-setup",
+        "title": "How to Connect LinkedIn (OAuth) for AgentGrow",
+        "excerpt": "Create a LinkedIn App, paste the Client ID and Secret, and click Connect. AgentGrow handles token exchange and automatic refresh — no manual token management required.",
+        "category": "How-To",
+        "readTime": "5 min read",
+        "publishedAt": "Mar 5, 2026"
+    },
+    {
+        "slug": "b2b-consulting-not-getting-clients",
+        "title": "Why Your B2B Consulting Firm Isn't Getting Clients (And the Marketing Fix That Takes 1 Hour)",
+        "excerpt": "Most B2B consulting firms lose pipeline not because they lack expertise — but because prospects can't find them online. Here's the exact fix.",
+        "category": "Strategy",
+        "readTime": "8 min read",
+        "publishedAt": "Mar 5, 2026"
+    },
+    {
+        "slug": "cost-of-not-marketing-your-business",
+        "title": "The True Cost of Not Marketing Your Business — What the Numbers Actually Show",
+        "excerpt": "The decision to delay marketing feels safe. But the data shows it costs far more than the marketing itself. Here's exactly what you're losing every month.",
+        "category": "Strategy",
+        "readTime": "7 min read",
+        "publishedAt": "Mar 5, 2026"
+    },
+    {
+        "slug": "content-marketing-for-solopreneurs",
+        "title": "Content Marketing for Solopreneurs: How to Stay Consistent When You're Running Everything Alone",
+        "excerpt": "Solopreneurs who publish consistently get 3x more inbound leads. The problem isn't motivation — it's bandwidth. Here's how to solve it.",
+        "category": "Strategy",
+        "readTime": "8 min read",
+        "publishedAt": "Mar 5, 2026"
+    },
+    {
+        "slug": "seo-for-b2b-service-businesses",
+        "title": "SEO for B2B Service Businesses: The 2026 Guide to Ranking Without an Agency",
+        "excerpt": "B2B service businesses that rank on Google generate 3–5x more inbound leads. This guide shows you exactly how to do it without an SEO agency.",
+        "category": "How-To",
+        "readTime": "9 min read",
+        "publishedAt": "Mar 5, 2026"
+    },
+    {
+        "slug": "linkedin-marketing-b2b-founders",
+        "title": "LinkedIn Marketing for B2B Founders: Get 3–5 Qualified Leads Per Week Without Paid Ads",
+        "excerpt": "LinkedIn generates 80% of B2B social media leads — yet most founders post inconsistently or not at all. Here's the exact strategy to change that.",
+        "category": "Strategy",
+        "readTime": "8 min read",
+        "publishedAt": "Mar 5, 2026"
+    },
+    {
+        "slug": "cold-email-outreach-b2b-2026",
+        "title": "Cold Email Outreach That Actually Works in 2026: The Complete B2B Playbook",
+        "excerpt": "Cold email still delivers the highest ROI of any B2B outreach channel — when done right. This playbook covers subject lines, sequences, and tools.",
+        "category": "How-To",
+        "readTime": "9 min read",
+        "publishedAt": "Mar 5, 2026"
+    },
+    {
+        "slug": "b2b-leads-without-paid-ads",
+        "title": "How to Get B2B Leads Without Paid Ads in 2026 (The Complete Organic Guide)",
+        "excerpt": "Paid ads work — but they stop the moment you stop paying. These 7 organic strategies build a pipeline that compounds over time, without ad spend.",
+        "category": "Strategy",
+        "readTime": "8 min read",
+        "publishedAt": "Mar 5, 2026"
+    },
+    {
+        "slug": "automate-marketing-small-business",
+        "title": "How Small Business Owners Can Automate Their Entire Marketing in 2026 (Step-by-Step)",
+        "excerpt": "Marketing automation isn't just for enterprise. Small businesses that automate see 4x more leads with the same time investment. Here's the complete playbook.",
+        "category": "How-To",
+        "readTime": "9 min read",
+        "publishedAt": "Mar 5, 2026"
+    },
+    {
+        "slug": "what-is-autonomous-marketing-agent",
+        "title": "What Is an Autonomous Marketing Agent? (And Why Smart Founders Are Using Them in 2026)",
+        "excerpt": "An autonomous marketing agent runs your entire marketing operation — content, SEO, social media, and lead generation — without human intervention.",
+        "category": "Platform",
+        "readTime": "7 min read",
+        "publishedAt": "Mar 5, 2026"
+    },
+    {
+        "slug": "inbound-marketing-it-consultants",
+        "title": "Inbound Marketing for IT Consultants: How to Get Clients to Come to You in 2026",
+        "excerpt": "IT consultants who build inbound marketing engines get 3–8x more qualified leads than those relying on referrals alone. Here's the exact strategy.",
+        "category": "How-To",
+        "readTime": "8 min read",
+        "publishedAt": "Mar 5, 2026"
+    },
+    {
+        "slug": "ai-marketing-agent-vs-hiring",
+        "title": "AI Marketing Agent vs Hiring a Marketer: What's Actually Cheaper for an SMB in 2026?",
+        "excerpt": "A full-time marketing hire costs $65,000–$90,000/year. An AI marketing agent costs a fraction of that — and works 24/7. Here's the full breakdown.",
+        "category": "Strategy",
+        "readTime": "7 min read",
+        "publishedAt": "Mar 5, 2026"
+    },
+    {
+        "slug": "b2b-marketing-strategy-no-budget",
+        "title": "How to Build a Complete B2B Marketing Strategy With No Budget and No Marketing Team",
+        "excerpt": "No marketing budget? No dedicated team? This guide shows you a zero-cost marketing strategy that actually generates pipeline.",
+        "category": "Strategy",
+        "readTime": "8 min read",
+        "publishedAt": "Mar 5, 2026"
+    },
+    {
+        "slug": "ai-marketing-tool-it-companies-india",
+        "title": "The Best AI Marketing Tool for IT Companies in India (2026 Guide)",
+        "excerpt": "IT companies in India struggle with marketing because technical expertise doesn't translate to visibility. Here's the AI marketing tool that changes that — without a marketing hire.",
+        "category": "Strategy",
+        "readTime": "8 min read",
+        "publishedAt": "Mar 12, 2026"
+    },
+    {
+        "slug": "marketing-automation-consulting-firms-india",
+        "title": "Marketing Automation for Consulting Firms in India: What Actually Works",
+        "excerpt": "Indian B2B consulting firms that rely on referrals hit a wall. Here's what marketing automation actually delivers — and what doesn't — for the Indian consulting market.",
+        "category": "Strategy",
+        "readTime": "9 min read",
+        "publishedAt": "Mar 12, 2026"
+    },
+    {
+        "slug": "autonomous-ai-agent-case-study-346-leads-19-days",
+        "title": "0 to 346 Leads in 19 Days: What an Autonomous AI Marketing Agent Actually Delivered",
+        "excerpt": "Real results from two live AI agent deployments: 346 CRM leads, enterprise contacts at Deloitte and JPMorgan, 80 blog posts in 6 months — zero marketing hires, zero ad dependency.",
+        "category": "Platform",
+        "readTime": "9 min read",
+        "publishedAt": "Mar 12, 2026"
+    },
+    {
+        "slug": "ai-b2b-lead-generation-10x",
+        "title": "How to Use AI to Generate 10x More Qualified B2B Leads",
+        "excerpt": "Most B2B businesses are sitting on a lead generation opportunity they're completely ignoring. Here's how to use AI to generate 10x more qualified leads without increasing your budget.",
+        "category": "Strategy",
+        "readTime": "8 min read",
+        "publishedAt": "Mar 16, 2026"
+    },
+    {
+        "slug": "smb-marketing-calendar-guide",
+        "title": "The SMB Marketing Calendar: What to Post, When, and Why",
+        "excerpt": "Stop guessing what to post and when. This SMB marketing calendar gives you a repeatable weekly system for content, social, and email — so your marketing never goes quiet again.",
+        "category": "How-To",
+        "readTime": "7 min read",
+        "publishedAt": "Mar 16, 2026"
+    },
+    {
+        "slug": "ai-agents-replace-fractional-cmo-smbs-2026",
+        "title": "How AI Agents Replace Fractional CMOs for SMBs in 2026",
+        "excerpt": "Fractional CMOs cost $5,000–$15,000/month and work 10–20 hours/week. AI agents now do more for a fraction of that — running 24/7 with no onboarding lag.",
+        "category": "Strategy",
+        "readTime": "7 min read",
+        "publishedAt": "Mar 18, 2026"
+    },
+    {
+        "slug": "zero-cost-marketing-team-ai-agents-smb-leads-247",
+        "title": "The $0 Marketing Team: How SMBs Are Using AI Agents to Generate Leads 24/7",
+        "excerpt": "SMBs that can't afford a marketing team are deploying AI agents that write content, run social media, and generate leads around the clock — for less than the cost of one freelancer.",
+        "category": "Strategy",
+        "readTime": "7 min read",
+        "publishedAt": "Mar 18, 2026"
+    }
 ]
