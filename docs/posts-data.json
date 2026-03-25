@@ -318,5 +318,21 @@
     "category": "Strategy",
     "readTime": "8 min read",
     "publishedAt": "Mar 20, 2026"
+  },
+  {
+    "slug": "b2b-sales-funnel-marketing-automation-2026",
+    "title": "Why B2B Sales Funnels Fail Without Marketing Automation",
+    "excerpt": "Most B2B sales funnels leak at follow-up. Marketing automation plugs those leaks \u2014 and AI agents run the whole system without hiring a team.",
+    "category": "Strategy",
+    "readTime": "7 min read",
+    "publishedAt": "Mar 25, 2026"
+  },
+  {
+    "slug": "smb-referral-marketing-ai-agent-2026",
+    "title": "How SMBs Can Use AI Agents to Scale Referral Marketing",
+    "excerpt": "Referral marketing drives the highest-quality leads \u2014 but most SMBs run it manually and inconsistently. AI agents automate the ask, the follow-up, and the nurture, so referrals compound instead of stall.",
+    "category": "Strategy",
+    "readTime": "6 min read",
+    "publishedAt": "Mar 25, 2026"
   }
 ]
