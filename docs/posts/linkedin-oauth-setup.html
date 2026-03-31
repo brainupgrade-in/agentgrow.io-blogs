@@ -18,7 +18,7 @@
     "@type": "BlogPosting",
     "headline": "How to Connect LinkedIn (OAuth) for AgentGrow",
     "description": "Step-by-step guide to creating a LinkedIn App and connecting it to AgentGrow via OAuth. Your agent gets automatic token refresh — no manual token pasting required.",
-    "datePublished": "2026-03-05","dateModified":"2026-03-12",
+    "datePublished": "2026-03-05","dateModified":"2026-03-31",
     "author":{"@type":"Person","name":"Rajesh Gheware","jobTitle":"Founder, AgentGrow","url":"https://agentgrow.io/about/"},
     "publisher": {"@type": "Organization", "name": "AgentGrow", "url": "https://agentgrow.io"},
     "mainEntityOfPage": "https://agentgrow.io/blog/posts/linkedin-oauth-setup.html"
@@ -215,15 +215,24 @@
         <span class="step-number">3</span>
         <h3>Request the required products</h3>
       </div>
-      <p>After creating the app, go to the <strong>Products</strong> tab and request access to:</p>
-      <ul>
-        <li><strong>Share on LinkedIn</strong> &mdash; allows your agent to create posts</li>
-        <li><strong>Sign In with LinkedIn using OpenID Connect</strong> &mdash; allows the OAuth login flow</li>
-      </ul>
-      <p>"Share on LinkedIn" is usually approved instantly. "Sign In with LinkedIn" may also be instant or take a few minutes.</p>
+      <p>After creating the app, go to the <strong>Products</strong> tab and request access to the products you need. Each product unlocks specific OAuth scopes:</p>
+
+      <table class="field-table">
+        <thead>
+          <tr><th>LinkedIn Product</th><th>Scopes Granted</th><th>Use Case</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Community Management API</td><td>w_organization_social, r_organization_social</td><td>Post on your <strong>company page</strong></td></tr>
+          <tr><td>Share on LinkedIn</td><td>w_member_social</td><td>Post on your <strong>personal profile</strong></td></tr>
+          <tr><td>Sign In with LinkedIn using OpenID Connect</td><td>openid, profile, email</td><td>Display your name/avatar in AgentGrow (optional)</td></tr>
+        </tbody>
+      </table>
+
+      <p><strong>To post on a company page</strong> (most common), you only need <strong>Community Management API</strong>. "Share on LinkedIn" is needed only if you also want to post on your personal profile.</p>
+      <p>Product approvals are usually instant. Some may take a few minutes.</p>
 
       <div class="warning-box">
-        <strong>Important:</strong> Both products must show as <strong>"Added"</strong> before you proceed. Without "Share on LinkedIn", your agent cannot create posts. Without "Sign In with LinkedIn using OpenID Connect", the OAuth flow will fail.
+        <strong>Important:</strong> Only request products you actually need. In Step 2 below, you will select the matching OAuth scopes in AgentGrow. If you select a scope whose product is not enabled, LinkedIn will reject the connection with a <strong>"Scope not authorized"</strong> error.
       </div>
 
       <div class="step-heading">
@@ -265,12 +274,24 @@
       </div>
       <p>Find the <strong>LinkedIn</strong> module and click <strong>Configure</strong>. You will see a two-step form:</p>
 
-      <p><strong>Step 1 &mdash; App Credentials:</strong></p>
+      <p><strong>Step 1 &mdash; App Credentials &amp; Scopes:</strong></p>
       <ul>
         <li>Paste your <strong>Client ID</strong></li>
         <li>Paste your <strong>Client Secret</strong></li>
         <li>(Optional) Enter your <strong>LinkedIn Page URL</strong> (e.g. <code>https://www.linkedin.com/company/your-company</code>)</li>
+        <li>Under <strong>OAuth Scopes</strong>, check only the scopes that match products you enabled in your LinkedIn App:
+          <ul>
+            <li><strong>Post as Organization</strong> + <strong>Read Organization</strong> &mdash; if you added "Community Management API"</li>
+            <li><strong>Post as Member</strong> &mdash; if you added "Share on LinkedIn"</li>
+            <li><strong>OpenID Connect</strong>, <strong>Profile</strong>, <strong>Email</strong> &mdash; if you added "Sign In with LinkedIn using OpenID Connect"</li>
+          </ul>
+        </li>
       </ul>
+
+      <div class="warning-box">
+        <strong>Match your scopes to your products.</strong> If you only enabled "Community Management API" for company page posting, select only <code>w_organization_social</code> and <code>r_organization_social</code>. Selecting scopes for products you have not enabled will cause a "Scope not authorized" error.
+      </div>
+
       <p>Click <strong>Save &amp; Continue</strong>.</p>
 
       <p><strong>Step 2 &mdash; Authorize:</strong></p>
@@ -291,6 +312,16 @@
       <hr class="section-divider">
 
       <h2 id="troubleshooting">Troubleshooting</h2>
+
+      <h3>"Scope not authorized for your application"</h3>
+      <p>This means you selected an OAuth scope in AgentGrow that your LinkedIn App does not have access to. To fix:</p>
+      <ol>
+        <li>Go to your LinkedIn App &rarr; <strong>Products</strong> tab and note which products show <strong>"Added"</strong></li>
+        <li>In AgentGrow, click <strong>Change credentials &amp; scopes</strong> on the LinkedIn module</li>
+        <li>Uncheck any scopes whose product is not enabled (see the table in Part 1, Step 3 above)</li>
+        <li>Click <strong>Save &amp; Continue</strong>, then <strong>Connect LinkedIn</strong> again</li>
+      </ol>
+      <p>For example, if you only have "Community Management API" enabled, select only <code>w_organization_social</code> and <code>r_organization_social</code>.</p>
 
       <h3>LinkedIn says "invalid redirect URI"</h3>
       <p>Make sure you added this exact URL in your LinkedIn App&rsquo;s Auth settings:</p>
