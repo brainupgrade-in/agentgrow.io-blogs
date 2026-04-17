@@ -21,7 +21,12 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Regenerate indexes from disk
+      - name: Regenerate indexes + SEO/AEO lint (warn-level)
+        # Lint emits ::warning:: annotations for over-length <title>, over-
+        # length meta description, missing BlogPosting/FAQPage JSON-LD, and
+        # missing related-reading block. Drift below is still a hard fail.
+        # Flip to --strict once the backlog from the 2026-04-17 review is
+        # burnt down.
         run: python3 docs/scripts/regenerate_indexes.py
 
       - name: Fail if posts-data.json / sitemap.xml drifted
