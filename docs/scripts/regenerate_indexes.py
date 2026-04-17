@@ -22,6 +22,12 @@ SITEMAP_PATH = DOCS / "sitemap.xml"
 
 BASE = "https://agentgrow.io/blog"
 
+# SEO/AEO lint thresholds. See docs/scripts/README.md or the
+# --strict flag below. Matches values agreed in the 2026-04-17 blog review.
+TITLE_MAX = 65
+DESC_MAX = 170
+DESC_MIN = 120
+
 
 def extract_meta(html, attr, value):
     pat1 = rf'<meta\s+{attr}="{re.escape(value)}"\s+content="([^"]*)"'
@@ -234,7 +240,54 @@ def regenerate_sitemap(entries):
     SITEMAP_PATH.write_text("\n".join(lines), encoding="utf-8")
 
 
+def lint_post(slug, html):
+    """Return list of (severity, message) for SEO/AEO issues.
+
+    severity: "warn" by default. main() escalates to error with --strict.
+    Covers: <title>, meta description, BlogPosting JSON-LD, FAQPage JSON-LD,
+    related-reading internal-links block. Extend here, not in main().
+    """
+    issues = []
+
+    t_match = re.search(r"<title>([^<]+)</title>", html)
+    if t_match:
+        title_text = html_unescape(t_match.group(1)).strip()
+        if len(title_text) > TITLE_MAX:
+            issues.append(
+                ("warn", f"<title> is {len(title_text)} chars (max {TITLE_MAX}); SERP will truncate")
+            )
+    else:
+        issues.append(("warn", "no <title> tag"))
+
+    desc = extract_meta(html, "name", "description")
+    if desc is None:
+        issues.append(("warn", 'meta name="description" missing'))
+    else:
+        desc_text = html_unescape(desc)
+        if len(desc_text) > DESC_MAX:
+            issues.append(
+                ("warn", f'meta description is {len(desc_text)} chars (max {DESC_MAX}); SERP will truncate')
+            )
+        elif len(desc_text) < DESC_MIN:
+            issues.append(
+                ("warn", f'meta description is {len(desc_text)} chars (min {DESC_MIN}); under-using the snippet')
+            )
+
+    if not re.search(r'"@type"\s*:\s*"BlogPosting"', html):
+        issues.append(("warn", 'missing JSON-LD {"@type":"BlogPosting"}'))
+
+    if not re.search(r'"@type"\s*:\s*"FAQPage"', html):
+        issues.append(("warn", 'missing FAQPage schema (AEO / AI Overview eligibility)'))
+
+    if not re.search(r'internal-links|Related reading|\xf0\x9f\x93\x9a Related', html) \
+       and "📚 Related reading" not in html:
+        issues.append(("warn", "no internal-links / Related reading block (hurts discovery + PageRank flow)"))
+
+    return issues
+
+
 def main():
+    strict = "--strict" in sys.argv
     entries = regenerate_posts_json()
     regenerate_sitemap(entries)
 
@@ -265,6 +318,39 @@ def main():
 
     print(f"posts-data.json: {len(entries)} entries (newest {entries[0]['date']})")
     print(f"sitemap.xml    : {len(entries)} post URLs + blog + guide")
+
+    # ---------------- SEO/AEO lint pass ----------------
+    lint_totals = {"post_issues": 0, "issues": 0}
+    per_check = {}
+    for post_file in sorted(POSTS_DIR.glob("*.html")):
+        slug = post_file.stem
+        html = post_file.read_text(encoding="utf-8")
+        if is_redirect_stub(html):
+            continue
+        issues = lint_post(slug, html)
+        if issues:
+            lint_totals["post_issues"] += 1
+            lint_totals["issues"] += len(issues)
+            for sev, msg in issues:
+                # Collapse variable bits (char counts) so the per-check
+                # summary groups by issue type, not by exact length.
+                key = re.sub(r"\d+", "N", msg.split(";")[0])
+                per_check[key] = per_check.get(key, 0) + 1
+                prefix = "::warning file=docs/posts/{slug}.html::".format(slug=slug) if os.environ.get("GITHUB_ACTIONS") else f"  warn  {slug}: "
+                print(f"{prefix}{msg}", file=sys.stderr)
+
+    if lint_totals["issues"]:
+        print(
+            f"\nSEO/AEO lint: {lint_totals['issues']} issue(s) across {lint_totals['post_issues']} post(s)",
+            file=sys.stderr,
+        )
+        for k, v in sorted(per_check.items(), key=lambda x: -x[1]):
+            print(f"  {v:3d}  {k}", file=sys.stderr)
+        if strict:
+            print("--strict set; failing.", file=sys.stderr)
+            sys.exit(3)
+    else:
+        print("SEO/AEO lint: clean ✓")
 
 
 if __name__ == "__main__":
