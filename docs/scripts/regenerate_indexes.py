@@ -250,6 +250,19 @@ def main():
             print(f"  {slug}: {miss}", file=sys.stderr)
         sys.exit(2)
 
+    # Catch future-dated datePublished typos. inconsistent-content-smb.html
+    # was committed 2026-03-05 with datePublished 2026-06-01 and pinned the
+    # blog index top slot for 6 weeks before anyone noticed. Hard fail so
+    # the publish.sh / CI drift check stops the push.
+    today = datetime.now().strftime("%Y-%m-%d")
+    future = [(e["slug"], e["date"]) for e in entries if e["date"] > today]
+    if future:
+        print(f"ERROR: {len(future)} post(s) have date in the future (today={today}):", file=sys.stderr)
+        for slug, date in future:
+            print(f"  {date}  {slug}", file=sys.stderr)
+        print("Fix the article:published_time / JSON-LD datePublished in the post HTML.", file=sys.stderr)
+        sys.exit(2)
+
     print(f"posts-data.json: {len(entries)} entries (newest {entries[0]['date']})")
     print(f"sitemap.xml    : {len(entries)} post URLs + blog + guide")
 
