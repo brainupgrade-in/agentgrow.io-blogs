@@ -1,0 +1,36 @@
+name: validate-indexes
+
+# Runs on every push to main. Regenerates docs/posts-data.json and
+# docs/sitemap.xml from the post HTML files (the source of truth) and
+# fails if the committed copies drift from the regenerated ones.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  drift-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Regenerate indexes from disk
+        run: python3 docs/scripts/regenerate_indexes.py
+
+      - name: Fail if posts-data.json / sitemap.xml drifted
+        run: |
+          if ! git diff --exit-code docs/posts-data.json docs/sitemap.xml; then
+            echo ""
+            echo "::error::Indexes are out of sync with docs/posts/*.html."
+            echo "::error::Run docs/scripts/regenerate_indexes.py locally, commit the result, and push again."
+            echo "::error::(docs/scripts/publish.sh does this automatically — prefer that.)"
+            exit 1
+          fi
+          echo "Indexes match disk ✓"
