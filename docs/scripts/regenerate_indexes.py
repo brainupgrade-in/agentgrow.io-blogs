@@ -57,23 +57,35 @@ def extract_date(html):
 
 
 def extract_category(html, existing=None):
-    """Extract category. Prefer existing JSON value if human-friendly;
-    otherwise derive from badge CSS class."""
+    """Extract category. Priority order:
+    1. existing JSON entry (preserve hand-curated taxonomy — avoids 1-post
+       singleton categories appearing on the UI when a post's
+       article:section meta disagrees with what the owner categorized it as)
+    2. badge CSS class (legacy agentgrow template)
+    3. article:section meta tag (fallback for posts not yet in JSON)
+    4. "Strategy" fallback
+    """
     if existing:
-        if existing.get("category"):
+        if existing.get("category") and existing["category"] not in (
+            "ca-marketing",
+            "seo-guide",
+        ):
             return existing["category"]
         cats = existing.get("categories")
         if cats and isinstance(cats, list):
             return cats[0].replace("-", " ").title()
 
-    # badge-<slug> → "Slug Slug"
     m = re.search(r'class="badge\s+badge-([a-z0-9-]+)"', html)
     if m:
         slug = m.group(1)
-        # Special case: "how-to" -> "How-To"
         if slug == "how-to":
             return "How-To"
         return " ".join(w.capitalize() for w in slug.split("-"))
+
+    section = extract_meta(html, "property", "article:section")
+    if section:
+        return html_unescape(section).strip()
+
     return "Strategy"
 
 
