@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://agentgrow.io/blog/</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -10,12 +10,6 @@
     <loc>https://agentgrow.io/blog/guide/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://agentgrow.io/blog/posts/inconsistent-content-smb.html</loc>
-    <lastmod>2026-06-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://agentgrow.io/blog/posts/ai-lead-generation-b2b-service-companies-india.html</loc>
@@ -343,6 +337,12 @@
   </url>
   <url>
     <loc>https://agentgrow.io/blog/posts/inbound-marketing-it-consultants.html</loc>
+    <lastmod>2026-03-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://agentgrow.io/blog/posts/inconsistent-content-smb.html</loc>
     <lastmod>2026-03-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

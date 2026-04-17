@@ -1,18 +1,5 @@
 [
   {
-    "title": "What 3 Months of Inconsistent Content Does to Your Business",
-    "slug": "inconsistent-content-smb",
-    "category": "Strategy",
-    "excerpt": "You had good reasons to pause content. Google didn't care. Here's the invisible damage inconsistent publishing does to your SEO and pipeline — and how to fix it.",
-    "description": "You had good reasons to pause content. Google didn't care. Here's the invisible damage inconsistent publishing does to your SEO and pipeline — and how to fix it.",
-    "publishedAt": "Jun 1, 2026",
-    "date": "2026-06-01",
-    "readTime": "5 min read",
-    "image": "images/inconsistent-content-smb.jpg",
-    "tags": [],
-    "url": "posts/inconsistent-content-smb.html"
-  },
-  {
     "title": "AI Lead Generation for B2B Service Companies India: Why Your Pipeline Is Empty (And How to Fix It)",
     "slug": "ai-lead-generation-b2b-service-companies-india",
     "category": "Strategy",
@@ -757,6 +744,19 @@
     "image": "images/inbound-marketing-it-consultants.jpg",
     "tags": [],
     "url": "posts/inbound-marketing-it-consultants.html"
+  },
+  {
+    "title": "What 3 Months of Inconsistent Content Does to Your Business",
+    "slug": "inconsistent-content-smb",
+    "category": "Strategy",
+    "excerpt": "You had good reasons to pause content. Google didn't care. Here's the invisible damage inconsistent publishing does to your SEO and pipeline — and how to fix it.",
+    "description": "You had good reasons to pause content. Google didn't care. Here's the invisible damage inconsistent publishing does to your SEO and pipeline — and how to fix it.",
+    "publishedAt": "Mar 5, 2026",
+    "date": "2026-03-05",
+    "readTime": "5 min read",
+    "image": "images/inconsistent-content-smb.jpg",
+    "tags": [],
+    "url": "posts/inconsistent-content-smb.html"
   },
   {
     "title": "Why IT Companies Are Replacing Marketing Agencies With AI CBOs in 2026",
