@@ -12,6 +12,10 @@ Env vars (optional):
     GOOGLE_INDEXING_SA_KEY   path to service account JSON with
                              https://www.googleapis.com/auth/indexing scope.
                              Defaults to ~/Downloads/agentgrow-seo-*.json.
+    GOOGLE_INDEXING_SA_JSON  inline SA JSON (for K8s pods where mounting a
+                             file is inconvenient). If both are set, the
+                             file path wins. Written to a 0600 temp file
+                             and deleted after submission.
     SKIP_INDEXNOW=1          disable IndexNow submission
     SKIP_GOOGLE_INDEXING=1   disable Google Indexing API submission
 """
@@ -19,6 +23,7 @@ import glob
 import json
 import os
 import sys
+import tempfile
 import time
 from urllib import request, error
 
@@ -59,35 +64,55 @@ def submit_indexnow(urls):
 
 
 def _locate_sa_key():
+    """Return (path, cleanup_fn). cleanup_fn removes any temp file we created."""
     explicit = os.environ.get("GOOGLE_INDEXING_SA_KEY")
     if explicit and os.path.exists(explicit):
-        return explicit
-    # Common local locations (owner's laptop). Don't ship with a fallback in CI.
+        return explicit, (lambda: None)
+
+    # Common local locations (owner's laptop).
     candidates = [
         os.path.expanduser("~/.rajesh/agentgrow/agentgrow-seo.json"),
         os.path.expanduser("~/Downloads/agentgrow-seo-488c65ac9b85.json"),
     ]
     for p in candidates:
         if os.path.exists(p):
-            return p
+            return p, (lambda: None)
     for p in sorted(glob.glob(os.path.expanduser("~/Downloads/agentgrow-seo-*.json"))):
-        return p
-    return None
+        return p, (lambda: None)
+
+    # Inline JSON env var (K8s pods). Validate it's parseable JSON before
+    # writing so we don't create a dead temp file on bad input.
+    inline = os.environ.get("GOOGLE_INDEXING_SA_JSON", "").strip()
+    if inline:
+        try:
+            json.loads(inline)
+        except json.JSONDecodeError:
+            return None, (lambda: None)
+        tmp = tempfile.NamedTemporaryFile(
+            mode="w", suffix=".json", delete=False, prefix="gi-sa-"
+        )
+        tmp.write(inline)
+        tmp.close()
+        os.chmod(tmp.name, 0o600)
+        return tmp.name, (lambda: os.unlink(tmp.name) if os.path.exists(tmp.name) else None)
+
+    return None, (lambda: None)
 
 
 def submit_google_indexing(urls):
     if os.environ.get("SKIP_GOOGLE_INDEXING"):
         log("Google Indexing API: skipped (SKIP_GOOGLE_INDEXING set)")
         return
-    sa_path = _locate_sa_key()
+    sa_path, cleanup = _locate_sa_key()
     if not sa_path:
-        log("Google Indexing API: skipped (no service-account key found — set GOOGLE_INDEXING_SA_KEY)")
+        log("Google Indexing API: skipped (no SA key — set GOOGLE_INDEXING_SA_KEY file path or GOOGLE_INDEXING_SA_JSON inline)")
         return
     try:
         from google.oauth2 import service_account
         from googleapiclient.discovery import build
     except ImportError:
         log("Google Indexing API: skipped (pip install google-api-python-client google-auth)")
+        cleanup()
         return
     try:
         creds = service_account.Credentials.from_service_account_file(
@@ -108,6 +133,8 @@ def submit_google_indexing(urls):
         log(f"Google Indexing API: {ok} submitted, {fail} failed (SA={os.path.basename(sa_path)})")
     except Exception as e:
         log(f"Google Indexing API: {type(e).__name__}: {str(e)[:160]}")
+    finally:
+        cleanup()
 
 
 def main():
