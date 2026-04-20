@@ -38,6 +38,27 @@ git add -A
 git commit -m "$COMMIT_MSG" 2>/dev/null && echo "   ✅ Committed: $COMMIT_MSG" || echo "   ℹ️  Nothing new to commit"
 git push origin main 2>&1 | tail -2
 
+# ─── STEP 2b: Close agent_approvals row (if caller set APPROVAL_ID) ──────────
+# Fixes Gotcha #68: rajeshgheware-gmail used to commit+push but leave the
+# approval row pending. Caller exports APPROVAL_ID before invoking publish.sh;
+# we only close the row if an actual commit landed.
+if [ -n "${APPROVAL_ID:-}" ]; then
+    NEW_HEAD="$(git rev-parse HEAD)"
+    if [ "$PREV_HEAD" != "$NEW_HEAD" ]; then
+        CLOSER="${CLOSE_APPROVAL_BIN:-$HOME/.openclaw/workspace/bin/close-approval.sh}"
+        if [ -x "$CLOSER" ]; then
+            echo ""
+            echo "2b  Closing approval $APPROVAL_ID..."
+            "$CLOSER" "$APPROVAL_ID" "Published: $NEW_HEAD — $COMMIT_MSG" \
+                || echo "   ⚠️  close-approval failed (non-blocking)"
+        else
+            echo "   ⚠️  close-approval.sh not found at $CLOSER — approval $APPROVAL_ID left pending"
+        fi
+    else
+        echo "   ℹ️  APPROVAL_ID=$APPROVAL_ID set but no new commit — approval unchanged"
+    fi
+fi
+
 # ─── STEP 3: Collect URLs to submit ──────────────────────────────────────────
 # CLI args after the commit message take priority; else diff against PREV_HEAD.
 URLS=("$@")
