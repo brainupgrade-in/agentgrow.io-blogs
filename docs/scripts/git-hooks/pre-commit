@@ -1,0 +1,42 @@
+#!/bin/bash
+# Auto-regen blog indexes when post HTML is staged.
+#
+# Backstop for Gotcha #65 / memory feedback_cron_must_use_publish_script:
+# whenever someone (agent or human) stages docs/blog/posts/*.html without
+# going through publish.sh, this hook re-runs regenerate_indexes.py and
+# re-stages posts-data.json / sitemap.xml / rss.xml so validate-indexes
+# CI doesn't fail.
+#
+# Bypass with `git commit --no-verify` (don't, unless you know why).
+
+set -e
+
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+cd "$REPO_ROOT"
+
+REGEN=""
+for p in docs/scripts/regenerate_indexes.py scripts/regenerate_indexes.py; do
+    [ -f "$p" ] && REGEN="$p" && break
+done
+[ -z "$REGEN" ] && exit 0
+
+STAGED=$(git diff --cached --name-only --diff-filter=ACMRD)
+if ! echo "$STAGED" | grep -qE '(^|/)posts/[^/]+\.html$|(^|/)blog/posts/[^/]+\.html$'; then
+    exit 0
+fi
+
+PYTHON=$(command -v python3 || command -v python || true)
+if [ -z "$PYTHON" ]; then
+    echo "[pre-commit] python3 not found — skipping index regen (this commit may break validate-indexes CI)" >&2
+    exit 0
+fi
+
+echo "[pre-commit] Blog post change detected → regenerating indexes via $REGEN…" >&2
+if ! "$PYTHON" "$REGEN" >&2; then
+    echo "[pre-commit] regenerate_indexes.py failed — aborting commit" >&2
+    exit 1
+fi
+
+git add -A
+echo "[pre-commit] Indexes regenerated and re-staged." >&2
+exit 0
