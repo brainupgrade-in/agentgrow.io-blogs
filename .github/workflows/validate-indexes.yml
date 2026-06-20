@@ -39,3 +39,9 @@ jobs:
             exit 1
           fi
           echo "Indexes match disk ✓"
+
+      - name: Structural template lint (hard fail on off-template posts)
+        # Every content post must ship the shared chrome (blog.css, <nav>,
+        # <footer>, BlogPosting JSON-LD) so it renders inside the site shell.
+        # Redirect stubs are exempt. See docs/scripts/validate-template.py.
+        run: python3 docs/scripts/validate-template.py
