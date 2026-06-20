@@ -39,4 +39,18 @@ fi
 
 git add -A
 echo "[pre-commit] Indexes regenerated and re-staged." >&2
+
+# Structural template lint — hard-block off-template content posts.
+# Pushable mirror of the validate-indexes CI step (a workflow-scoped PAT
+# is needed to land the CI step itself). Every content post must ship the
+# shared chrome: ../css/blog.css + <nav> + <footer> + BlogPosting JSON-LD.
+# Redirect stubs are exempt. See docs/scripts/validate-template.py.
+for LINT in docs/scripts/validate-template.py scripts/validate-template.py; do
+    [ -f "$LINT" ] || continue
+    if ! "$PYTHON" "$LINT" >&2; then
+        echo "[pre-commit] Template lint failed — aborting commit. Fix the post(s) above to use the canonical template." >&2
+        exit 1
+    fi
+    break
+done
 exit 0
