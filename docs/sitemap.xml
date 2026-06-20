@@ -102,6 +102,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://agentgrow.io/blog/posts/automate-b2b-lead-follow-up-ai.html</loc>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://agentgrow.io/blog/posts/earn-recurring-revenue-reselling-agentgrow.html</loc>
     <lastmod>2026-04-03</lastmod>
     <changefreq>monthly</changefreq>
@@ -512,18 +518,6 @@
   <url>
     <loc>https://agentgrow.io/blog/posts/what-is-ai-cbo.html</loc>
     <lastmod>2026-02-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://agentgrow.io/blog/posts/automate-b2b-lead-follow-up-ai.html</loc>
-    <lastmod>2026-01-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://agentgrow.io/blog/posts/replace-marketing-agency-ai-agent.html</loc>
-    <lastmod>2026-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

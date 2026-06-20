@@ -21,7 +21,7 @@
     "publishedAt": "May 18, 2026",
     "date": "2026-05-18",
     "readTime": "8 min read",
-    "image": "images/ai-employee-b2b-service-business.jpg",
+    "image": "posts/ai-employee-b2b-service-hero.png",
     "tags": [],
     "url": "posts/ai-employee-b2b-service-business.html"
   },
@@ -34,7 +34,7 @@
     "publishedAt": "May 15, 2026",
     "date": "2026-05-15",
     "readTime": "9 min read",
-    "image": "images/ai-chatbot-lead-qualification-smb.jpg",
+    "image": "posts/ai-chatbot-lead-qualification-smb-hero.png",
     "tags": [],
     "url": "posts/ai-chatbot-lead-qualification-smb.html"
   },
@@ -67,7 +67,7 @@
     "publishedAt": "May 11, 2026",
     "date": "2026-05-11",
     "readTime": "7 min read",
-    "image": "images/automate-b2b-cold-outreach-ai-agent.jpg",
+    "image": "posts/images/automate-b2b-cold-outreach-ai-agent.png",
     "tags": [
       "AI cold outreach",
       "B2B automation",
@@ -87,7 +87,7 @@
     "publishedAt": "May 6, 2026",
     "date": "2026-05-06",
     "readTime": "9 min read",
-    "image": "images/ai-agents-vs-hiring-marketing-manager-smb-2026.jpg",
+    "image": "images/ai-agents-vs-hiring-marketing-manager-smb-2026.png",
     "tags": [],
     "url": "posts/ai-agents-vs-hiring-marketing-manager-smb-2026.html"
   },
@@ -118,7 +118,7 @@
     "publishedAt": "Apr 29, 2026",
     "date": "2026-04-29",
     "readTime": "9 min read",
-    "image": "images/ai-sales-prospecting-tools-b2b-services.jpg",
+    "image": "posts/images/ai-sales-prospecting-hero.jpg",
     "tags": [
       "AI sales prospecting tools",
       "B2B lead generation",
@@ -224,6 +224,25 @@
     "image": "images/marketing-tasks-stealing-founder-time-ai-solution-2026.jpg",
     "tags": [],
     "url": "posts/marketing-tasks-stealing-founder-time-ai-solution-2026.html"
+  },
+  {
+    "title": "How to Automate B2B Lead Follow-Up with AI (and Never Lose a Deal Again)",
+    "slug": "automate-b2b-lead-follow-up-ai",
+    "category": "Lead Generation",
+    "excerpt": "Learn how AI-powered follow-up automation helps B2B service businesses nurture leads, reduce response time, and close more deals without manual effort.",
+    "description": "Learn how AI-powered follow-up automation helps B2B service businesses nurture leads, reduce response time, and close more deals without manual effort.",
+    "publishedAt": "Apr 3, 2026",
+    "date": "2026-04-03",
+    "readTime": "7 min read",
+    "image": "hero-followup.png",
+    "tags": [
+      "automate B2B lead follow-up",
+      "AI lead follow-up",
+      "B2B follow-up automation",
+      "AI sales follow-up",
+      "automated lead nurturing B2B"
+    ],
+    "url": "posts/automate-b2b-lead-follow-up-ai.html"
   },
   {
     "title": "How Consultants Can Earn Recurring Revenue by Reselling AgentGrow",
@@ -351,7 +370,7 @@
     "publishedAt": "Mar 28, 2026",
     "date": "2026-03-28",
     "readTime": "7 min read",
-    "image": "../images/outbound-prospecting-mistakes-smb.jpg",
+    "image": "images/outbound-prospecting-mistakes-smb.jpg",
     "tags": [
       "outbound prospecting",
       "cold email",
@@ -370,7 +389,7 @@
     "publishedAt": "Mar 28, 2026",
     "date": "2026-03-28",
     "readTime": "7 min read",
-    "image": "../images/smb-content-repurposing-seo-social.jpg",
+    "image": "images/smb-content-repurposing-seo-social.jpg",
     "tags": [
       "content repurposing",
       "social media strategy",
@@ -389,7 +408,7 @@
     "publishedAt": "Mar 28, 2026",
     "date": "2026-03-28",
     "readTime": "7 min read",
-    "image": "../images/smb-marketing-metrics-that-matter.jpg",
+    "image": "images/smb-marketing-metrics-that-matter.jpg",
     "tags": [
       "marketing metrics",
       "KPI",
@@ -409,7 +428,7 @@
     "publishedAt": "Mar 27, 2026",
     "date": "2026-03-27",
     "readTime": "7 min read",
-    "image": "../images/ai-lead-scoring-qualify-prospects.jpg",
+    "image": "images/ai-lead-scoring-qualify-prospects.jpg",
     "tags": [
       "lead scoring",
       "AI lead qualification",
@@ -428,7 +447,7 @@
     "publishedAt": "Mar 27, 2026",
     "date": "2026-03-27",
     "readTime": "7 min read",
-    "image": "../images/email-drip-automation-b2b-service.jpg",
+    "image": "images/email-drip-automation-b2b-service.jpg",
     "tags": [
       "email marketing automation",
       "drip campaigns",
@@ -1152,37 +1171,5 @@
     "image": "images/what-is-ai-cbo.jpg",
     "tags": [],
     "url": "posts/what-is-ai-cbo.html"
-  },
-  {
-    "title": "How to Automate B2B Lead Follow-Up with AI (and Never Lose a Deal Again)",
-    "slug": "automate-b2b-lead-follow-up-ai",
-    "category": "Lead Generation",
-    "excerpt": "Learn how AI-powered follow-up automation helps B2B service businesses nurture leads, reduce response time, and close more deals without manual effort.",
-    "description": "Learn how AI-powered follow-up automation helps B2B service businesses nurture leads, reduce response time, and close more deals without manual effort.",
-    "publishedAt": "Jan 1, 2026",
-    "date": "2026-01-01",
-    "readTime": "7 min read",
-    "image": "hero-followup.png",
-    "tags": [
-      "automate B2B lead follow-up",
-      "AI lead follow-up",
-      "B2B follow-up automation",
-      "AI sales follow-up",
-      "automated lead nurturing B2B"
-    ],
-    "url": "posts/automate-b2b-lead-follow-up-ai.html"
-  },
-  {
-    "title": "How to Replace Your Marketing Agency with an AI Agent (And Save $1,500/Month)",
-    "slug": "replace-marketing-agency-ai-agent",
-    "category": "Strategy",
-    "excerpt": "Discover why thousands of SMB founders are replacing traditional marketing agencies with autonomous AI agents — cutting costs by 70% while running campaigns 24/7.",
-    "description": "Discover why thousands of SMB founders are replacing traditional marketing agencies with autonomous AI agents — cutting costs by 70% while running campaigns 24/7.",
-    "publishedAt": "Jan 1, 2026",
-    "date": "2026-01-01",
-    "readTime": "7 min read",
-    "image": "images/replace-marketing-agency-ai-agent.png",
-    "tags": [],
-    "url": "posts/replace-marketing-agency-ai-agent.html"
   }
 ]
