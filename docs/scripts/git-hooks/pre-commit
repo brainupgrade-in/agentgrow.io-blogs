@@ -53,4 +53,18 @@ for LINT in docs/scripts/validate-template.py scripts/validate-template.py; do
     fi
     break
 done
+
+# No-fabrication lint — hard-block #88 client-attribution signatures
+# (named enterprises as clients, invented surveys/personas, AgentGrow
+# case studies with ₹-saved / N-person-firm result claims). Conservative
+# (low FP). Pushable mirror of the validate-indexes CI step. See
+# docs/scripts/validate-no-fabrication.py.
+for FAB in docs/scripts/validate-no-fabrication.py scripts/validate-no-fabrication.py; do
+    [ -f "$FAB" ] || continue
+    if ! "$PYTHON" "$FAB" >&2; then
+        echo "[pre-commit] Fabrication lint failed — aborting commit. Neutralise the post(s) above per #88 (strip the client roster / invented metric / fabricated case study; keep real anchors)." >&2
+        exit 1
+    fi
+    break
+done
 exit 0

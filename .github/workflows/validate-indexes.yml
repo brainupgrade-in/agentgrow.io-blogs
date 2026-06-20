@@ -45,3 +45,10 @@ jobs:
         # <footer>, BlogPosting JSON-LD) so it renders inside the site shell.
         # Redirect stubs are exempt. See docs/scripts/validate-template.py.
         run: python3 docs/scripts/validate-template.py
+
+      - name: No fabricated client attribution (#88, hard fail)
+        # Blocks high-confidence #88 fabrication signatures: named enterprises
+        # as clients, invented surveys/personas, AgentGrow case studies with
+        # ₹-saved / N-person-firm result claims. Conservative (low FP).
+        # See docs/scripts/validate-no-fabrication.py.
+        run: python3 docs/scripts/validate-no-fabrication.py
