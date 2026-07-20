@@ -32,6 +32,20 @@ CHECKS = [
         'BlogPosting JSON-LD',
         lambda h: re.search(r'"@type"\s*:\s*"BlogPosting"', h) is not None,
     ),
+    # Brand suffix in <title> — the tab/SERP title must end with "AgentGrow"
+    # (any separator; an optional trailing "Blog" is fine). Added 2026-07-20
+    # after 10 posts shipped with no branding suffix.
+    (
+        '<title> "… — AgentGrow" brand suffix',
+        lambda h: re.search(r'AgentGrow(?:\s+Blog)?\s*</title>', h) is not None,
+    ),
+    # JSON-LD author must be the founder (Person / Rajesh Gheware), never the
+    # Organization. Added 2026-07-20 after 17 posts drifted to Organization/
+    # AgentGrow (one malformed as Person/AgentGrow). Publisher stays Organization.
+    (
+        'JSON-LD author = Person/Rajesh Gheware',
+        lambda h: re.search(r'"@type"\s*:\s*"Person"\s*,\s*"name"\s*:\s*"Rajesh Gheware"', h) is not None,
+    ),
 ]
 
 
