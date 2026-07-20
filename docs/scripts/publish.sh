@@ -33,9 +33,14 @@ PREV_HEAD="$(git rev-parse HEAD)"
 
 echo ""
 echo "2️⃣  Git commit & push..."
-git pull origin main --rebase 2>&1 | tail -2
+# Commit BEFORE pulling: `git pull --rebase` refuses to run with a dirty tree,
+# and STEP 1's regen always dirties the tree. Stage+commit first so the rebase
+# sees a clean tree, then push. (Pre-2026-07-20 order pulled first and aborted
+# with "cannot pull with rebase: You have unstaged changes" whenever main had
+# advanced.)
 git add -A
 git commit -m "$COMMIT_MSG" 2>/dev/null && echo "   ✅ Committed: $COMMIT_MSG" || echo "   ℹ️  Nothing new to commit"
+git pull origin main --rebase 2>&1 | tail -2
 git push origin main 2>&1 | tail -2
 
 # ─── STEP 2b: Close agent_approvals row (if caller set APPROVAL_ID) ──────────
