@@ -10,6 +10,17 @@ A content post MUST contain:
   - a <nav> element        (site-header navigation)
   - a <footer> element     (site-footer chrome)
   - a BlogPosting JSON-LD block
+  - the structural shell classes site-header / container-narrow / site-footer
+  - a well-formed viewport meta
+
+The last two were added 2026-08-08. The marker checks above are satisfiable by a
+two-line skeleton — `<nav>` matches ANY nav, `<footer>` ANY footer, and the
+stylesheet check is a substring test — so this lint passed
+`flat-rate-vs-usage-pricing-marketing-automation.html` even though it shipped
+live with no site chrome, no `.container-narrow` wrapper (so blog.css styled
+nothing) and a mangled `content="width=device-1.0"` viewport. Checking for the
+class names blog.css actually keys off is what makes this lint mean what its
+docstring always claimed.
 
 Redirect stubs (files with <meta http-equiv="refresh">) are exempt.
 
@@ -45,6 +56,29 @@ CHECKS = [
     (
         'JSON-LD author = Person/Rajesh Gheware',
         lambda h: re.search(r'"@type"\s*:\s*"Person"\s*,\s*"name"\s*:\s*"Rajesh Gheware"', h) is not None,
+    ),
+    # Structural shell (2026-08-08). blog.css keys off these class names — a post
+    # without them renders as unstyled raw HTML even though it links the
+    # stylesheet. `bin/apply-blog-shell.py` guarantees them pre-gate; this is the
+    # fail-loud backstop at pre-commit + CI.
+    (
+        'site-header chrome (class="site-header")',
+        lambda h: "site-header" in h,
+    ),
+    (
+        'article width wrapper (class="container-narrow")',
+        lambda h: "container-narrow" in h,
+    ),
+    (
+        'site-footer chrome (class="site-footer")',
+        lambda h: "site-footer" in h,
+    ),
+    # A model-mangled viewport ("width=device-1.0") breaks mobile rendering and
+    # nothing else in the pipeline looks at it.
+    (
+        'viewport meta "width=device-width"',
+        lambda h: re.search(
+            r'<meta\s+name="viewport"\s+content="[^"]*width=device-width', h) is not None,
     ),
 ]
 
