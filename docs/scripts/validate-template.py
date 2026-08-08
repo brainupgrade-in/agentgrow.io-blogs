@@ -69,6 +69,14 @@ CHECKS = [
         'article width wrapper (class="container-narrow")',
         lambda h: "container-narrow" in h,
     ),
+    # The load-bearing one. blog.css defines EVERY body-copy rule (p, h2, h3, ul,
+    # li, table, .callout) under `.article-body …` and has no bare `article`
+    # selector — so the 4 posts using `<article class="container-narrow">` had
+    # correct width and zero typography. container-narrow alone is not enough.
+    (
+        'article body wrapper (class="article-body")',
+        lambda h: "article-body" in h,
+    ),
     (
         'site-footer chrome (class="site-footer")',
         lambda h: "site-footer" in h,
