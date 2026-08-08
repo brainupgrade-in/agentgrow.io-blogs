@@ -142,6 +142,24 @@ def load_existing_by_slug():
     return result
 
 
+# `<title>` must end with the brand suffix (validate-template.py hard-requires
+# it, #114/#139) but og:title carries it only on some posts — 24 of 86 as of
+# 2026-08-08. Since the index title is taken from og:title verbatim, the blog
+# grid and the related-posts cards showed "… — AgentGrow" on some cards and not
+# others, on AgentGrow's own blog.
+#
+# Strip it here, at the one place the card title is derived, rather than
+# rewriting og:title in 24 posts (og:title also drives social share cards, where
+# the brand is wanted). A separator is REQUIRED before the brand: 9 posts end in
+# "AgentGrow" as real headline text ("How to Set Up Email Marketing for
+# AgentGrow", "…by Reselling AgentGrow") and must not be truncated.
+BRAND_SUFFIX_RE = re.compile(r"\s*[—–|-]\s*AgentGrow(\s+Blog)?\s*$")
+
+
+def strip_brand_suffix(title):
+    return BRAND_SUFFIX_RE.sub("", title).strip() or title
+
+
 def build_entry(slug, html, existing=None):
     """Build one posts-data.json entry from post HTML."""
     existing = existing or {}
@@ -151,7 +169,7 @@ def build_entry(slug, html, existing=None):
         # JSON-LD headline
         m = re.search(r'"headline"\s*:\s*"([^"]+)"', html)
         og_title = m.group(1) if m else existing.get("title", slug)
-    title = html_unescape(og_title).strip()
+    title = strip_brand_suffix(html_unescape(og_title).strip())
 
     desc = extract_meta(html, "name", "description") or extract_meta(
         html, "property", "og:description"
