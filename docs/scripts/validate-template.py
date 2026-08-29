@@ -81,6 +81,15 @@ CHECKS = [
         'site-footer chrome (class="site-footer")',
         lambda h: "site-footer" in h,
     ),
+    # Author bio (2026-08-29). Unconditional chrome emitted by apply-blog-shell.py,
+    # so it is safe to hard-require. The table of contents deliberately is NOT
+    # required: it is suppressed on posts with fewer than 3 <h2>s, and a gate that
+    # demands what the pipeline cannot supply deadlocks against its own producer
+    # (the #128 failure mode).
+    (
+        'author bio block (class="author-bio")',
+        lambda h: "author-bio" in h,
+    ),
     # A model-mangled viewport ("width=device-1.0") breaks mobile rendering and
     # nothing else in the pipeline looks at it.
     (
@@ -95,9 +104,58 @@ def is_redirect_stub(html):
     return bool(re.search(r'<meta\s+http-equiv="refresh"', html[:500], re.IGNORECASE))
 
 
+# ── Undefined-class check (2026-08-29) ──────────────────────────────────────
+#
+# Every check above is a MARKER check: it asks whether a string is present. That is
+# structurally blind, and it is how three separate unstyled-body outages shipped
+# green — #141 (right markup, missing stylesheet), #142 (right stylesheet, no
+# markup), #144 (both right, another site's class vocabulary). A marker check
+# cannot see that `.post-content` means nothing to THIS stylesheet.
+#
+# So this one inverts the question: every class the post actually uses must be
+# defined in the CSS it actually loads. That is the property all three outages
+# violated, and none of the marker checks could express.
+CSS_FILE = Path(__file__).resolve().parent.parent / "css" / "blog.css"
+
+# Styled inline, or supplied by the page's own <style>. Kept explicit and short:
+# a long exemption list is how this check would rot into a no-op.
+EXEMPT_CLASSES = {
+    "logo", "logo-icon", "brand", "addr", "copy", "inner", "cta-btn",
+    "sr-only", "excerpt", "author",
+}
+
+
+def _css_classes():
+    if not CSS_FILE.exists():
+        return None
+    return set(re.findall(r"\.([a-zA-Z][\w-]*)", CSS_FILE.read_text(encoding="utf-8")))
+
+
+def undefined_classes(html, defined):
+    """Classes used by the post but absent from blog.css.
+
+    Two exemptions, both learned from #141b's false positives: a post carrying its
+    own inline <style>, and a post loading the Tailwind CDN, both legitimately use
+    class names blog.css has never heard of.
+    """
+    if defined is None:
+        return []
+    if re.search(r"<style[\s>]", html) or "cdn.tailwindcss.com" in html:
+        return []
+    # The related-posts renderer builds markup by string concatenation, so a naive
+    # class= scan over the raw file picks up JavaScript fragments, not class names.
+    markup = re.sub(r"<script\b.*?</script>", " ", html, flags=re.S | re.I)
+    used = set()
+    for attr in re.findall(r'class="([^"]+)"', markup):
+        used.update(attr.split())
+    return sorted(c for c in used - EXEMPT_CLASSES if c not in defined)
+
+
 def main():
     failures = []
+    warnings = []
     checked = 0
+    defined = _css_classes()
     for post in sorted(POSTS_DIR.glob("*.html")):
         html = post.read_text(encoding="utf-8")
         if is_redirect_stub(html):
@@ -106,6 +164,25 @@ def main():
         missing = [label for label, test in CHECKS if not test(html)]
         if missing:
             failures.append((post.name, missing))
+        # WARN, not fail — deliberately. The check found 37 distinct undefined classes
+        # already live across the corpus (internal-links on 33 posts, toc on 31), all
+        # pre-dating it. Hard-failing on day one would block every publish for a
+        # backlog this check did not cause — #134a, where a blocked hook became a
+        # silent 3-week outage. It fails loudly for NEW drift once the backlog is
+        # cleared; until then it reports.
+        undefined = undefined_classes(html, defined)
+        if undefined:
+            warnings.append((post.name, undefined))
+
+    if warnings:
+        total = len({c for _, cs in warnings for c in cs})
+        print(f"Template lint: {len(warnings)} post(s) use {total} class(es) not defined "
+              f"in blog.css — these render unstyled (warning, not a failure):",
+              file=sys.stderr)
+        for name, cs in warnings[:10]:
+            print(f"  WARN  {name}: {', '.join(cs)}", file=sys.stderr)
+        if len(warnings) > 10:
+            print(f"  … and {len(warnings) - 10} more", file=sys.stderr)
 
     if failures:
         print(

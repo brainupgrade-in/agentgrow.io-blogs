@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noindex, follow">
-  <title>How to Connect LinkedIn (OAuth) for AgentGrow &mdash; AgentGrow</title>
+  <title>How to Connect LinkedIn (OAuth) for AgentGrow — AgentGrow</title>
   <meta name="description" content="Step-by-step guide to creating a LinkedIn App and connecting it to AgentGrow via OAuth. Your agent gets automatic token refresh — no manual token pasting required.">
   <meta property="og:title" content="How to Connect LinkedIn (OAuth) for AgentGrow">
   <meta property="og:description" content="Step-by-step guide to creating a LinkedIn App and connecting it to AgentGrow via OAuth. Your agent gets automatic token refresh — no manual token pasting required.">
@@ -19,97 +18,16 @@
     "@type": "BlogPosting",
     "headline": "How to Connect LinkedIn (OAuth) for AgentGrow",
     "description": "Step-by-step guide to creating a LinkedIn App and connecting it to AgentGrow via OAuth. Your agent gets automatic token refresh — no manual token pasting required.",
-    "datePublished": "2026-03-05","dateModified":"2026-03-31",
-    "author":{"@type":"Person","name":"Rajesh Gheware","jobTitle":"Founder, AgentGrow","url":"https://agentgrow.io/about/"},
+    "datePublished": "2026-03-05",
+    "dateModified": "2026-03-05",
+    "author": {"@type": "Person", "name": "Rajesh Gheware", "jobTitle": "Founder, AgentGrow", "url": "https://agentgrow.io/about/"},
     "publisher": {"@type": "Organization", "name": "AgentGrow", "url": "https://agentgrow.io"},
     "mainEntityOfPage": "https://agentgrow.io/blog/posts/linkedin-oauth-setup.html"
   }
   </script>
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agentgrow.io"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://agentgrow.io/blog"},{"@type":"ListItem","position":3,"name":"How to Connect LinkedIn (OAuth) for AgentGrow &mdash; AgentGrow"}]}
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agentgrow.io"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://agentgrow.io/blog"},{"@type":"ListItem","position":3,"name":"How to Connect LinkedIn (OAuth) for AgentGrow"}]}
   </script>
-  <style>
-    .step-number {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 28px;
-      height: 28px;
-      background: var(--lime);
-      color: var(--obsidian);
-      border-radius: 50%;
-      font-weight: 700;
-      font-size: 0.85rem;
-      margin-right: 0.5rem;
-      flex-shrink: 0;
-    }
-    .step-heading {
-      display: flex;
-      align-items: center;
-      margin-bottom: 0.75rem;
-    }
-    .step-heading h3 {
-      margin: 0 !important;
-      padding: 0 !important;
-    }
-    .code-block {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid var(--border-subtle);
-      border-radius: 8px;
-      padding: 0.75rem 1rem;
-      font-family: 'SF Mono', 'Fira Code', monospace;
-      font-size: 0.85rem;
-      color: var(--lime);
-      overflow-x: auto;
-      margin: 0.75rem 0 1.25rem;
-      word-break: break-all;
-    }
-    .warning-box {
-      background: rgba(251, 191, 36, 0.08);
-      border-left: 3px solid var(--amber);
-      border-radius: 0 8px 8px 0;
-      padding: 1rem 1.25rem;
-      margin: 1.25rem 0;
-      color: var(--zinc-300);
-      font-size: 0.9rem;
-    }
-    .warning-box strong {
-      color: var(--amber);
-    }
-    .section-divider {
-      border: none;
-      border-top: 1px solid var(--border-subtle);
-      margin: 2.5rem 0;
-    }
-    .field-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 1rem 0 1.5rem;
-    }
-    .field-table th {
-      text-align: left;
-      padding: 0.6rem 0.75rem;
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--zinc-500);
-      border-bottom: 1px solid var(--border-subtle);
-    }
-    .field-table td {
-      padding: 0.6rem 0.75rem;
-      font-size: 0.9rem;
-      border-bottom: 1px solid var(--glass-border);
-    }
-    .field-table td:first-child {
-      font-family: 'SF Mono', 'Fira Code', monospace;
-      font-size: 0.85rem;
-      color: var(--lime);
-      white-space: nowrap;
-    }
-    .field-table td:last-child {
-      color: var(--zinc-400);
-    }
-  </style>
 </head>
 <body>
 
@@ -138,24 +56,29 @@
       <p class="breadcrumb"><a href="../">&larr; Blog</a> / How-To</p>
       <span class="badge badge-how-to">How-To</span>
       <h1>How to Connect LinkedIn (OAuth) for AgentGrow</h1>
-    <img src="../images/linkedin-oauth-setup.jpg" alt="LinkedIn OAuth Setup" style="width:100%;max-height:400px;object-fit:cover;border-radius:8px;margin-bottom:2rem;" loading="lazy">
-
-      <p class="excerpt-text">Create a LinkedIn App, paste the Client ID and Secret into AgentGrow, and click Connect. The platform handles token exchange and automatic refresh &mdash; no manual token management required.</p>
-      <div class="meta">
-        <span>AgentGrow</span>
-        <span>&middot;</span>
-        <span>Mar 5, 2026</span>
-        <span>&middot;</span>
-        <span>5 min read</span>
-      </div>
+      <img class="post-hero" src="../images/linkedin-oauth-setup.jpg" alt="How to Connect LinkedIn (OAuth) for AgentGrow" loading="lazy">
+      <p class="excerpt-text">Create a LinkedIn App, paste the Client ID and Secret into AgentGrow, and click Connect. The platform handles token exchange and automatic refresh — no manual token management required.</p>
+      <div class="meta"><span>AgentGrow</span><span>&middot;</span><span>March 5, 2026</span><span>&middot;</span><span>6 min read</span></div>
     </div>
   </div>
 
-  <!-- Article Body -->
+  <!-- Article Content -->
   <div class="article-body">
     <div class="container-narrow">
 
-      <p>The LinkedIn module lets your AI agent publish posts to your LinkedIn profile or company page. AgentGrow uses <strong>OAuth 2.0</strong> to connect securely &mdash; you create a LinkedIn App, enter its credentials, and click a button. The platform handles token exchange, encrypted storage, and <strong>automatic daily refresh</strong> so your connection never expires silently.</p>
+      <nav class="table-of-contents" aria-label="Table of contents">
+        <h2>Table of Contents</h2>
+        <ol>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#what-you-will-need">What You Will Need</a></li>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#part-1-create-a-linkedin-app">Part 1 — Create a LinkedIn App</a></li>
+        <li><a href="#part-2-connect-linkedin-in-agentgrow">Part 2 — Connect LinkedIn in AgentGrow</a></li>
+        <li><a href="#troubleshooting">Troubleshooting</a></li>
+        </ol>
+      </nav>
+
+<p>The LinkedIn module lets your AI agent publish posts to your LinkedIn profile or company page. AgentGrow uses <strong>OAuth 2.0</strong> to connect securely &mdash; you create a LinkedIn App, enter its credentials, and click a button. The platform handles token exchange, encrypted storage, and <strong>automatic daily refresh</strong> so your connection never expires silently.</p>
 
       <h2 id="how-it-works">How It Works</h2>
 
@@ -192,7 +115,7 @@
       <hr class="section-divider">
 
       <!-- PART 1 -->
-      <h2 id="part-1-mdash-create-a-linkedin-app">Part 1 &mdash; Create a LinkedIn App</h2>
+      <h2 id="part-1-create-a-linkedin-app">Part 1 &mdash; Create a LinkedIn App</h2>
 
       <div class="step-heading">
         <span class="step-number">1</span>
@@ -261,7 +184,7 @@
       <hr class="section-divider">
 
       <!-- PART 2 -->
-      <h2 id="part-2-mdash-connect-linkedin-in-agentgrow">Part 2 &mdash; Connect LinkedIn in AgentGrow</h2>
+      <h2 id="part-2-connect-linkedin-in-agentgrow">Part 2 &mdash; Connect LinkedIn in AgentGrow</h2>
 
       <div class="step-heading">
         <span class="step-number">1</span>
@@ -353,40 +276,38 @@
       <h3>Can I switch to a different LinkedIn account?</h3>
       <p>Yes. Disconnect the current connection, then click <strong>Connect LinkedIn</strong> again. When LinkedIn asks you to authorize, sign in with the different account.</p>
 
-    </div>
-  </div>
+    
+  
 
   <!-- Related Posts -->
-  <div class="container-narrow">
+  
     
 
 
-<div style="display:flex;gap:1rem;align-items:flex-start;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:1.25rem 1.5rem;margin:2rem 0;">
-  <div style="width:48px;height:48px;border-radius:50%;background:#4a6cf7;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:white;font-weight:700;font-size:1.1rem;">R</div>
-  <div>
-    <p style="margin:0 0 0.25rem;font-weight:700;color:#ffffff;">Rajesh Gheware</p>
-    <p style="margin:0 0 0.5rem;font-size:0.85rem;color:rgba(255,255,255,0.45);">Founder, AgentGrow · AI Marketing Automation Expert</p>
-    <p style="margin:0;font-size:0.9rem;color:#d4d4d8;">Building AI agents that handle marketing for SMBs and consulting firms. Based in Bengaluru, India.</p>
-  </div>
-</div>
+
 <div class="internal-links" style="background:rgba(37,99,235,0.1);border-left:4px solid #38bdf8;padding:1.2rem 1.5rem;margin:2rem 0;border-radius:0 8px 8px 0;">
   <p style="margin:0 0 0.5rem;font-weight:600;color:#93c5fd;">📚 Related reading:</p>
   <ul style="margin:0;padding-left:1.2rem;">
   <li><a href="linkedin-setup.html">Setting Up LinkedIn</a></li>
   <li><a href="integrations-guide.html">Integrations Guide</a></li>
   <li><a href="linkedin-marketing-b2b-founders.html">LinkedIn Marketing for B2B Founders</a></li>
-  </ul>
-</div>
-<div class="related-posts">
-      <h2>More from the blog</h2>
-      <div class="card-grid" id="related-posts"></div>
+  </ul></div>
+
+      <div class="author-bio">
+        <div class="author-bio-avatar">RG</div>
+        <div>
+          <p class="author-bio-name">Rajesh Gheware</p>
+          <p class="author-bio-role">Founder, AgentGrow &middot; 25+ years architecting systems for enterprise engineering teams.</p>
+        </div>
+      </div>
+
+    <div class="related-posts"><h2>More from the blog</h2><div class="card-grid" id="related-posts"></div></div>
     </div>
   </div>
 
-  <!-- CTA -->
   <section class="cta-section">
     <h2>Deploy your AI CBO today</h2>
-    <p>Your AI CBO goes live within an hour. 90-day satisfaction guarantee &mdash; full refund if minimum deliverables aren't met.</p>
+    <p>Your AI CBO goes live within an hour. 90-day satisfaction guarantee — full refund if minimum deliverables aren't met.</p>
     <div style="display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap">
       <a href="https://agentgrow.io/onboard/" class="btn-lime">Get Started</a>
       <a href="../" class="btn-outline">Back to Blog</a>
@@ -403,12 +324,9 @@
           </div>
           AgentGrow
         </a>
-        <p>AI-powered Chief Business Officer that grows your business 24/7 &mdash; content, leads, social, SEO.</p>
+        <p>AI-powered Chief Business Officer that grows your business 24/7 — content, leads, social, SEO.</p>
         <div style="display:flex;gap:0.75rem;margin-top:1rem">
-          <a href="https://www.facebook.com/profile.php?id=61586359084622" target="_blank" rel="noopener noreferrer" aria-label="Facebook" style="color:var(--zinc-400);transition:color 0.2s" onmouseover="this.style.color='var(--white)'" onmouseout="this.style.color='var(--zinc-400)'"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
-          <a href="https://www.instagram.com/agentgrowio/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style="color:var(--zinc-400);transition:color 0.2s" onmouseover="this.style.color='var(--white)'" onmouseout="this.style.color='var(--zinc-400)'"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></a>
-          <a href="https://www.linkedin.com/company/agentgrow-io" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="color:var(--zinc-400);transition:color 0.2s" onmouseover="this.style.color='var(--white)'" onmouseout="this.style.color='var(--zinc-400)'"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>
-          <a href="https://youtube.com/@agentgrow-io" target="_blank" rel="noopener noreferrer" aria-label="YouTube" style="color:var(--zinc-400);transition:color 0.2s" onmouseover="this.style.color='var(--white)'" onmouseout="this.style.color='var(--zinc-400)'"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></a>
+          <a href="https://www.facebook.com/profile.php?id=61586359084622" target="_blank" rel="noopener noreferrer" aria-label="Facebook" style="color:var(--zinc-400);transition:color 0.2s" onmouseover="this.style.color='var(--white)'" onmouseout="this.style.color='var(--zinc-400)'"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a><a href="https://www.instagram.com/agentgrowio/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style="color:var(--zinc-400);transition:color 0.2s" onmouseover="this.style.color='var(--white)'" onmouseout="this.style.color='var(--zinc-400)'"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></a><a href="https://www.linkedin.com/company/agentgrow-io" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="color:var(--zinc-400);transition:color 0.2s" onmouseover="this.style.color='var(--white)'" onmouseout="this.style.color='var(--zinc-400)'"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a><a href="https://youtube.com/@agentgrow-io" target="_blank" rel="noopener noreferrer" aria-label="YouTube" style="color:var(--zinc-400);transition:color 0.2s" onmouseover="this.style.color='var(--white)'" onmouseout="this.style.color='var(--zinc-400)'"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></a>
         </div>
         <p class="addr">2146 Sunscape, Sobha Hillview, Kanakapura Road, Bengaluru, Karnataka, INDIA 560109</p>
         <p class="copy">&copy; 2026 gheWARE uniGPS Solutions LLP. All rights reserved.</p>

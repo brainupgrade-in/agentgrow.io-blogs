@@ -52,7 +52,7 @@
     "url": "posts/flat-rate-vs-usage-pricing-marketing-automation.html"
   },
   {
-    "title": "AI Proposal Generation for B2B: Cut Quote Time",
+    "title": "AI Proposal Generation for B2B: Cut Quote Time from Days to Minutes",
     "slug": "ai-proposal-generation-b2b-services",
     "category": "Strategy",
     "excerpt": "Discover how AI proposal generation helps B2B service founders create winning quotes in minutes instead of days. Learn the 2026 playbook for faster deals.",
@@ -91,7 +91,7 @@
     "url": "posts/ai-chatbot-lead-qualification-smb.html"
   },
   {
-    "title": "AI Email Personalization for B2B Services: 2026 Playbook",
+    "title": "AI Email Personalization for B2B Service Businesses: The 2026 Playbook",
     "slug": "ai-email-personalization-b2b-service-business",
     "category": "Strategy",
     "excerpt": "Discover how AI email personalization helps B2B service businesses send relevant, one-to-one messages at scale — without burning founder time or sounding robotic.",
@@ -111,7 +111,7 @@
     "url": "posts/ai-email-personalization-b2b-service-business.html"
   },
   {
-    "title": "Automate B2B Cold Outreach with an AI Agent: Field Guide",
+    "title": "Automate B2B Cold Outreach with an AI Agent: Founder's Field Guide",
     "slug": "automate-b2b-cold-outreach-ai-agent",
     "category": "Strategy",
     "excerpt": "Discover how B2B service founders automate cold outreach with AI agents — personalized emails, follow-up sequences, and pipeline on autopilot.",
@@ -144,7 +144,7 @@
     "url": "posts/ai-agents-vs-hiring-marketing-manager-smb-2026.html"
   },
   {
-    "title": "AI Marketing Reporting for Small Business: Automate Dashboards",
+    "title": "AI Marketing Reporting for Small Business: Automate Dashboards That Drive Decisions",
     "slug": "ai-marketing-reporting-small-business",
     "category": "Strategy",
     "excerpt": "Most small business owners spend hours on marketing reports instead of decisions. Learn how AI automates dashboards and gives you metrics that drive growth.",
@@ -414,7 +414,7 @@
     "url": "posts/why-smbs-fail-marketing-automation.html"
   },
   {
-    "title": "5 Outbound Prospecting Mistakes That Kill SMB Growth",
+    "title": "5 Outbound Prospecting Mistakes That Kill SMB Growth (And How to Fix Them)",
     "slug": "outbound-prospecting-mistakes-smb",
     "category": "Strategy",
     "excerpt": "Learn the 5 biggest outbound prospecting mistakes that kill B2B SMB growth. Fix them and watch your reply rates and conversions improve.",
@@ -433,7 +433,7 @@
     "url": "posts/outbound-prospecting-mistakes-smb.html"
   },
   {
-    "title": "Content Repurposing for SMBs: Turn 1 Blog Post Into 10 Social Posts",
+    "title": "Content Repurposing for SMBs: Turn 1 Blog Post Into 10 Social Posts (Without Extra Work)",
     "slug": "smb-content-repurposing-seo-social",
     "category": "How-To",
     "excerpt": "Learn how to repurpose a single blog post into 10+ social media posts. Maximize your content ROI and keep your social feeds active without writing more.",
@@ -452,7 +452,7 @@
     "url": "posts/smb-content-repurposing-seo-social.html"
   },
   {
-    "title": "SMB Marketing Metrics That Matter: Track What Converts",
+    "title": "SMB Marketing Metrics That Matter: Stop Vanity Metrics, Track What Actually Converts",
     "slug": "smb-marketing-metrics-that-matter",
     "category": "Strategy",
     "excerpt": "Learn which marketing metrics actually matter for SMBs. Stop tracking vanity metrics and focus on what drives revenue.",
@@ -472,7 +472,7 @@
     "url": "posts/smb-marketing-metrics-that-matter.html"
   },
   {
-    "title": "Lead Scoring Made Simple: How AI Agents Qualify Your Prospects Automatically",
+    "title": "Lead Scoring Made Simple: How AI Agents Qualify Your Prospects Automatically (No More Manual Work)",
     "slug": "ai-lead-scoring-qualify-prospects",
     "category": "Strategy",
     "excerpt": "Stop wasting time on bad leads. Learn how AI-powered lead scoring automatically qualifies prospects and helps you focus on high-probability deals.",
@@ -491,7 +491,7 @@
     "url": "posts/ai-lead-scoring-qualify-prospects.html"
   },
   {
-    "title": "Email Drip Campaigns That Convert Without Your Input",
+    "title": "Email Drip Campaigns That Convert Without Your Input: The Automation Blueprint for B2B Service Businesses",
     "slug": "email-drip-automation-b2b-service",
     "category": "Strategy",
     "excerpt": "Learn how to build email drip sequences that generate leads on autopilot. The complete blueprint for B2B service businesses — no manual follow-up required.",
@@ -978,7 +978,7 @@
     "url": "posts/inbound-marketing-it-consultants.html"
   },
   {
-    "title": "What 3 Months of Inconsistent Content Does to Your Business",
+    "title": "What 3 Months of Inconsistent Content Does to Your Business (And Why Most SMB Owners Never Recover)",
     "slug": "inconsistent-content-smb",
     "category": "Strategy",
     "excerpt": "You had good reasons to pause content. Google didn't care. Here's the invisible damage inconsistent publishing does to your SEO and pipeline — and how to fix it.",
@@ -1085,8 +1085,8 @@
     "title": "Your Client Dashboard: A Complete Walkthrough",
     "slug": "dashboard-walkthrough",
     "category": "Getting Started",
-    "excerpt": "A guided tour of the AgentGrow client dashboard &mdash; agent status, KPI goals with sparklines, approval queue, activity feed, prospect pipeline, and ROI tracking.",
-    "description": "A guided tour of the AgentGrow client dashboard &mdash; agent status, KPI goals with sparklines, approval queue, activity feed, prospect pipeline, and ROI tracking.",
+    "excerpt": "A guided tour of the AgentGrow client dashboard — agent status, KPI goals with sparklines, approval queue, activity feed, prospect pipeline, and ROI tracking.",
+    "description": "A guided tour of the AgentGrow client dashboard — agent status, KPI goals with sparklines, approval queue, activity feed, prospect pipeline, and ROI tracking.",
     "publishedAt": "Mar 4, 2026",
     "date": "2026-03-04",
     "readTime": "5 min read",

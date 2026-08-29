@@ -3,83 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Client Dashboard: A Complete Walkthrough &mdash; AgentGrow</title>
-  <meta name="description" content="A guided tour of the AgentGrow client dashboard &mdash; agent status, KPI goals with sparklines, approval queue, activity feed, prospect pipeline, and ROI tracking.">
+  <title>Your Client Dashboard: A Complete Walkthrough — AgentGrow</title>
+  <meta name="description" content="A guided tour of the AgentGrow client dashboard — agent status, KPI goals with sparklines, approval queue, activity feed, prospect pipeline, and ROI tracking.">
   <meta property="og:title" content="Your Client Dashboard: A Complete Walkthrough">
-  <meta property="og:description" content="A guided tour of the AgentGrow client dashboard &mdash; agent status, KPI goals with sparklines, approval queue, activity feed, prospect pipeline, and ROI tracking.">
+  <meta property="og:description" content="A guided tour of the AgentGrow client dashboard — agent status, KPI goals with sparklines, approval queue, activity feed, prospect pipeline, and ROI tracking.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://agentgrow.io/blog/posts/dashboard-walkthrough.html">
   <meta name="twitter:card" content="summary">
   <link rel="canonical" href="https://agentgrow.io/blog/posts/dashboard-walkthrough.html">
   <link rel="stylesheet" href="../css/blog.css">
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"BlogPosting","headline":"Your Client Dashboard: A Complete Walkthrough","description":"A guided tour of the AgentGrow client dashboard — agent status, KPI goals with sparklines, approval queue, activity feed, prospect pipeline, and ROI tracking.","datePublished":"2026-03-04","dateModified":"2026-03-12","author":{"@type":"Person","name":"Rajesh Gheware","jobTitle":"Founder, AgentGrow","url":"https://agentgrow.io/about/"},"publisher":{"@type":"Organization","name":"AgentGrow","url":"https://agentgrow.io"},"mainEntityOfPage":"https://agentgrow.io/blog/posts/dashboard-walkthrough.html"}
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Your Client Dashboard: A Complete Walkthrough",
+    "description": "A guided tour of the AgentGrow client dashboard — agent status, KPI goals with sparklines, approval queue, activity feed, prospect pipeline, and ROI tracking.",
+    "datePublished": "2026-03-04",
+    "dateModified": "2026-03-04",
+    "author": {"@type": "Person", "name": "Rajesh Gheware", "jobTitle": "Founder, AgentGrow", "url": "https://agentgrow.io/about/"},
+    "publisher": {"@type": "Organization", "name": "AgentGrow", "url": "https://agentgrow.io"},
+    "mainEntityOfPage": "https://agentgrow.io/blog/posts/dashboard-walkthrough.html"
+  }
   </script>
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agentgrow.io"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://agentgrow.io/blog"},{"@type":"ListItem","position":3,"name":"Your Client Dashboard: A Complete Walkthrough &mdash; AgentGrow"}]}
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agentgrow.io"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://agentgrow.io/blog"},{"@type":"ListItem","position":3,"name":"Your Client Dashboard: A Complete Walkthrough"}]}
   </script>
-  <style>
-    .step-number { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; background: var(--lime); color: var(--obsidian); border-radius: 50%; font-weight: 700; font-size: 0.85rem; margin-right: 0.5rem; flex-shrink: 0; }
-    .step-heading { display: flex; align-items: center; margin-bottom: 0.75rem; }
-    .step-heading h3 { margin: 0 !important; padding: 0 !important; }
-    .section-divider { border: none; border-top: 1px solid var(--border-subtle); margin: 2.5rem 0; }
-
-    .dashboard-section {
-      background: var(--glass-bg);
-      border: 1px solid var(--glass-border);
-      border-radius: 12px;
-      padding: 1.5rem;
-      margin: 1.75rem 0;
-    }
-    .dashboard-section-label {
-      display: inline-block;
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--zinc-500);
-      margin-bottom: 0.5rem;
-    }
-    .dashboard-section h3 {
-      color: var(--white);
-      font-size: 1.05rem;
-      margin-bottom: 0.6rem;
-    }
-    .status-dot {
-      display: inline-block;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      margin-right: 0.4rem;
-      vertical-align: middle;
-    }
-    .status-dot.green { background: #22c55e; box-shadow: 0 0 6px #22c55e88; }
-    .status-dot.amber { background: var(--amber); box-shadow: 0 0 6px #fbbf2488; }
-    .kpi-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-top: 1rem;
-    }
-    .kpi-chip {
-      flex: 1 1 calc(50% - 0.75rem);
-      background: rgba(255,255,255,0.04);
-      border: 1px solid var(--border-subtle);
-      border-radius: 8px;
-      padding: 0.75rem 1rem;
-      min-width: 140px;
-    }
-    .kpi-chip .kpi-label { font-size: 0.75rem; color: var(--zinc-500); margin-bottom: 0.25rem; }
-    .kpi-chip .kpi-value { font-size: 1.25rem; font-weight: 700; color: var(--white); }
-    .kpi-chip .kpi-trend { font-size: 0.75rem; color: #22c55e; margin-top: 0.2rem; }
-    .tip-list { list-style: none; padding: 0; margin: 0.75rem 0 0; }
-    .tip-list li { padding: 0.5rem 0; border-bottom: 1px solid var(--glass-border); color: var(--zinc-400); font-size: 0.95rem; }
-    .tip-list li:last-child { border-bottom: none; }
-    .tip-list li::before { content: "→ "; color: var(--lime); font-weight: 700; }
-  </style>
 </head>
 <body>
 
+  <!-- Header -->
   <header class="site-header">
     <div class="inner">
       <a href="https://agentgrow.io/" class="logo">
@@ -98,34 +50,45 @@
     </div>
   </header>
 
+  <!-- Article Header -->
   <div class="article-header">
     <div class="container-narrow">
       <p class="breadcrumb"><a href="../">&larr; Blog</a> / Getting Started</p>
       <span class="badge badge-getting-started">Getting Started</span>
       <h1>Your Client Dashboard: A Complete Walkthrough</h1>
-    <img src="../images/dashboard-walkthrough.jpg" alt="AgentGrow Dashboard Walkthrough" style="width:100%;max-height:400px;object-fit:cover;border-radius:8px;margin-bottom:2rem;" loading="lazy">
-
-      <p class="excerpt-text">A guided tour of the AgentGrow client dashboard &mdash; agent status, KPI goals with sparklines, approval queue, activity feed, prospect pipeline, and ROI tracking.</p>
-      <div class="meta">
-        <span>AgentGrow</span>
-        <span>&middot;</span>
-        <span>Mar 4, 2026</span>
-        <span>&middot;</span>
-        <span>5 min read</span>
-      </div>
+      <img class="post-hero" src="../images/dashboard-walkthrough.jpg" alt="Your Client Dashboard: A Complete Walkthrough" loading="lazy">
+      <p class="excerpt-text">A guided tour of the AgentGrow client dashboard — agent status, KPI goals with sparklines, approval queue, activity feed, prospect pipeline, and ROI tracking.</p>
+      <div class="meta"><span>AgentGrow</span><span>&middot;</span><span>March 4, 2026</span><span>&middot;</span><span>11 min read</span></div>
     </div>
   </div>
 
+  <!-- Article Content -->
   <div class="article-body">
     <div class="container-narrow">
 
-      <p>Once your AI CBO is live, everything it does on your behalf flows into one place: <strong>agentgrow.io/user/dashboard</strong>. This is your command center &mdash; a live view of your agent's health, output, and business impact. You do not need to check Telegram every hour or dig through social media apps to know what is happening. The dashboard surfaces exactly what matters, when it matters.</p>
+      <nav class="table-of-contents" aria-label="Table of contents">
+        <h2>Table of Contents</h2>
+        <ol>
+        <li><a href="#1-overview-your-command-center">1. Overview — Your Command Center</a></li>
+        <li><a href="#2-agent-status">2. Agent Status</a></li>
+        <li><a href="#3-kpi-goals">3. KPI Goals</a></li>
+        <li><a href="#4-this-week-stats">4. This Week Stats</a></li>
+        <li><a href="#5-approval-queue">5. Approval Queue</a></li>
+        <li><a href="#6-activity-feed">6. Activity Feed</a></li>
+        <li><a href="#7-prospect-pipeline">7. Prospect Pipeline</a></li>
+        <li><a href="#8-roi-events">8. ROI Events</a></li>
+        <li><a href="#9-tips-for-getting-the-most-out-of-your-dashboard">9. Tips for Getting the Most Out of Your Dashboard</a></li>
+        <li><a href="#what-the-dashboard-does-not-replace">What the Dashboard Does Not Replace</a></li>
+        </ol>
+      </nav>
+
+<p>Once your AI CBO is live, everything it does on your behalf flows into one place: <strong>agentgrow.io/user/dashboard</strong>. This is your command center &mdash; a live view of your agent's health, output, and business impact. You do not need to check Telegram every hour or dig through social media apps to know what is happening. The dashboard surfaces exactly what matters, when it matters.</p>
 
       <p>This walkthrough covers every section of the dashboard in the order you will encounter them, from the top-level status indicator down to ROI event tracking.</p>
 
       <hr class="section-divider">
 
-      <h2 id="1-overview-mdash-your-command-center">1. Overview &mdash; Your Command Center</h2>
+      <h2 id="1-overview-your-command-center">1. Overview &mdash; Your Command Center</h2>
 
       <p>The dashboard opens with a full picture of your agent's current state. The layout is intentionally top-heavy with status information: the most urgent things (agent health, pending approvals) appear before the historical data (activity feed, pipeline). If anything needs your attention right now, you will see it within the first scroll.</p>
 
@@ -324,44 +287,44 @@
 
       <p>For feature requests or questions about the dashboard, the fastest channel is your Telegram group with the agent. It can answer questions about your own data, log events, and relay requests to the AgentGrow team.</p>
 
-    </div>
-  </div>
+    
+  
 
-  <div class="container-narrow">
+  
     
 
 
-<div style="display:flex;gap:1rem;align-items:flex-start;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:1.25rem 1.5rem;margin:2rem 0;">
-  <div style="width:48px;height:48px;border-radius:50%;background:#4a6cf7;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:white;font-weight:700;font-size:1.1rem;">R</div>
-  <div>
-    <p style="margin:0 0 0.25rem;font-weight:700;color:#ffffff;">Rajesh Gheware</p>
-    <p style="margin:0 0 0.5rem;font-size:0.85rem;color:rgba(255,255,255,0.45);">Founder, AgentGrow · AI Marketing Automation Expert</p>
-    <p style="margin:0;font-size:0.9rem;color:#d4d4d8;">Building AI agents that handle marketing for SMBs and consulting firms. Based in Bengaluru, India.</p>
-  </div>
-</div>
+
 <div class="internal-links" style="background:rgba(37,99,235,0.1);border-left:4px solid #38bdf8;padding:1.2rem 1.5rem;margin:2rem 0;border-radius:0 8px 8px 0;">
   <p style="margin:0 0 0.5rem;font-weight:600;color:#93c5fd;">📚 Related reading:</p>
   <ul style="margin:0;padding-left:1.2rem;">
   <li><a href="what-is-autonomous-marketing-agent.html">What Is an Autonomous Marketing Agent?</a></li>
   <li><a href="what-is-ai-cbo.html">What Is an AI CBO</a></li>
   <li><a href="how-agentgrow-works.html">How AgentGrow Works</a></li>
-  </ul>
-</div>
-<div class="related-posts">
-      <h2>More from the blog</h2>
-      <div class="card-grid" id="related-posts"></div>
+  </ul></div>
+
+      <div class="author-bio">
+        <div class="author-bio-avatar">RG</div>
+        <div>
+          <p class="author-bio-name">Rajesh Gheware</p>
+          <p class="author-bio-role">Founder, AgentGrow &middot; 25+ years architecting systems for enterprise engineering teams.</p>
+        </div>
+      </div>
+
+    <div class="related-posts"><h2>More from the blog</h2><div class="card-grid" id="related-posts"></div></div>
     </div>
   </div>
 
   <section class="cta-section">
     <h2>Deploy your AI CBO today</h2>
-    <p>Your AI CBO goes live within an hour. 90-day satisfaction guarantee &mdash; full refund if minimum deliverables aren't met.</p>
+    <p>Your AI CBO goes live within an hour. 90-day satisfaction guarantee — full refund if minimum deliverables aren't met.</p>
     <div style="display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap">
       <a href="https://agentgrow.io/onboard/" class="btn-lime">Get Started</a>
       <a href="../" class="btn-outline">Back to Blog</a>
     </div>
   </section>
 
+  <!-- Footer -->
   <footer class="site-footer">
     <div class="inner">
       <div class="brand">
@@ -371,12 +334,9 @@
           </div>
           AgentGrow
         </a>
-        <p>AI-powered Chief Business Officer that grows your business 24/7.</p>
+        <p>AI-powered Chief Business Officer that grows your business 24/7 — content, leads, social, SEO.</p>
         <div style="display:flex;gap:0.75rem;margin-top:1rem">
-          <a href="https://www.facebook.com/profile.php?id=61586359084622" target="_blank" rel="noopener noreferrer" aria-label="Facebook" style="color:var(--zinc-400);transition:color 0.2s" onmouseover="this.style.color='var(--white)'" onmouseout="this.style.color='var(--zinc-400)'"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
-          <a href="https://www.instagram.com/agentgrowio/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style="color:var(--zinc-400);transition:color 0.2s" onmouseover="this.style.color='var(--white)'" onmouseout="this.style.color='var(--zinc-400)'"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></a>
-          <a href="https://www.linkedin.com/company/agentgrow-io" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="color:var(--zinc-400);transition:color 0.2s" onmouseover="this.style.color='var(--white)'" onmouseout="this.style.color='var(--zinc-400)'"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>
-          <a href="https://youtube.com/@agentgrow-io" target="_blank" rel="noopener noreferrer" aria-label="YouTube" style="color:var(--zinc-400);transition:color 0.2s" onmouseover="this.style.color='var(--white)'" onmouseout="this.style.color='var(--zinc-400)'"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></a>
+          <a href="https://www.facebook.com/profile.php?id=61586359084622" target="_blank" rel="noopener noreferrer" aria-label="Facebook" style="color:var(--zinc-400);transition:color 0.2s" onmouseover="this.style.color='var(--white)'" onmouseout="this.style.color='var(--zinc-400)'"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a><a href="https://www.instagram.com/agentgrowio/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style="color:var(--zinc-400);transition:color 0.2s" onmouseover="this.style.color='var(--white)'" onmouseout="this.style.color='var(--zinc-400)'"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></a><a href="https://www.linkedin.com/company/agentgrow-io" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="color:var(--zinc-400);transition:color 0.2s" onmouseover="this.style.color='var(--white)'" onmouseout="this.style.color='var(--zinc-400)'"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a><a href="https://youtube.com/@agentgrow-io" target="_blank" rel="noopener noreferrer" aria-label="YouTube" style="color:var(--zinc-400);transition:color 0.2s" onmouseover="this.style.color='var(--white)'" onmouseout="this.style.color='var(--zinc-400)'"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></a>
         </div>
         <p class="addr">2146 Sunscape, Sobha Hillview, Kanakapura Road, Bengaluru, Karnataka, INDIA 560109</p>
         <p class="copy">&copy; 2026 gheWARE uniGPS Solutions LLP. All rights reserved.</p>
@@ -406,12 +366,21 @@
   </footer>
 
   <script>
-    fetch('../posts-data.json').then(r=>r.json()).then(posts=>{
-      const BADGE_CLASS={'Platform':'badge-platform','Getting Started':'badge-getting-started','How-To':'badge-how-to','Strategy':'badge-strategy'};
-      const current='dashboard-walkthrough';
-      const related=posts.filter(p=>p.slug!==current).slice(0,3);
-      document.getElementById('related-posts').innerHTML=related.map(p=>'<div class="card"><span class="badge '+(BADGE_CLASS[p.category]||'')+'">'+ p.category+'</span><h2><a href="'+p.slug+'.html">'+p.title+'</a></h2><p class="excerpt">'+p.excerpt+'</p><div class="card-meta"><span>'+p.publishedAt+'</span><span>&middot;</span><span>'+p.readTime+'</span></div></div>').join('');
-    });
+    fetch('../posts-data.json')
+      .then(r => r.json())
+      .then(posts => {
+        const BADGE_CLASS = {'Platform':'badge-platform','Getting Started':'badge-getting-started','How-To':'badge-how-to','Strategy':'badge-strategy'};
+        const current = 'dashboard-walkthrough';
+        const related = posts.filter(p => p.slug !== current).slice(0, 3);
+        document.getElementById('related-posts').innerHTML = related.map(p =>
+          '<div class="card">' +
+            '<span class="badge ' + (BADGE_CLASS[p.category]||'') + '">' + p.category + '</span>' +
+            '<h2><a href="' + p.slug + '.html">' + p.title + '</a></h2>' +
+            '<p class="excerpt">' + p.excerpt + '</p>' +
+            '<div class="card-meta"><span>' + p.publishedAt + '</span><span>&middot;</span><span>' + p.readTime + '</span></div>' +
+          '</div>'
+        ).join('');
+      });
   </script>
 
 </body>

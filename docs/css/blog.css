@@ -187,6 +187,14 @@ img { max-width: 100%; height: auto; }
 .badge-getting-started { color: var(--sky);  border-color: rgba(56,189,248,0.3); background: rgba(56,189,248,0.08); }
 .badge-how-to      { color: var(--purple); border-color: rgba(192,132,252,0.3); background: rgba(192,132,252,0.08); }
 .badge-strategy    { color: var(--amber);  border-color: rgba(251,191,36,0.3);  background: rgba(251,191,36,0.08); }
+/* apply-blog-shell.py can emit a badge for any of its 10 KNOWN_CATEGORIES, but only
+   4 were ever styled — the other 6 rendered as an unstyled bare word. Added 2026-08-29. */
+.badge-seo         { color: var(--lime);   border-color: rgba(173,250,29,0.3);  background: rgba(173,250,29,0.08); }
+.badge-leads       { color: var(--sky);    border-color: rgba(56,189,248,0.3);  background: rgba(56,189,248,0.08); }
+.badge-guide       { color: var(--purple); border-color: rgba(192,132,252,0.3); background: rgba(192,132,252,0.08); }
+.badge-growth      { color: var(--lime);   border-color: rgba(173,250,29,0.3);  background: rgba(173,250,29,0.08); }
+.badge-email       { color: var(--amber);  border-color: rgba(251,191,36,0.3);  background: rgba(251,191,36,0.08); }
+.badge-analytics   { color: var(--sky);    border-color: rgba(56,189,248,0.3);  background: rgba(56,189,248,0.08); }
 
 /* ── Card Grid ───────────────────────────────────────── */
 
@@ -595,4 +603,163 @@ img { max-width: 100%; height: auto; }
   clip: rect(0,0,0,0);
   white-space: nowrap;
   border-width: 0;
+}
+
+/* ── Table of Contents ───────────────────────────────── */
+
+.table-of-contents {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 0 0 2.5rem;
+}
+
+.table-of-contents h2 {
+  color: var(--zinc-300);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0 0 1rem;
+}
+
+.table-of-contents ol {
+  counter-reset: toc;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.table-of-contents li {
+  counter-increment: toc;
+  margin: 0 0 0.25rem;
+}
+
+.table-of-contents li a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding: 0.4rem 0.6rem;
+  border-radius: 8px;
+  color: var(--zinc-400);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  transition: background 0.2s, color 0.2s;
+}
+
+.table-of-contents li a::before {
+  content: counter(toc);
+  flex: 0 0 auto;
+  min-width: 1.25rem;
+  color: var(--sky);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.table-of-contents li a:hover {
+  background: var(--glass-border);
+  color: var(--white);
+}
+
+/* ── Key Takeaways ───────────────────────────────────── */
+
+.key-takeaways {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-left: 3px solid var(--lime);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 0 0 2.5rem;
+}
+
+.key-takeaways h2 {
+  color: var(--zinc-300);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0 0 1rem;
+}
+
+.key-takeaways ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.key-takeaways li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: var(--zinc-300);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.key-takeaways li:last-child {
+  margin-bottom: 0;
+}
+
+.key-takeaways li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--lime);
+}
+
+/* ── Post Hero ───────────────────────────────────────── */
+
+.post-hero {
+  display: block;
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  border: 1px solid var(--glass-border);
+}
+
+/* ── Author Bio ──────────────────────────────────────── */
+
+.author-bio {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin: 3rem 0 0;
+}
+
+.author-bio .author-bio-avatar {
+  flex: 0 0 auto;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--lime);
+  color: var(--obsidian);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+
+.author-bio .author-bio-name {
+  color: var(--white);
+  font-weight: 600;
+  margin: 0;
+}
+
+.author-bio .author-bio-role {
+  color: var(--zinc-500);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin: 0.125rem 0 0;
 }
