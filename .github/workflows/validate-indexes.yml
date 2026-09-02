@@ -31,7 +31,7 @@ jobs:
 
       - name: Fail if posts-data.json / sitemap.xml drifted
         run: |
-          if ! git diff --exit-code docs/posts-data.json docs/sitemap.xml; then
+          if ! git diff --exit-code docs/posts-data.json docs/sitemap.xml docs/index.html; then
             echo ""
             echo "::error::Indexes are out of sync with docs/posts/*.html."
             echo "::error::Run docs/scripts/regenerate_indexes.py locally, commit the result, and push again."
