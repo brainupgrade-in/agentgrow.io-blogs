@@ -155,6 +155,7 @@ def main():
     failures = []
     warnings = []
     no_posthog = []
+    few_links = []
     checked = 0
     defined = _css_classes()
     for post in sorted(POSTS_DIR.glob("*.html")):
@@ -179,6 +180,13 @@ def main():
         # with docs/scripts/add-posthog-snippet.py; new posts get it from the shell.
         if "posthog.init(" not in html:
             no_posthog.append(post.name)
+        # Static internal links (2026-09-03, blog-traffic-recovery Phase 3b): the
+        # related block used to be filled by JS, so a crawler saw one internal
+        # link per post (the CTA). Soft — related-links.py is the remediator.
+        body = html.split('class="article-body"', 1)[-1]
+        n_internal = len(re.findall(r'href="(?:\.\./posts/|\./)?[a-z0-9-]+\.html"', body))
+        if n_internal < 3:
+            few_links.append((post.name, n_internal))
 
     if warnings:
         total = len({c for _, cs in warnings for c in cs})
@@ -198,6 +206,14 @@ def main():
             print(f"  WARN  {name}: posthog-snippet", file=sys.stderr)
         if len(no_posthog) > 10:
             print(f"  … and {len(no_posthog) - 10} more", file=sys.stderr)
+
+    if few_links:
+        print(f"Template lint: {len(few_links)} post(s) with fewer than 3 static internal links "
+              f"in the body (warning — run docs/scripts/related-links.py <post>):", file=sys.stderr)
+        for name, n in few_links[:10]:
+            print(f"  WARN  {name}: internal-links={n}", file=sys.stderr)
+        if len(few_links) > 10:
+            print(f"  … and {len(few_links) - 10} more", file=sys.stderr)
 
     if failures:
         print(
