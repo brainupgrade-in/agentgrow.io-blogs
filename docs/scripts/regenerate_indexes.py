@@ -211,12 +211,36 @@ def is_redirect_stub(html):
     return bool(re.search(r'<meta\s+http-equiv="refresh"', html[:500], re.IGNORECASE))
 
 
+# Pruned posts (2026-09-03, blog-traffic-recovery Phase 2): a post whose
+# canonical points at another URL, or that carries a robots noindex, stays live
+# and readable but leaves posts-data.json, sitemap.xml and the static index —
+# otherwise the sitemap keeps submitting URLs we asked Google to drop, and
+# related-links.py keeps linking to them. Attribute-order agnostic (#144a: a
+# rel-then-href regex silently missed every tag bs4 had rewritten).
+def is_pruned(html, slug):
+    head = html[:6000]
+    if re.search(r'<meta\b(?=[^>]*\bname="robots")(?=[^>]*noindex)[^>]*>', head, re.IGNORECASE):
+        return "noindex"
+    for tag in re.findall(r'<link\b(?=[^>]*\brel="canonical")[^>]*>', head, re.IGNORECASE):
+        m = re.search(r'href="([^"]*)"', tag)
+        if m and m.group(1).rstrip("/") != f"https://agentgrow.io/blog/posts/{slug}.html":
+            return "canonical→" + m.group(1).split("/")[-1].replace(".html", "")
+    return None
+
+
+PRUNED = []
+
+
 def regenerate_posts_json():
     existing_by_slug = load_existing_by_slug()
     entries = []
     for post_file in sorted(POSTS_DIR.glob("*.html")):
         slug = post_file.stem
         html = post_file.read_text(encoding="utf-8")
+        pruned = is_pruned(html, slug)
+        if pruned:
+            PRUNED.append((slug, pruned))
+            continue
         if is_redirect_stub(html):
             continue
         entries.append(build_entry(slug, html, existing_by_slug.get(slug)))
@@ -403,6 +427,9 @@ def main():
     print(f"posts-data.json: {len(entries)} entries (newest {entries[0]['date']})")
     print(f"sitemap.xml    : {len(entries)} post URLs + blog + guide")
     print(f"index.html     : {index_cards} static cards")
+    if PRUNED:
+        print(f"pruned         : {len(PRUNED)} post(s) kept live but out of the indexes — " +
+              ", ".join(f"{s} ({why})" for s, why in PRUNED))
 
     # ---------------- SEO/AEO lint pass ----------------
     lint_totals = {"post_issues": 0, "issues": 0}
