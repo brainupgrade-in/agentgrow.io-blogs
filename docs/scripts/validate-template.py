@@ -154,6 +154,7 @@ def undefined_classes(html, defined):
 def main():
     failures = []
     warnings = []
+    no_posthog = []
     checked = 0
     defined = _css_classes()
     for post in sorted(POSTS_DIR.glob("*.html")):
@@ -173,6 +174,11 @@ def main():
         undefined = undefined_classes(html, defined)
         if undefined:
             warnings.append((post.name, undefined))
+        # PostHog snippet (2026-09-03, blog-traffic-recovery Phase 1a). Soft, not
+        # hard: a hard gate with no remediator is #134a's silent stall. Backfill
+        # with docs/scripts/add-posthog-snippet.py; new posts get it from the shell.
+        if "posthog.init(" not in html:
+            no_posthog.append(post.name)
 
     if warnings:
         total = len({c for _, cs in warnings for c in cs})
@@ -183,6 +189,15 @@ def main():
             print(f"  WARN  {name}: {', '.join(cs)}", file=sys.stderr)
         if len(warnings) > 10:
             print(f"  … and {len(warnings) - 10} more", file=sys.stderr)
+
+    if no_posthog:
+        print(f"Template lint: {len(no_posthog)} post(s) without the PostHog snippet "
+              f"(warning, not a failure — run docs/scripts/add-posthog-snippet.py):",
+              file=sys.stderr)
+        for name in no_posthog[:10]:
+            print(f"  WARN  {name}: posthog-snippet", file=sys.stderr)
+        if len(no_posthog) > 10:
+            print(f"  … and {len(no_posthog) - 10} more", file=sys.stderr)
 
     if failures:
         print(
