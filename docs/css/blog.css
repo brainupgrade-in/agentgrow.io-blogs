@@ -387,8 +387,14 @@ img { max-width: 100%; height: auto; }
 }
 
 .article-body ul li {
-  display: flex;
-  gap: 0.75rem;
+  /* Was display:flex with a gap, which turned every inline child of a list item
+     into its own flex column: a bullet like "<strong>App name:</strong> text
+     <code>chip</code> more text" rendered as three side-by-side columns instead
+     of one flowing sentence. 619 list items across 74 posts were affected.
+     The marker is absolutely positioned instead, so the text flows normally. */
+  display: block;
+  position: relative;
+  padding-left: 1.5rem;
   margin-bottom: 0.5rem;
   color: var(--zinc-400);
   font-size: 0.9375rem;
@@ -399,8 +405,9 @@ img { max-width: 100%; height: auto; }
   content: '▸';
   color: var(--lime);
   opacity: 0.7;
-  flex-shrink: 0;
-  margin-top: 0.1em;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
 .article-body .callout {
@@ -845,9 +852,9 @@ img { max-width: 100%; height: auto; }
 
 /* Tips */
 .tip-list { list-style: none; padding-left: 0; }
-.tip-list li { display: flex; gap: 0.6rem; margin: 0.5rem 0; }
+.tip-list li { padding-left: 0; margin: 0.5rem 0; }
 .tip-list li::before { content: none; }
-.tip-icon { flex: 0 0 auto; color: var(--lime); }
+.tip-icon { color: var(--lime); margin-right: 0.4rem; }
 
 /* Calls to action inside the article body */
 .cta-box {
