@@ -321,8 +321,19 @@ def lint_post(slug, html):
     if not re.search(r'"@type"\s*:\s*"FAQPage"', html):
         issues.append(("warn", 'missing FAQPage schema (AEO / AI Overview eligibility)'))
 
-    if not re.search(r'internal-links|Related reading|\xf0\x9f\x93\x9a Related', html) \
-       and "📚 Related reading" not in html:
+    # Two block shapes are legitimate: the inline-styled "Related reading" box and
+    # the older "More from the blog" grid that related-links.py populates
+    # (<div class="card-grid" id="related-posts">). Matching only the first
+    # reported 47 posts as link-less when every one of them carried three static
+    # related links — and the remedy for that false warning would have been to
+    # add a second, duplicate block. Require a real anchor in the grid, so an
+    # empty grid (redirect stubs) still warns.
+    has_related = (
+        re.search(r'internal-links|Related reading', html)
+        or "📚 Related reading" in html
+        or re.search(r'id="related-posts">.*?<a\s', html, re.S)
+    )
+    if not has_related:
         issues.append(("warn", "no internal-links / Related reading block (hurts discovery + PageRank flow)"))
 
     return issues
