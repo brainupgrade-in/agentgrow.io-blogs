@@ -763,3 +763,129 @@ img { max-width: 100%; height: auto; }
   line-height: 1.5;
   margin: 0.125rem 0 0;
 }
+
+/* ── Guide & long-form components ─────────────────────
+   Emitted by the setup/guide posts (linkedin-setup, facebook-instagram-setup,
+   seo-analyst-setup, dashboard-walkthrough, blog-publisher-setup, …) and by a
+   few long-form articles. These classes had never been defined here, so 21
+   indexed pages rendered their step numbers, code blocks and callouts as bare
+   body text. Added 2026-09-06. Keep in sync with the vocabulary the posts
+   actually emit — see the template lint in regenerate_indexes.py. */
+
+/* Numbered steps */
+.step-heading { display: flex; align-items: center; gap: 0.75rem; margin: 2.25rem 0 0.75rem; }
+.step-heading h3 { margin: 0; }
+.step-number {
+  flex: 0 0 auto; width: 1.75rem; height: 1.75rem; border-radius: 50%;
+  background: var(--lime); color: var(--obsidian);
+  font-size: 0.9rem; font-weight: 700; line-height: 1;
+  display: inline-flex; align-items: center; justify-content: center;
+}
+
+/* Section rule */
+.section-divider { border: 0; border-top: 1px solid var(--border-subtle); margin: 3rem 0; }
+
+/* Code */
+.article-body code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.9em; color: var(--zinc-300);
+  background: rgba(255,255,255,0.06); border-radius: 4px; padding: 0.1rem 0.35rem;
+}
+.code-block {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.9rem; color: var(--zinc-300);
+  background: rgba(255,255,255,0.04); border: 1px solid var(--glass-border);
+  border-radius: 8px; padding: 0.85rem 1rem; margin: 1.25rem 0;
+  overflow-x: auto; white-space: pre-wrap; word-break: break-word;
+}
+.code-block code { background: none; padding: 0; }
+
+/* Callout boxes */
+.warning-box {
+  background: rgba(251,191,36,0.08); border-left: 3px solid var(--amber);
+  border-radius: 0 8px 8px 0; padding: 1rem 1.25rem; margin: 1.5rem 0; color: var(--zinc-300);
+}
+.highlight-box {
+  background: rgba(56,189,248,0.08); border-left: 3px solid var(--sky);
+  border-radius: 0 8px 8px 0; padding: 1rem 1.25rem; margin: 1.5rem 0; color: var(--zinc-300);
+}
+.screenshot-placeholder {
+  border: 1px dashed var(--border-subtle); background: var(--glass-bg);
+  border-radius: 8px; padding: 1rem; margin: 1.25rem 0;
+  text-align: center; font-size: 0.9rem; color: var(--zinc-500);
+}
+
+/* Cards — one shared surface for every *-card / *-box the guides emit */
+.section-box, .step-box, .option-card, .settings-card, .format-card,
+.metric-card, .stat-card, .dashboard-section, .funnel-stage, .kpi-chip {
+  background: var(--glass-bg); border: 1px solid var(--glass-border);
+  border-radius: 12px; padding: 1.1rem 1.25rem; margin: 1.25rem 0;
+}
+.settings-grid, .format-grid, .stat-grid, .kpi-row {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem; margin: 1.5rem 0;
+}
+.settings-grid > *, .format-grid > *, .stat-grid > *, .kpi-row > * { margin: 0; }
+
+/* Numbers and labels inside those cards */
+.kpi-value, .metric-number, .article-body .number {
+  display: block; font-size: 1.5rem; font-weight: 700; color: var(--white); line-height: 1.2;
+}
+.kpi-label, .dashboard-section-label, .stage-label, .article-body .label {
+  display: block; font-size: 0.8rem; letter-spacing: 0.04em; text-transform: uppercase;
+  color: var(--zinc-500);
+}
+.kpi-trend { font-size: 0.85rem; color: var(--zinc-400); }
+.kpi-trend.green, .article-body .green { color: var(--lime); }
+.status-dot {
+  display: inline-block; width: 0.55rem; height: 0.55rem; border-radius: 50%;
+  background: var(--zinc-500); margin-right: 0.4rem; vertical-align: middle;
+}
+.status-dot.green { background: var(--lime); }
+
+/* Tips */
+.tip-list { list-style: none; padding-left: 0; }
+.tip-list li { display: flex; gap: 0.6rem; margin: 0.5rem 0; }
+.tip-list li::before { content: none; }
+.tip-icon { flex: 0 0 auto; color: var(--lime); }
+
+/* Calls to action inside the article body */
+.cta-box {
+  background: var(--glass-bg); border: 1px solid var(--glass-border);
+  border-radius: 12px; padding: 1.5rem; margin: 2rem 0; text-align: center;
+}
+.cta-button {
+  display: inline-block; background: var(--lime); color: var(--obsidian);
+  font-weight: 600; padding: 0.7rem 1.4rem; border-radius: 999px;
+  transition: opacity 0.2s;
+}
+.cta-button:hover { color: var(--obsidian); opacity: 0.85; }
+.cta-link { color: var(--sky); font-weight: 600; }
+
+/* Misc */
+.article-hero-image { width: 100%; border-radius: 12px; margin: 1.5rem 0; }
+.article-footer {
+  margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border-subtle);
+  font-size: 0.9rem; color: var(--zinc-500);
+}
+
+/* Table aliases — these inherit .article-body table; named so the class-coverage
+   lint stops reporting them as undefined. */
+.field-table, .comparison-table, .category-table { width: 100%; }
+
+/* One-off long-form components */
+.article-body .lead { font-size: 1.05rem; color: var(--zinc-300); }
+.vanity-vs-real { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+.vanity-col, .real-col {
+  background: var(--glass-bg); border: 1px solid var(--glass-border);
+  border-radius: 12px; padding: 1.1rem 1.25rem;
+}
+.real-col { border-color: rgba(173,250,29,0.35); }
+
+/* Legacy dialect on ai-sales-automation-small-business.html — that post was
+   generated with devops.gheware.com's vocabulary (gotcha #144). Aliased rather
+   than rewritten: the post is canonicalised onto
+   automated-sales-pipeline-small-business and still serves 200. */
+.post-content { max-width: 100%; }
+.post-footer { margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border-subtle); font-size: 0.9rem; color: var(--zinc-500); }
+.post-footer .tags, .post-footer .share { margin-top: 0.75rem; }
