@@ -146,8 +146,15 @@ def undefined_classes(html, defined):
     # class= scan over the raw file picks up JavaScript fragments, not class names.
     markup = re.sub(r"<script\b.*?</script>", " ", html, flags=re.S | re.I)
     used = set()
-    for attr in re.findall(r'class="([^"]+)"', markup):
-        used.update(attr.split())
+    # Third exemption (2026-09-06, #163): an element carrying its own inline
+    # style= renders correctly whatever blog.css knows. The "📚 Related reading"
+    # block is built that way, so scanning class= alone reported 43 correctly
+    # rendered posts as unstyled — a permanent false positive that buries the
+    # real ones. Match the whole tag, not just the class attribute.
+    for tag in re.finditer(r'<([a-z]+)([^>]*)class="([^"]+)"([^>]*)>', markup):
+        if "style=" in tag.group(2) + tag.group(4):
+            continue
+        used.update(tag.group(3).split())
     return sorted(c for c in used - EXEMPT_CLASSES if c not in defined)
 
 
